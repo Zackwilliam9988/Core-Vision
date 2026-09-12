@@ -126,15 +126,17 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
               { id: 'services', label: 'Services', path: '/services' },
               { id: 'about', label: 'About', path: '/about' },
               { id: 'why-us', label: 'Why Us', path: '/why-us' },
+              { id: 'partners', label: 'Partners', path: '/partners' },
               { id: 'contact', label: 'Contact', path: '/contact' },
             ].map((link) => (
               <a
                 key={link.id}
+                id={link.id === 'partners' ? 'nav-partners-link' : undefined}
                 href={link.path}
                 onClick={(e) => handleNavLinkClick(e, link.id)}
-                className={`text-xs tracking-wide transition-colors ${
+                className={`text-xs font-semibold uppercase tracking-wider transition-colors duration-200 ${
                   isActive(link.id) 
-                    ? 'text-white font-semibold border-b border-[#ef233c] pb-1' 
+                    ? 'text-white border-b-2 border-[#ef233c] pb-1' 
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -191,16 +193,24 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
             className="md:hidden bg-[#0a0a0c] border-t border-white/10 shadow-2xl overflow-hidden"
           >
             <div className="px-5 py-4 space-y-3">
-              {[ 'home','services','about','why-us','contact' ].map((id) => (
+              {[
+                { id: 'home', label: 'Home' },
+                { id: 'services', label: 'Services' },
+                { id: 'about', label: 'About' },
+                { id: 'why-us', label: 'Why Us' },
+                { id: 'partners', label: 'Partners' },
+                { id: 'contact', label: 'Contact' },
+              ].map((item) => (
                 <a 
-                  key={id} 
-                  href="#" 
-                  onClick={(e) => handleNavLinkClick(e, id)} 
+                  key={item.id} 
+                  id={item.id === 'partners' ? 'nav-partners-link-mobile' : undefined}
+                  href={`/${item.id === 'home' ? '' : item.id}`} 
+                  onClick={(e) => handleNavLinkClick(e, item.id)} 
                   className={`block text-sm uppercase font-mono tracking-wider py-2 px-3 rounded-lg ${
-                    isActive(id) ? 'bg-[#ef233c]/10 text-[#ef233c] font-bold border border-[#ef233c]/20' : 'text-zinc-300 hover:bg-white/5'
+                    isActive(item.id) ? 'bg-[#ef233c]/10 text-[#ef233c] font-bold border border-[#ef233c]/20' : 'text-zinc-300 hover:bg-white/5'
                   }`}
                 >
-                  {id === 'why-us' ? 'Why Us' : id.charAt(0).toUpperCase() + id.slice(1)}
+                  {item.label}
                 </a>
               ))}
               <div className="pt-3 border-t border-white/10">

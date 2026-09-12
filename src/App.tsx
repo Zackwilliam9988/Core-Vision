@@ -47,6 +47,7 @@ import { ContactPage } from "./components/ContactPage";
 import { ServicesPage } from "./components/ServicesPage";
 import { AboutPage } from "./components/AboutPage";
 import { WhyUsPage } from "./components/WhyUsPage";
+import { PartnersPage } from "./components/PartnersPage";
 import { Navbar } from "./components/Navbar";
 import { CCTVCamera } from "./components/CCTVCamera";
 import { SuccessNotification } from "./components/SuccessNotification";
@@ -56,7 +57,6 @@ import { HeroVideoBackground } from "./components/HeroVideoBackground";
 import { EngineeringShowcase } from "./components/EngineeringShowcase";
 import { PartnersShowcase } from "./components/PartnersShowcase";
 import { ShowroomCard3D } from "./components/ShowroomCard3D";
-import { ContinuousTickerScroll } from "./components/ContinuousTickerScroll";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
@@ -306,6 +306,9 @@ export default function App() {
     if (path === "/why-us" || path === "/why-us/" || hash === "#/why-us" || hash === "#why-us") {
       return { page: "why-us" };
     }
+    if (path === "/partners" || path === "/partners/" || hash === "#/partners" || hash === "#partners") {
+      return { page: "partners" };
+    }
     
     const servicePathMatch = path.match(/^\/service\/([^/]+)/);
     if (servicePathMatch) {
@@ -336,6 +339,8 @@ export default function App() {
       url = "/about";
     } else if (route.page === "why-us") {
       url = "/why-us";
+    } else if (route.page === "partners") {
+      url = "/partners";
     } else if (route.page === "contact") {
       url = "/contact";
     }
@@ -507,6 +512,11 @@ export default function App() {
           <AboutPage key="about-page" />
         ) : currentRoute.page === "why-us" ? (
           <WhyUsPage key="why-us-page" />
+        ) : currentRoute.page === "partners" ? (
+          <PartnersPage 
+            key="partners-page"
+            onTriggerQuote={(srvId) => triggerQuote(srvId)}
+          />
         ) : (
           <motion.div
             key="home-page"
@@ -820,12 +830,6 @@ export default function App() {
             {/* HORIZONTAL LINE DIVIDER */}
             <div className="inove-hline" />
 
-            {/* CONTINUOUS REAL MAGIC TICKER SCROLL */}
-            <ContinuousTickerScroll />
-
-            {/* HORIZONTAL LINE DIVIDER */}
-            <div className="inove-hline" />
-
             {/* CERTIFIED ENGINEERING SHOWCASE & DEPLOYMENT PROTOCOL */}
             <EngineeringShowcase 
               onTriggerQuote={(srvId) => triggerQuote(srvId)}
@@ -896,6 +900,7 @@ export default function App() {
                 <li><button onClick={() => navigateTo({ page: "services" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Solutions Catalog</button></li>
                 <li><button onClick={() => navigateTo({ page: "about" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">About Engineering</button></li>
                 <li><button onClick={() => navigateTo({ page: "why-us" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Certified Promise</button></li>
+                <li><button onClick={() => navigateTo({ page: "partners" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">OEM Alliances</button></li>
                 <li><button onClick={() => navigateTo({ page: "contact" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Security Dispatch</button></li>
               </ul>
             </div>
