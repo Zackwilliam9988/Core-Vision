@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { 
   Shield, 
   Eye, 
@@ -13,6 +13,7 @@ import {
   Zap, 
   Heart 
 } from "lucide-react";
+import { ScrollJourneyAbout } from "./ScrollJourneyAbout";
 
 export const AboutPage: React.FC = () => {
   const coreValues = [
@@ -55,13 +56,6 @@ export const AboutPage: React.FC = () => {
       specialty: "Enterprise Switching, Splicing & Datacenters",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
     }
-  ];
-
-  const milestones = [
-    { year: "2018", title: "Enterprise Conception", desc: "Core Vision Pakistan begins high-end commercial cabling & CCTV rollouts in Islamabad." },
-    { year: "2020", title: "Fiber Splice Core", desc: "Acquired state-of-the-art OTDR core-alignment splicing units to service optical feeds." },
-    { year: "2022", title: "Smart City Contract", desc: "Deployed integrated surveillance systems covering major commercial zones." },
-    { year: "2025", title: "Biometric Integration Hub", desc: "Launched central biometric database syncing cloud metrics for 50+ enterprise sites." }
   ];
 
   return (
@@ -166,36 +160,8 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        {/* ACHIEVEMENTS / HISTORIC TIMELINE */}
-        <div className="mb-20 bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-          
-          <div className="text-left mb-12">
-            <h2 className="text-3xl font-black font-sans text-white mt-4">Proven Service Trajectory</h2>
-          </div>
-
-          <div className="relative border-l-2 border-zinc-800 pl-6 sm:pl-10 space-y-12">
-            {milestones.map((m, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="relative text-left"
-              >
-                {/* Timeline Dot Indicator */}
-                <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 h-4 w-4 rounded-full bg-black border-2 border-[#ef233c] shadow-[0_0_12px_rgba(239,35,60,0.6)]" />
-                
-                <span className="text-sm font-mono font-black text-[#ef233c] bg-[#ef233c]/10 px-3 py-1 rounded-md border border-[#ef233c]/30 inline-block mb-2">
-                  {m.year}
-                </span>
-                <h4 className="text-xl font-bold font-sans text-white">{m.title}</h4>
-                <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl font-sans leading-relaxed">{m.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {/* SCROLL-DRIVEN DYNAMIC SVG JOURNEY TIMELINE */}
+        <ScrollJourneyAbout />
 
         {/* PROFESSIONAL TEAM SECTION */}
         <div className="mb-8">
