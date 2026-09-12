@@ -20,22 +20,19 @@ export const AboutPage: React.FC = () => {
       icon: Shield,
       title: "Absolute Protection",
       description: "We deploy defense-grade surveillance systems and rigorous protocols to protect digital and physical critical infrastructure.",
-      color: "from-[#0284C7]/10 to-[#0EA5E9]/10",
-      accentColor: "#0284C7"
+      accentColor: "#ef233c"
     },
     {
       icon: Cpu,
       title: "Pristine Calibration",
       description: "Our optical fiber splices and network cabling systems adhere to nanosecond response budgets and 100% loss-free validation.",
-      color: "from-[#0EA5E9]/10 to-[#2563EB]/10",
-      accentColor: "#0EA5E9"
+      accentColor: "#ef233c"
     },
     {
       icon: Zap,
       title: "Rapid Deployment",
       description: "Enterprise operations require constant uptime. We provide rapid emergency support dispatch within 2 hours.",
-      color: "from-[#2563EB]/10 to-[#0284C7]/10",
-      accentColor: "#2563EB"
+      accentColor: "#ef233c"
     }
   ];
 
@@ -68,11 +65,11 @@ export const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-white min-h-screen text-slate-800 font-sans relative overflow-hidden">
+    <div className="pt-32 pb-24 bg-black min-h-screen text-white font-sans relative overflow-hidden">
       
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(217,91,22,0.04),transparent_50%)] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(217,91,22,0.03),transparent_50%)] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(239,35,60,0.12),transparent_50%)] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(239,35,60,0.06),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -82,16 +79,16 @@ export const AboutPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none mb-6"
+            className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight leading-none mb-6"
           >
-            Engineering Pristine <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] to-[#0EA5E9]">Security Landscapes</span>
+            Engineering Pristine <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ef233c] to-[#ff4d6d]">Security Landscapes</span>
           </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-xl leading-relaxed font-sans"
+            className="text-zinc-300 text-base sm:text-xl leading-relaxed font-sans"
           >
             Core Vision Pakistan is a specialized high-performance security systems integrator and infrastructure engineering collective. We service commercial buildings, residential hubs, and industrial warehouses, laying fast optical fibers, smart networks, and unified CCTV grids.
           </motion.p>
@@ -104,11 +101,11 @@ export const AboutPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white border border-slate-100 rounded-3xl p-8 relative overflow-hidden group shadow-md hover:shadow-lg transition-all duration-300"
+            className="bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/40 hover:shadow-[0_0_30px_rgba(239,35,60,0.15)] transition-all duration-300"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 blur-2xl pointer-events-none" />
-            <h3 className="text-2xl font-black font-sans mb-4 tracking-tight text-slate-900 mt-2">Our Mission</h3>
-            <p className="text-slate-600 text-sm leading-relaxed font-sans">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 blur-2xl pointer-events-none" />
+            <h3 className="text-2xl font-black font-sans mb-4 tracking-tight text-white mt-2">Our Mission</h3>
+            <p className="text-zinc-400 text-sm leading-relaxed font-sans">
               To engineer and maintain bulletproof security grids, high-speed networking paths, and automated bio-tracking modules that guarantee commercial clients continuous uptime, maximum asset protection, and streamlined oversight.
             </p>
           </motion.div>
@@ -118,11 +115,11 @@ export const AboutPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white border border-slate-100 rounded-3xl p-8 relative overflow-hidden group shadow-md hover:shadow-lg transition-all duration-300"
+            className="bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/40 hover:shadow-[0_0_30px_rgba(239,35,60,0.15)] transition-all duration-300"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 blur-2xl pointer-events-none" />
-            <h3 className="text-2xl font-black font-sans mb-4 tracking-tight text-slate-900 mt-2">Our Vision</h3>
-            <p className="text-slate-600 text-sm leading-relaxed font-sans">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 blur-2xl pointer-events-none" />
+            <h3 className="text-2xl font-black font-sans mb-4 tracking-tight text-white mt-2">Our Vision</h3>
+            <p className="text-zinc-400 text-sm leading-relaxed font-sans">
               To be Pakistan's standard in mission-critical infrastructure integration. We envision automated commercial grids where biometric flow, 4K intelligent surveillance, and redundant fiber links seamlessly collaborate on a single secure platform.
             </p>
           </motion.div>
@@ -131,13 +128,14 @@ export const AboutPage: React.FC = () => {
         {/* CORE VALUES */}
         <div className="mb-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 mt-4 font-sans">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mt-4 font-sans">
               The Principles Behind Core Vision Pakistan
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {coreValues.map((value, idx) => {
+              const Icon = value.icon;
               return (
                 <motion.div 
                   key={idx}
@@ -145,10 +143,13 @@ export const AboutPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
-                  className="bg-white border border-slate-100 rounded-2xl p-6 relative transition-all duration-300 group hover:scale-[1.02] shadow-sm hover:shadow-md"
+                  className="bg-[#0a0a0c] border border-white/10 rounded-2xl p-6 relative transition-all duration-300 group hover:scale-[1.02] shadow-xl hover:border-[#ef233c] hover:shadow-[0_0_25px_rgba(239,35,60,0.2)]"
                 >
-                  <h4 className="text-lg font-black text-slate-900 mb-2 mt-2 font-sans group-hover:text-[#0284C7] transition-colors">{value.title}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed font-sans">{value.description}</p>
+                  <div className="h-10 w-10 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 text-[#ef233c] flex items-center justify-center mb-3">
+                    <Icon size={18} />
+                  </div>
+                  <h4 className="text-lg font-black text-white mb-2 font-sans group-hover:text-[#ef233c] transition-colors">{value.title}</h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed font-sans">{value.description}</p>
                 </motion.div>
               );
             })}
@@ -156,14 +157,14 @@ export const AboutPage: React.FC = () => {
         </div>
 
         {/* ACHIEVEMENTS / HISTORIC TIMELINE */}
-        <div className="mb-20 bg-slate-50 border border-slate-100 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-inner">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.015)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+        <div className="mb-20 bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
           
           <div className="text-left mb-12">
-            <h2 className="text-3xl font-black font-sans text-slate-900 mt-4">Proven Service Trajectory</h2>
+            <h2 className="text-3xl font-black font-sans text-white mt-4">Proven Service Trajectory</h2>
           </div>
 
-          <div className="relative border-l-2 border-slate-200 pl-6 sm:pl-10 space-y-12">
+          <div className="relative border-l-2 border-zinc-800 pl-6 sm:pl-10 space-y-12">
             {milestones.map((m, idx) => (
               <motion.div 
                 key={idx}
@@ -174,13 +175,13 @@ export const AboutPage: React.FC = () => {
                 className="relative text-left"
               >
                 {/* Timeline Dot Indicator */}
-                <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 h-4 w-4 rounded-full bg-white border-2 border-[#D95B16] shadow-[0_2px_8px_rgba(217,91,22,0.3)]" />
+                <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 h-4 w-4 rounded-full bg-black border-2 border-[#ef233c] shadow-[0_0_12px_rgba(239,35,60,0.6)]" />
                 
-                <span className="text-sm font-mono font-black text-[#D95B16] bg-[#D95B16]/5 px-3 py-1 rounded-md border border-[#D95B16]/10 inline-block mb-2">
+                <span className="text-sm font-mono font-black text-[#ef233c] bg-[#ef233c]/10 px-3 py-1 rounded-md border border-[#ef233c]/30 inline-block mb-2">
                   {m.year}
                 </span>
-                <h4 className="text-xl font-bold font-sans text-slate-900">{m.title}</h4>
-                <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-xl font-sans leading-relaxed">{m.desc}</p>
+                <h4 className="text-xl font-bold font-sans text-white">{m.title}</h4>
+                <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl font-sans leading-relaxed">{m.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -189,10 +190,10 @@ export const AboutPage: React.FC = () => {
         {/* PROFESSIONAL TEAM SECTION */}
         <div className="mb-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 mt-4 font-sans">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mt-4 font-sans">
               Our Senior Engineering Team
             </h2>
-            <p className="text-slate-500 text-xs sm:text-sm mt-2 max-w-xl mx-auto">
+            <p className="text-zinc-400 text-xs sm:text-sm mt-2 max-w-xl mx-auto">
               Meet the specialists leading on-site configurations, OTDR laser calculations, and enterprise CCTV network deployment.
             </p>
           </div>
@@ -205,26 +206,26 @@ export const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-md hover:border-orange-500/20 hover:shadow-lg transition-all duration-300 text-left group"
+                className="bg-[#0a0a0c] border border-white/10 rounded-2xl overflow-hidden shadow-2xl hover:border-[#ef233c] hover:shadow-[0_0_30px_rgba(239,35,60,0.25)] transition-all duration-300 text-left group"
               >
                 <div className="h-72 overflow-hidden relative">
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-[0.9]"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="text-[9px] font-mono font-bold text-[#D95B16] bg-[#D95B16]/10 border border-[#D95B16]/20 px-2 py-0.5 rounded">
+                    <span className="text-[9px] font-mono font-bold text-[#ef233c] bg-black/80 backdrop-blur-md border border-[#ef233c]/40 px-2.5 py-0.5 rounded shadow-sm">
                       VERIFIED
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-5 text-center">
-                  <h4 className="text-base font-bold text-slate-900 font-sans group-hover:text-[#D95B16] transition-colors">{member.name}</h4>
-                  <p className="text-xs text-slate-500 font-medium mt-1">{member.role}</p>
-                  <p className="text-[10px] text-slate-400 mt-1.5 font-mono uppercase">{member.specialty}</p>
+                  <h4 className="text-base font-bold text-white font-sans group-hover:text-[#ef233c] transition-colors">{member.name}</h4>
+                  <p className="text-xs text-zinc-400 font-medium mt-1">{member.role}</p>
+                  <p className="text-[10px] text-zinc-500 mt-1.5 font-mono uppercase">{member.specialty}</p>
                 </div>
               </motion.div>
             ))}

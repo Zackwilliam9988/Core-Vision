@@ -250,8 +250,6 @@ export default function App() {
     setStats(updated);
   };
 
-
-
   // Core loading trigger mimics security sweep
   useEffect(() => {
     const interval = setInterval(() => {
@@ -373,8 +371,6 @@ export default function App() {
     };
   }, []);
 
-
-
   const triggerQuote = (serviceId?: string) => {
     window.dispatchEvent(new CustomEvent("open-sophia-chat", { detail: { serviceId } }));
   };
@@ -397,19 +393,17 @@ export default function App() {
     }, 1200);
   };
 
-
-
   if (loading) {
     return (
-      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#F8FAFC] font-sans text-slate-800">
-        <div className="absolute inset-0 opacity-10 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full border border-dashed border-orange-500 animate-[spin_40s_linear_infinite]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[750px] w-[750px] rounded-full border border-dotted border-orange-600 animate-[spin_60s_linear_infinite_reverse]" />
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black font-sans text-white">
+        <div className="absolute inset-0 opacity-20 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full border border-dashed border-[#ef233c] animate-[spin_40s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[750px] w-[750px] rounded-full border border-dotted border-[#d90429] animate-[spin_60s_linear_infinite_reverse]" />
         </div>
 
         <div className="relative text-center max-w-sm px-6">
           <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-white rounded-full border border-slate-200 shadow-xl relative animate-bounce overflow-hidden flex items-center justify-center">
+            <div className="w-20 h-20 bg-[#0a0a0c] rounded-full border-2 border-[#ef233c] shadow-[0_0_30px_rgba(239,35,60,0.4)] relative animate-bounce overflow-hidden flex items-center justify-center">
               <img
                 src={logo}
                 alt="Core Vision Pakistan Logo"
@@ -419,25 +413,25 @@ export default function App() {
             </div>
           </div>
           
-          <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900">
-            CORE<span className="text-[#D95B16]">GUARD</span>
+          <h2 className="font-display text-3xl font-bold tracking-tight text-white">
+            CORE<span className="text-[#ef233c]">GUARD</span>
           </h2>
-          <p className="text-[10px] font-mono uppercase tracking-widest text-[#D95B16] font-bold mt-1.5">
-            Secure . Connect . Protect
+          <p className="text-[10px] font-mono uppercase tracking-widest text-[#ef233c] font-bold mt-1.5">
+            Secure • Connect • Protect
           </p>
 
           <div className="mt-8">
-            <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden border border-slate-100">
+            <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden border border-white/10">
               <div 
-                className="h-full bg-[#D95B16] rounded-full transition-all duration-150"
+                className="h-full bg-gradient-to-r from-[#ef233c] to-[#d90429] shadow-[0_0_12px_#ef233c] rounded-full transition-all duration-150"
                 style={{ width: `${Math.min(loadingProgress, 100)}%` }}
               />
             </div>
-            <div className="flex justify-between items-center text-[10px] font-mono text-slate-400 mt-2">
-              <span className="text-[#D95B16] font-semibold animate-pulse">
+            <div className="flex justify-between items-center text-[10px] font-mono text-zinc-500 mt-2">
+              <span className="text-[#ef233c] font-semibold animate-pulse">
                 {loadingProgress < 40 ? "Checking Hardware Interfaces..." : 
                  loadingProgress < 80 ? "Verifying Telecom Trunking..." : 
-                 "Workspace Initialized."}
+                 "Red Noir Protocol Initialized."}
               </span>
               <span>{Math.min(loadingProgress, 100)}%</span>
             </div>
@@ -448,7 +442,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-850 overflow-x-hidden selection:bg-orange-100 selection:text-slate-900 relative">
+    <div className="min-h-screen bg-black font-sans text-white overflow-x-hidden selection:bg-[#ef233c] selection:text-white relative">
       <CustomCursor />
       
       {/* INTERACTIVE SOPHIA CHATBOT ASSISTANT */}
@@ -458,7 +452,7 @@ export default function App() {
       {showBackToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-24 right-8 z-40 flex items-center justify-center h-10 w-10 rounded-full bg-white text-slate-700 hover:text-[#D95B16] border border-slate-200 shadow-md transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 animate-in slide-in-from-bottom-5"
+          className="fixed bottom-24 right-8 z-40 flex items-center justify-center h-10 w-10 rounded-full bg-[#0a0a0c] text-zinc-300 hover:text-[#ef233c] border border-white/10 hover:border-[#ef233c] shadow-lg hover:shadow-[0_0_20px_rgba(239,35,60,0.35)] transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 animate-in slide-in-from-bottom-5"
           aria-label="Back to Top"
         >
           <ArrowUp size={16} />
@@ -467,7 +461,7 @@ export default function App() {
 
       {/* BACKGROUND FLOATING PLEXUS LINES & PASTEL GEOMETRICS */}
       <NetworkBackground />
-      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-30">
+      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-25">
         <FloatingGeometrics />
       </div>
 
@@ -492,7 +486,7 @@ export default function App() {
         ) : currentRoute.page === "service" ? (
           (() => {
             const selectedService = services.find(s => s.id === currentRoute.serviceId);
-            if (!selectedService) return <div className="pt-32 pb-24 text-center text-slate-500 font-mono text-sm">Service not found.</div>;
+            if (!selectedService) return <div className="pt-32 pb-24 text-center text-zinc-500 font-mono text-sm">Service not found.</div>;
             return (
               <ServiceDetailView 
                 key={`service-${currentRoute.serviceId}`}
@@ -519,10 +513,10 @@ export default function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-white min-h-screen text-black font-['Open_Sans'] pt-16"
+            className="bg-black min-h-screen text-white font-['Open_Sans'] pt-16"
           >
             {/* INOVE HEADER IMAGE / AI VIDEO SHOWCASE (himage) */}
-            <div className="inove-himage shadow-xs">
+            <div className="inove-himage shadow-2xl">
               <HeroVideoBackground />
             </div>
 
@@ -542,20 +536,20 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.05 }}
-                  className="md:col-span-4 bg-white border border-slate-200/90 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:border-[#0284C7]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px] group"
+                  className="md:col-span-4 bg-[#0a0a0c]/90 border border-white/10 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-[#ef233c]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px] group"
                 >
                   <div className="space-y-2.5">
-                    <span className="text-[10px] font-mono font-bold text-[#0284C7] uppercase tracking-widest bg-sky-50 px-2.5 py-1 rounded-full border border-sky-100 inline-block">
+                    <span className="text-[10px] font-mono font-bold text-[#ef233c] uppercase tracking-widest bg-[#ef233c]/10 px-2.5 py-1 rounded-full border border-[#ef233c]/20 inline-block">
                       Our Philosophy
                     </span>
-                    <p className="font-['Open_Sans'] text-sm sm:text-base leading-relaxed text-slate-600 font-normal pt-1">
+                    <p className="font-['Open_Sans'] text-sm sm:text-base leading-relaxed text-zinc-300 font-normal pt-1">
                       We believe that we are here to explore, learn and grow, to push the boundaries towards better things.
                     </p>
                   </div>
                   
-                  <div className="pt-6 border-t border-slate-100">
-                    <h2 className="font-['Open_Sans_Condensed'] text-2xl sm:text-3xl font-light text-slate-900 uppercase tracking-tight group-hover:text-[#0284C7] transition-colors">
-                      We are <span className="font-bold text-[#0284C7]">Core Vision Pakistan</span>
+                  <div className="pt-6 border-t border-white/10">
+                    <h2 className="font-['Open_Sans_Condensed'] text-2xl sm:text-3xl font-light text-white uppercase tracking-tight group-hover:text-[#ef233c] transition-colors">
+                      We are <span className="font-bold text-[#ef233c]">Core Vision Pakistan</span>
                     </h2>
                   </div>
                 </motion.div>
@@ -566,22 +560,22 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.12 }}
-                  className="md:col-span-5 bg-white border border-slate-200/90 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:border-[#0284C7]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px] group"
+                  className="md:col-span-5 bg-[#0a0a0c]/90 border border-white/10 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-[#ef233c]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px] group"
                 >
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+                    <span className="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest">
                       Welcome in our world
                     </span>
-                    <h3 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-slate-900 my-1 leading-tight">
-                      we live in <span className="text-[#0284C7] font-semibold italic">“precision”</span>;
+                    <h3 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-white my-1 leading-tight">
+                      we live in <span className="text-[#ef233c] font-semibold italic">“precision”</span>;
                     </h3>
-                    <p className="font-['Open_Sans'] text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
+                    <p className="font-['Open_Sans'] text-xs sm:text-sm leading-relaxed text-zinc-400 font-normal">
                       we engineer and map out physical & optical networks and their possibilities:
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100">
-                    <p className="font-['Open_Sans'] text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed">
+                  <div className="pt-4 border-t border-white/10">
+                    <p className="font-['Open_Sans'] text-xs sm:text-sm font-semibold text-zinc-200 leading-relaxed">
                       We study them, we secure them, we make them accessible to others.
                     </p>
                   </div>
@@ -593,10 +587,10 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.18 }}
-                  className="md:col-span-3 bg-white border border-slate-200/90 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:border-[#0284C7]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px]"
+                  className="md:col-span-3 bg-[#0a0a0c]/90 border border-white/10 rounded-3xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.5)] hover:border-[#ef233c]/50 transition-all duration-300 flex flex-col justify-between min-h-[260px]"
                 >
                   <div>
-                    <h3 className="font-['Open_Sans_Condensed'] text-2xl font-light text-slate-900 mb-4 tracking-wide uppercase">
+                    <h3 className="font-['Open_Sans_Condensed'] text-2xl font-light text-white mb-4 tracking-wide uppercase">
                       Direct Channels
                     </h3>
                     
@@ -605,7 +599,7 @@ export default function App() {
                         href={`https://wa.me/${contactInfo.phone.replace(/\D/g, "")}`} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="flex-1 p-3 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 text-emerald-600 transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
+                        className="flex-1 p-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
                         title="Direct WhatsApp Support"
                       >
                         <MessageSquare size={16} />
@@ -614,7 +608,7 @@ export default function App() {
 
                       <a 
                         href={`tel:${contactInfo.phone.replace(/\D/g, "")}`} 
-                        className="flex-1 p-3 rounded-2xl border border-slate-200 hover:border-[#0284C7] hover:bg-sky-50 text-[#0284C7] transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
+                        className="flex-1 p-3 rounded-2xl border border-white/10 hover:border-[#ef233c] hover:bg-[#ef233c]/10 text-white hover:text-[#ef233c] transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
                         title="Priority Hotline"
                       >
                         <Phone size={16} />
@@ -623,7 +617,7 @@ export default function App() {
 
                       <button 
                         onClick={() => triggerQuote()}
-                        className="p-3 rounded-2xl border border-slate-200 hover:border-[#0284C7] hover:bg-[#0284C7] hover:text-white text-[#0284C7] transition-all duration-300 shadow-xs cursor-pointer"
+                        className="p-3 rounded-2xl border border-[#ef233c]/40 bg-[#ef233c] hover:bg-[#d90429] text-white transition-all duration-300 shadow-[0_0_15px_rgba(239,35,60,0.35)] cursor-pointer"
                         title="Launch Quote Simulator"
                       >
                         <Sparkles size={16} />
@@ -632,17 +626,17 @@ export default function App() {
                   </div>
 
                   {/* Quality & Response Commitments */}
-                  <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-500 space-y-1.5">
+                  <div className="mt-6 pt-4 border-t border-white/10 text-[11px] font-mono text-zinc-400 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span>SLA:</span>
-                      <b className="text-emerald-600 font-bold flex items-center gap-1">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <b className="text-emerald-400 font-bold flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         100% Verified
                       </b>
                     </div>
                     <div className="flex items-center justify-between">
                       <span>DISPATCH:</span>
-                      <b className="text-[#0284C7] font-bold">Rapid Response</b>
+                      <b className="text-[#ef233c] font-bold">Rapid Response</b>
                     </div>
                   </div>
                 </motion.div>
@@ -662,7 +656,7 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8"
+                  className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-white mb-8"
                 >
                   Showroom Gallery
                 </motion.h2>
@@ -681,27 +675,27 @@ export default function App() {
 
               {/* Column 2: Commercial Sectors */}
               <div className="inove-bbox inove-clients">
-                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black mb-8">
+                <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-white mb-8">
                   Commercial Sectors
                 </h2>
 
                 <div className="space-y-4">
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="block font-bold text-xs text-black uppercase tracking-wider mb-1">Corporate High-Rises</span>
-                    <p className="text-[11px] text-slate-500 font-sans leading-relaxed">Integrated biometric checkpoints, perimeter surveillance, and building-wide Gigabit fiber backbones.</p>
+                  <div className="p-4 rounded-xl bg-[#0a0a0c] border border-white/10">
+                    <span className="block font-bold text-xs text-white uppercase tracking-wider mb-1">Corporate High-Rises</span>
+                    <p className="text-[11px] text-zinc-400 font-sans leading-relaxed">Integrated biometric checkpoints, perimeter surveillance, and building-wide Gigabit fiber backbones.</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="block font-bold text-xs text-black uppercase tracking-wider mb-1">Industrial Logistics & Warehouses</span>
-                    <p className="text-[11px] text-slate-500 font-sans leading-relaxed">Wide-angle thermal PTZ cameras, license-plate recognition, and heavy armored cabling conduits.</p>
+                  <div className="p-4 rounded-xl bg-[#0a0a0c] border border-white/10">
+                    <span className="block font-bold text-xs text-white uppercase tracking-wider mb-1">Industrial Logistics & Warehouses</span>
+                    <p className="text-[11px] text-zinc-400 font-sans leading-relaxed">Wide-angle thermal PTZ cameras, license-plate recognition, and heavy armored cabling conduits.</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="block font-bold text-xs text-black uppercase tracking-wider mb-1">Residential Compounds & Embassies</span>
-                    <p className="text-[11px] text-slate-500 font-sans leading-relaxed">Low-profile 4K multi-lens cameras, smart intercoms, and redundant fiber internet loops.</p>
+                  <div className="p-4 rounded-xl bg-[#0a0a0c] border border-white/10">
+                    <span className="block font-bold text-xs text-white uppercase tracking-wider mb-1">Residential Compounds & Embassies</span>
+                    <p className="text-[11px] text-zinc-400 font-sans leading-relaxed">Low-profile 4K multi-lens cameras, smart intercoms, and redundant fiber internet loops.</p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 pt-2 text-xs font-bold text-slate-700">
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Datacenters</div>
-                    <div className="p-3 border border-slate-200 bg-slate-50 text-center hover:border-sky-300 hover:text-[#0284C7] transition-all">Commercial Plazas</div>
+                  <div className="grid grid-cols-2 gap-2 pt-2 text-xs font-bold text-zinc-300">
+                    <div className="p-3 border border-white/10 bg-[#0a0a0c] text-center hover:border-[#ef233c] hover:text-[#ef233c] transition-all">Datacenters</div>
+                    <div className="p-3 border border-white/10 bg-[#0a0a0c] text-center hover:border-[#ef233c] hover:text-[#ef233c] transition-all">Commercial Plazas</div>
                   </div>
                 </div>
               </div>
@@ -715,10 +709,10 @@ export default function App() {
                 className="inove-bbox inove-tags"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-black">
+                  <h2 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl font-light text-white">
                     Project Tags
                   </h2>
-                  <span className="text-[10px] font-mono font-bold text-[#0284C7] uppercase tracking-widest bg-sky-50 px-2 py-0.5 rounded-full border border-sky-100">
+                  <span className="text-[10px] font-mono font-bold text-[#ef233c] uppercase tracking-widest bg-[#ef233c]/10 px-2 py-0.5 rounded-full border border-[#ef233c]/20">
                     Live Taxonomy
                   </span>
                 </div>
@@ -780,10 +774,10 @@ export default function App() {
                 </motion.div>
 
                 {/* Action Blueprint Button */}
-                <div className="mt-8 pt-6 border-t border-slate-200">
+                <div className="mt-8 pt-6 border-t border-white/10">
                   <button
                     onClick={() => triggerQuote()}
-                    className="w-full bg-[#0284C7] hover:bg-[#0369A1] text-white font-['Open_Sans'] font-bold text-xs py-3.5 px-4 rounded-xl uppercase tracking-wider transition-all shadow-sm hover:shadow-md cursor-pointer text-center flex items-center justify-center gap-2"
+                    className="w-full bg-[#ef233c] hover:bg-[#d90429] text-white font-['Open_Sans'] font-bold text-xs py-3.5 px-4 rounded-xl uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] cursor-pointer text-center flex items-center justify-center gap-2"
                   >
                     <Sparkles size={14} />
                     <span>Generate Instant Quote</span>
@@ -813,33 +807,33 @@ export default function App() {
             {/* INOVE BLOCK 3: FOOTER (.block.footer) */}
             <div className="inove-block inove-footer text-center py-12 space-y-4">
               <a 
-                className="font-['Open_Sans'] text-sm sm:text-base text-black hover:text-[#0284C7] font-medium tracking-wide transition-colors block"
+                className="font-['Open_Sans'] text-sm sm:text-base text-zinc-300 hover:text-[#ef233c] font-medium tracking-wide transition-colors block"
                 href={`mailto:${contactInfo.email}`}
               >
                 {contactInfo.email.replace("@", " @ ")}
               </a>
-              <div className="w-12 h-12 mx-auto rounded-full overflow-hidden border border-slate-300 bg-white shadow-xs">
+              <div className="w-12 h-12 mx-auto rounded-full overflow-hidden border border-white/20 bg-[#0a0a0c] shadow-[0_0_15px_rgba(239,35,60,0.2)]">
                 <img src={logo} alt="Core Vision Pakistan" className="w-full h-full object-cover" />
               </div>
-              <div className="font-['Open_Sans'] text-xs text-slate-400 font-bold tracking-widest uppercase">
-                2026 &bull; Core Vision Pakistan &bull; Islamabad HQ
+              <div className="font-['Open_Sans'] text-xs text-zinc-500 font-bold tracking-widest uppercase">
+                2026 • Core Vision Pakistan • Islamabad HQ
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* DETAILED PREMIUM LIGHT ENTERPRISE FOOTER (For Subpages) */}
+      {/* DETAILED PREMIUM RED NOIR ENTERPRISE FOOTER (For Subpages) */}
       {currentRoute.page !== "home" && (
-        <footer className="bg-slate-100 text-slate-600 pt-16 pb-8 text-left relative border-t border-slate-200 z-10 font-sans">
+        <footer className="bg-[#0a0a0c] text-zinc-400 pt-16 pb-8 text-left relative border-t border-white/10 z-10 font-sans">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-slate-200 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10 text-sm">
             
             {/* Column 1 info and desc */}
             <div className="lg:col-span-4 space-y-4">
               <div className="flex items-center gap-2.5">
-                <div className="relative w-9 h-9 rounded-full border border-slate-200 overflow-hidden bg-white shrink-0 shadow-sm">
+                <div className="relative w-9 h-9 rounded-full border border-white/15 overflow-hidden bg-black shrink-0 shadow-sm">
                   <img
                     src={logo}
                     alt="Core Vision Pakistan Logo"
@@ -847,56 +841,56 @@ export default function App() {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <span className="font-display font-black text-lg text-slate-900 leading-none uppercase">
-                  Core <span className="text-[#0284C7]">Vision</span> Pakistan
+                <span className="font-display font-black text-lg text-white leading-none uppercase">
+                  Core <span className="text-[#ef233c]">Vision</span> Pakistan
                 </span>
               </div>
-              <p className="text-slate-500 leading-relaxed text-xs font-medium">
+              <p className="text-zinc-400 leading-relaxed text-xs font-medium">
                 A premium tech services provider specialized in corporate structured cabling trunkings, biometrics controls, smart optical fibers terminations, and high-definition CCTV security configurations.
               </p>
               <div className="flex gap-2.5 pt-2 text-[9px] font-mono uppercase tracking-wider font-bold">
-                <span className="text-[#0284C7] hover:underline cursor-pointer">secure</span>
-                <span className="text-slate-300">|</span>
-                <span className="text-[#0284C7] hover:underline cursor-pointer">connect</span>
-                <span className="text-slate-300">|</span>
-                <span className="text-[#0284C7] hover:underline cursor-pointer">protect</span>
+                <span className="text-[#ef233c] hover:underline cursor-pointer">secure</span>
+                <span className="text-zinc-700">|</span>
+                <span className="text-[#ef233c] hover:underline cursor-pointer">connect</span>
+                <span className="text-zinc-700">|</span>
+                <span className="text-[#ef233c] hover:underline cursor-pointer">protect</span>
               </div>
             </div>
 
             {/* Column 2 navigation links */}
             <div className="lg:col-span-3 space-y-3.5">
-              <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-slate-800 font-bold">Portal Index</h4>
-              <ul className="space-y-2 text-xs font-semibold text-slate-500 font-mono">
-                <li><button onClick={() => navigateTo({ page: "home" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Home landing</button></li>
-                <li><button onClick={() => navigateTo({ page: "services" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Solutions Catalog</button></li>
-                <li><button onClick={() => navigateTo({ page: "about" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">About Engineering</button></li>
-                <li><button onClick={() => navigateTo({ page: "why-us" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Certified Promise</button></li>
-                <li><button onClick={() => navigateTo({ page: "contact" })} className="hover:text-[#0284C7] text-left transition-colors cursor-pointer">Security Dispatch</button></li>
+              <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-white">Portal Index</h4>
+              <ul className="space-y-2 text-xs font-semibold text-zinc-400 font-mono">
+                <li><button onClick={() => navigateTo({ page: "home" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Home landing</button></li>
+                <li><button onClick={() => navigateTo({ page: "services" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Solutions Catalog</button></li>
+                <li><button onClick={() => navigateTo({ page: "about" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">About Engineering</button></li>
+                <li><button onClick={() => navigateTo({ page: "why-us" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Certified Promise</button></li>
+                <li><button onClick={() => navigateTo({ page: "contact" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Security Dispatch</button></li>
               </ul>
             </div>
 
             {/* Column 3 Quick request actions */}
             <div className="lg:col-span-3 space-y-3.5">
-              <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-slate-800 font-bold">Key Solutions</h4>
-              <ul className="space-y-2 text-xs text-slate-500 font-semibold font-mono">
-                <li><button onClick={() => triggerQuote("cctv-install")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">CCTV HD Deployments</button></li>
-                <li><button onClick={() => triggerQuote("fiber-splicing")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">Optical Fiber Splicing</button></li>
-                <li><button onClick={() => triggerQuote("network-setup")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">Enterprise Setup Routing</button></li>
-                <li><button onClick={() => triggerQuote("biometric-system")} className="hover:text-[#0284C7] text-left cursor-pointer transition-colors">SSID & Biometric Loggers</button></li>
+              <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-white">Key Solutions</h4>
+              <ul className="space-y-2 text-xs text-zinc-400 font-semibold font-mono">
+                <li><button onClick={() => triggerQuote("cctv-install")} className="hover:text-[#ef233c] text-left cursor-pointer transition-colors">CCTV HD Deployments</button></li>
+                <li><button onClick={() => triggerQuote("fiber-splicing")} className="hover:text-[#ef233c] text-left cursor-pointer transition-colors">Optical Fiber Splicing</button></li>
+                <li><button onClick={() => triggerQuote("network-setup")} className="hover:text-[#ef233c] text-left cursor-pointer transition-colors">Enterprise Setup Routing</button></li>
+                <li><button onClick={() => triggerQuote("biometric-system")} className="hover:text-[#ef233c] text-left cursor-pointer transition-colors">SSID & Biometric Loggers</button></li>
               </ul>
             </div>
 
             {/* Column 4 dispatch support info */}
             <div className="lg:col-span-2 space-y-3.5">
-              <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-slate-800 font-bold">Support Desk</h4>
-              <p className="text-xs text-slate-500 leading-normal font-medium">
+              <h4 className="font-sans font-extrabold text-[11px] uppercase tracking-widest text-white">Support Desk</h4>
+              <p className="text-xs text-zinc-400 leading-normal font-medium">
                 Islamabad HQ Hub Block:<br />
                 {contactInfo.address}
               </p>
               <div className="pt-2">
                 <a 
                   href={`tel:${contactInfo.phone}`}
-                  className="inline-flex items-center gap-1.5 bg-sky-50 border border-sky-200 hover:bg-sky-100 text-[#0284C7] py-2 px-3.5 rounded-full text-[10px] uppercase font-mono font-bold tracking-wider hover:shadow-md transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 bg-[#ef233c]/10 border border-[#ef233c]/30 hover:bg-[#ef233c] hover:text-white text-[#ef233c] py-2 px-3.5 rounded-full text-[10px] uppercase font-mono font-bold tracking-wider hover:shadow-[0_0_15px_rgba(239,35,60,0.3)] transition-all cursor-pointer"
                 >
                   <Phone size={10} /> Call Dispatch Priority
                 </a>
@@ -905,12 +899,12 @@ export default function App() {
 
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium mt-8">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-medium mt-8">
             <span>Copyright © 2026 Core Vision Pakistan Technology Services Company. All Rights Reserved.</span>
             <div className="flex gap-4 font-mono text-[9px] uppercase tracking-wider items-center">
-              <span className="hover:text-[#0284C7] cursor-pointer">Terms</span>
+              <span className="hover:text-[#ef233c] cursor-pointer">Terms</span>
               <span>•</span>
-              <span className="hover:text-[#0284C7] cursor-pointer">Privacy Protocol</span>
+              <span className="hover:text-[#ef233c] cursor-pointer">Privacy Protocol</span>
             </div>
           </div>
 

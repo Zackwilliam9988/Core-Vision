@@ -94,14 +94,12 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
       mode: "no-cors"
     })
     .then(() => {
-      // log success
       import("../utils/logger").then(({ log }) => log("Form data sent successfully to Google Apps Script")).catch(() => {});
     })
     .catch((err) => {
       import("../utils/logger").then(({ warn }) => warn("Form submission reached service with status indicator", err)).catch(() => {});
     })
     .finally(() => {
-      // Clear the loading loop interval and move to success state
       setTimeout(() => {
         clearInterval(interval);
         setIsSubmitting(false);
@@ -109,7 +107,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
         if (onSuccess) {
           onSuccess();
         }
-      }, 1000); // minimal elegant transition delay of 1s to view the UI steps
+      }, 1000);
     });
   };
 
@@ -118,7 +116,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 font-sans text-slate-800 overflow-y-auto">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 font-sans text-white overflow-y-auto">
           
           {/* Backdrop blur */}
           <motion.div 
@@ -126,216 +124,157 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-slate-900/60 backdrop-blur-md z-0"
+            className="absolute inset-0 bg-black/80 backdrop-blur-md z-0"
           />
 
-          {/* Dialog Container - scrollbar-free premium layout */}
+          {/* Dialog Container */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, y: 15 }}
             animate={{ 
               opacity: 1, 
               scale: 1, 
               y: 0,
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 50px rgba(217, 91, 22, 0.05)"
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 50px rgba(239, 35, 60, 0.25)"
             }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: "spring", damping: 28, stiffness: 350 }}
-            className="relative w-full max-w-sm rounded-[24px] border border-slate-100 bg-white p-6 md:p-7 z-10 overflow-hidden backdrop-blur-3xl select-none"
+            className="relative w-full max-w-sm rounded-[24px] border border-white/15 bg-[#0a0a0c] p-6 md:p-7 z-10 overflow-hidden backdrop-blur-3xl select-none"
           >
-            {/* Subtle cyber background grid lines */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.01)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none rounded-[24px]" />
+            {/* Cyber background grid lines */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none rounded-[24px]" />
             
             {/* Soft decorative glow effects */}
-            <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-orange-500/5 blur-3xl pointer-events-none" />
+            <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-red-500/10 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-red-500/10 blur-3xl pointer-events-none" />
 
-            {/* Close Button */}
-            <button 
-              onClick={onClose}
-              className="absolute top-4 right-4 text-slate-400 hover:text-[#0284C7] transition-colors p-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-sky-200 rounded-xl cursor-pointer group z-50"
-              aria-label="Close dialog"
-            >
-              <X size={14} className="group-hover:scale-105 transition-transform" />
-            </button>
-
-            {!isSuccess ? (
-              <div className="relative z-10">
-                
-                {/* Header Information */}
-                <div className="flex items-center gap-3.5 mb-5">
-                  <div className="p-2.5 bg-sky-50 border border-sky-100 rounded-xl text-[#0284C7]">
-                    <Shield size={20} className="animate-pulse" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg font-bold text-slate-900 tracking-tight">
-                      Request a Callback
-                    </h3>
-                    <p className="text-[10px] text-slate-400 tracking-wider uppercase font-semibold font-mono mt-0.5">
-                      Secure connection line
-                    </p>
-                  </div>
+            {/* Header section */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 relative z-10">
+              <div className="flex items-center gap-2.5">
+                <div className="h-8 w-8 rounded-lg bg-[#ef233c]/15 border border-[#ef233c]/30 flex items-center justify-center text-[#ef233c]">
+                  <Sparkles size={16} />
                 </div>
+                <div>
+                  <h3 className="text-sm font-black font-display text-white tracking-wide uppercase">
+                    Launch AI Quotation
+                  </h3>
+                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
+                    Direct Dispatch Channel
+                  </span>
+                </div>
+              </div>
 
-                {/* Submitting Loader */}
-                {isSubmitting ? (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="py-10 flex flex-col items-center justify-center text-center space-y-4 bg-slate-50 border border-slate-100 rounded-2xl p-5"
-                  >
-                    <div className="relative w-14 h-14 flex items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-dashed border-[#0284C7]/40 animate-spin [animation-duration:6s]" />
-                      <div className="absolute inset-2 rounded-full border border-sky-100 animate-spin [animation-duration:10s] [animation-direction:reverse]" />
-                      <div className="absolute inset-3 rounded-full bg-sky-50 flex items-center justify-center">
-                        <Terminal size={18} className="text-[#0284C7]" />
-                      </div>
-                    </div>
+              <button
+                onClick={onClose}
+                className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              >
+                <X size={16} />
+              </button>
+            </div>
 
-                    <div className="space-y-1">
-                      <p className="font-mono text-[9px] text-slate-400 tracking-wider">SECURE TRANSMISSION</p>
-                      <h4 className="text-[#0284C7] font-mono font-bold text-xs animate-pulse">
-                        {submitPhase}
-                      </h4>
-                    </div>
-
-                    <div className="w-full max-w-[200px] h-1 bg-slate-100 rounded-full overflow-hidden relative">
-                      <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#0284C7] to-[#0EA5E9] rounded-full animate-infinite-loading w-[40%]" />
-                    </div>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    
-                    {/* Selected Service Context Info */}
-                    {selectedService && (
-                      <div className="bg-slate-50 border border-slate-100 rounded-xl px-3.5 py-2.5 flex items-center justify-between text-xs">
-                        <span className="text-slate-500">Selected Solution:</span>
-                        <span className="text-[#0284C7] font-mono font-bold">{selectedService.title}</span>
-                      </div>
-                    )}
-
-                    {/* Full Name Input */}
-                    <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-1.5">
-                        <User size={11} className="text-[#0284C7]" /> Full Name
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="John Doe"
-                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0284C7]/5 transition-all duration-200 font-sans"
-                      />
-                    </div>
-
-                    {/* Email Input */}
-                    <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-1.5">
-                        <Mail size={11} className="text-[#0284C7]" /> Email Address
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="john@example.com"
-                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0284C7]/5 transition-all duration-200 font-sans"
-                      />
-                    </div>
-
-                    {/* Phone Number Input */}
-                    <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-1.5">
-                        <Phone size={11} className="text-[#0284C7]" /> Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+92 300 1234567"
-                        className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white rounded-xl px-3.5 py-2.5 text-base md:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#0284C7]/5 transition-all duration-200 font-sans"
-                      />
-                    </div>
-
-                    {/* Elegant Submit Button */}
-                    <div className="pt-2">
-                      <button
-                        type="submit"
-                        className="w-full relative overflow-hidden group rounded-xl bg-[#0284C7] hover:bg-[#0369A1] text-white font-bold py-3 px-4 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer hover:shadow-[0_4px_12px_rgba(2,132,199,0.15)] active:scale-[0.98] border-none"
-                      >
-                        {/* Shimmer overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none" />
-                        
-                        <Send size={13} className="text-white group-hover:translate-x-0.5 transition-transform" />
-                        <span className="text-xs tracking-wide">Submit Secure Call Request</span>
-                      </button>
-                    </div>
-
-                    <div className="text-[9px] text-center text-slate-400 font-mono">
-                      🛡️ End-to-end encrypted connection
-                    </div>
-
-                  </form>
-                )}
+            {/* Content area */}
+            {isSuccess ? (
+              <div className="py-6 text-center space-y-3 relative z-10">
+                <div className="h-12 w-12 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                  <CheckCircle size={24} />
+                </div>
+                <h4 className="text-base font-bold text-white">Quotation Packet Transmitted</h4>
+                <p className="text-xs text-zinc-400 leading-relaxed font-sans">
+                  Your customized inquiry has been routed directly to our chief engineering dispatch. We will contact you at <b>{formData.phone}</b>.
+                </p>
+                <button
+                  onClick={onClose}
+                  className="mt-4 w-full bg-[#ef233c] hover:bg-[#d90429] text-white py-2.5 rounded-xl font-bold uppercase text-xs tracking-wider transition-all shadow-[0_0_15px_rgba(239,35,60,0.35)] cursor-pointer"
+                >
+                  Close Window
+                </button>
+              </div>
+            ) : isSubmitting ? (
+              <div className="py-10 text-center space-y-4 relative z-10 font-mono">
+                <div className="relative h-12 w-12 mx-auto flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#ef233c] animate-spin" />
+                  <Terminal size={18} className="text-[#ef233c] animate-pulse" />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[11px] font-bold text-[#ef233c] block">{submitPhase}</span>
+                  <span className="text-[9px] text-zinc-500">AES-256 GCM SECURE TUNNEL</span>
+                </div>
               </div>
             ) : (
-              /* Success View */
-              <div className="py-4 text-center relative z-10">
-                <div className="relative mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-sky-50 border border-[#0284C7] text-[#0284C7] shadow-[0_0_15px_rgba(2,132,199,0.1)]">
-                  <CheckCircle size={22} className="animate-pulse" />
-                </div>
-                
-                <h3 className="font-display text-lg font-bold text-slate-900 mb-1">Callback Requested!</h3>
-                <p className="text-[#0284C7] font-mono text-[9px] uppercase tracking-wider mb-4 font-semibold">
-                  Operator routing initialized
-                </p>
-                
-                <div className="bg-slate-50 border border-slate-100 rounded-xl p-3.5 mb-4 text-left text-xs space-y-2.5">
-                  <div className="grid grid-cols-2 gap-2 text-slate-600">
-                    <div>
-                      <span className="font-mono text-slate-400 block text-[8px] uppercase tracking-wider">Client</span> 
-                      <span className="font-bold text-slate-850 text-xs">{formData.name}</span>
-                    </div>
-                    <div>
-                      <span className="font-mono text-slate-400 block text-[8px] uppercase tracking-wider">Uplink Phone</span> 
-                      <span className="font-bold text-[#0284C7] font-mono text-xs">{formData.phone}</span>
-                    </div>
-                  </div>
-
-                  {formData.email && (
-                    <div className="border-t border-slate-100 pt-2">
-                      <span className="font-mono text-slate-400 block text-[8px] uppercase tracking-wider">Email Contact</span> 
-                      <span className="font-bold text-slate-800 text-xs">{formData.email}</span>
-                    </div>
-                  )}
-
-                  {selectedService && (
-                    <div className="border-t border-slate-100 pt-2">
-                      <span className="font-mono text-slate-400 block text-[8px] uppercase tracking-wider">Solution Selected</span> 
-                      <span className="text-[#0284C7] font-semibold text-[11px]">{selectedService.title}</span>
-                    </div>
-                  )}
-
-                  <p className="text-[10px] text-slate-500 leading-relaxed font-sans border-t border-slate-100 pt-2 text-center italic">
-                    We will ring you shortly on <span className="text-slate-800 font-medium">{formData.phone}</span>.
-                  </p>
-                </div>
-
-                {/* Priority action link */}
+              <form onSubmit={handleSubmit} className="space-y-3.5 relative z-10 text-left">
+                {/* Service Selection */}
                 <div>
-                  <a
-                    href={`https://wa.me/923064422550?text=Hi%20Core%20Vision%20Pakistan,%20I%20just%20submitted%20a%20callback%20request%20for%20${encodeURIComponent(selectedService?.title || "security services")}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-3.5 text-xs font-bold font-mono tracking-wide flex items-center justify-center gap-2 transition-all shadow-[0_4px_12px_rgba(16,185,129,0.2)] border-none text-center justify-center"
+                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
+                    Target Hardware Solution
+                  </label>
+                  <select
+                    value={formData.serviceId}
+                    onChange={(e) => setFormData({ ...formData, serviceId: e.target.value })}
+                    className="w-full bg-[#121214] border border-white/10 focus:border-[#ef233c] rounded-xl px-3 py-2 text-xs text-white focus:outline-none transition-all"
                   >
-                    <Globe size={12} />
-                    <span>Instant WhatsApp Dispatch</span>
-                  </a>
+                    {activeServices.map((srv) => (
+                      <option key={srv.id} value={srv.id} className="bg-[#0a0a0c] text-white">
+                        {srv.title}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-              </div>
+
+                {/* Name */}
+                <div>
+                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
+                    Your Full Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Asad Farooq"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full bg-[#121214] border border-white/10 focus:border-[#ef233c] rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-all font-sans"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="e.g. +92 300 1234567"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full bg-[#121214] border border-white/10 focus:border-[#ef233c] rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-all font-sans"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="e.g. name@company.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full bg-[#121214] border border-white/10 focus:border-[#ef233c] rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none transition-all font-sans"
+                  />
+                </div>
+
+                {/* Submit button */}
+                <button
+                  type="submit"
+                  className="mt-2 w-full bg-[#ef233c] hover:bg-[#d90429] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <Send size={13} />
+                  <span>Transmit Estimate Packet</span>
+                </button>
+              </form>
             )}
+
           </motion.div>
         </div>
       )}

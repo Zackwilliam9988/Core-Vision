@@ -1,33 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Open+Sans+Condensed:wght@300;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+:root {
+  --bg-main: #000000;
+  --bg-surface: #0a0a0c;
+  --bg-card: rgba(18, 18, 20, 0.7);
+  --accent-red: #ef233c;
+  --accent-red-hover: #d90429;
+  --accent-red-glow: rgba(239, 35, 60, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(239, 35, 60, 0.4);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+}
+
+/* Red Noir Keyframe Animations */
+@keyframes border-spin {
+  from { --gradient-angle: 0deg; }
+  to { --gradient-angle: 360deg; }
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animate-fade-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.selection-red::selection {
+  background: var(--accent-red);
+  color: #ffffff;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  color: transparent;
+}
+
 @theme {
   --font-sans: "Open Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-condensed: "Open Sans Condensed", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-tech-primary: #0284C7;
-  --color-tech-secondary: #0369A1;
-  --color-tech-accent: #0EA5E9;
-  --color-tech-purple: #2563EB;
-  --color-tech-bg: #FFFFFF;
-  --color-brand-cream: #F0F9FF;
-  --color-brand-coal: #0F172A;
-  --color-brand-gold: #0284C7;
+  --color-tech-primary: #ef233c;
+  --color-tech-secondary: #d90429;
+  --color-tech-accent: #ff4d6d;
+  --color-tech-purple: #9d0208;
+  --color-tech-bg: #000000;
+  --color-brand-cream: #121214;
+  --color-brand-coal: #000000;
+  --color-brand-gold: #ef233c;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #FFFFFF;
+  background-color: #000000;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #000000;
   font-family: var(--font-sans);
-  color: #0F172A;
+  color: #ffffff;
   overflow-x: hidden;
+}
+
+::selection {
+  background-color: #ef233c;
+  color: #ffffff;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ef233c;
 }
 
 /* Float animations for geometric shapes */
@@ -47,8 +119,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; transform: scale(1); filter: blur(40px); }
-  50% { opacity: 0.8; transform: scale(1.15); filter: blur(60px); }
+  0%, 100% { opacity: 0.4; transform: scale(1); filter: blur(40px); }
+  50% { opacity: 0.75; transform: scale(1.15); filter: blur(60px); }
 }
 
 .animate-float-up {
@@ -67,48 +139,49 @@ body {
   animation: pulse-glow 10s ease-in-out infinite;
 }
 
-/* Glassmorphism cards */
+/* Red Noir Glassmorphism cards */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(18, 18, 20, 0.75);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(239, 35, 60, 0.4);
 }
 
 .glass-panel-dark {
-  background: rgba(240, 249, 255, 0.95);
+  background: rgba(10, 10, 12, 0.85);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(2, 132, 199, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Custom glow borders and shadows */
-.shadow-tech-cyan {
-  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08);
+/* Red Glow borders and shadows */
+.shadow-red-glow {
+  box-shadow: 0 4px 25px rgba(239, 35, 60, 0.25);
 }
 
-.shadow-tech-purple {
-  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.08);
+.shadow-red-glow-lg {
+  box-shadow: 0 10px 40px rgba(239, 35, 60, 0.35);
 }
 
+.shadow-tech-cyan,
+.shadow-tech-purple,
 .shadow-tech-blue {
-  box-shadow: 0 4px 20px rgba(3, 105, 161, 0.08);
+  box-shadow: 0 4px 20px rgba(239, 35, 60, 0.15);
 }
 
-.border-glow-cyan {
-  border-color: rgba(2, 132, 199, 0.15);
-}
-
-.border-glow-cyan:hover {
-  border-color: rgba(2, 132, 199, 0.5);
-  box-shadow: 0 0 15px rgba(2, 132, 199, 0.15);
-}
-
+.border-glow-red,
+.border-glow-cyan,
 .border-glow-purple {
-  border-color: rgba(14, 165, 233, 0.15);
+  border-color: rgba(239, 35, 60, 0.2);
 }
 
+.border-glow-red:hover,
+.border-glow-cyan:hover,
 .border-glow-purple:hover {
-  border-color: rgba(14, 165, 233, 0.5);
-  box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
+  border-color: rgba(239, 35, 60, 0.6);
+  box-shadow: 0 0 20px rgba(239, 35, 60, 0.3);
 }
 
 /* Hide scrollbar for clean modals */
@@ -116,8 +189,8 @@ body {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* CCTV Animated Camera Background Effects */
@@ -189,7 +262,7 @@ body {
 }
 
 /* ==========================================================================
-   INOVE EUROPEAN AGENCY DESIGN SYSTEM
+   INOVE EUROPEAN AGENCY DESIGN SYSTEM - RED NOIR EDITION
    ========================================================================== */
 
 .inove-hlogo {
@@ -205,10 +278,10 @@ body {
   height: 480px;
   position: relative;
   border-width: 1px 0;
-  border-color: rgb(190, 190, 190);
+  border-color: rgba(255, 255, 255, 0.1);
   border-style: solid;
   overflow: hidden;
-  background-color: #030712;
+  background-color: #000000;
 }
 
 @media (max-width: 640px) {
@@ -219,7 +292,7 @@ body {
 
 .inove-hline {
   height: 1px;
-  background-color: rgb(190, 190, 190);
+  background-color: rgba(255, 255, 255, 0.08);
   width: 85%;
   max-width: 1500px;
   margin: 0 auto;
@@ -268,7 +341,7 @@ body {
   top: 0;
   bottom: 0;
   box-sizing: border-box;
-  border: 1px solid #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-right-width: 0;
   font-weight: 600;
   font-size: 13px;
@@ -277,17 +350,17 @@ body {
   align-items: center;
   justify-content: center;
   padding: 8px 12px;
-  background: #fff;
-  color: #000;
+  background: #0a0a0c;
+  color: #ffffff;
   transition: all 0.2s ease;
   z-index: 2;
   text-align: center;
 }
 
 .inove-gallery .inove-btn:hover .inove-btn-l {
-  border-color: #0284C7;
-  color: #0284C7;
-  background-color: #F0F9FF;
+  border-color: #ef233c;
+  color: #ef233c;
+  background-color: #121214;
 }
 
 .inove-gallery .inove-btn .inove-btn-r {
@@ -299,17 +372,17 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 1px solid #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-left-width: 0;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .inove-gallery .inove-btn:hover .inove-btn-r {
-  border-color: #0284C7;
+  border-color: #ef233c;
 }
 
-/* White Triangle Cut at bottom-right corner */
+/* Black Triangle Cut at bottom-right corner for Red Noir */
 .inove-gallery .inove-btn .inove-btn-r::after {
   content: "";
   display: block;
@@ -323,20 +396,20 @@ body {
   bottom: 0;
   border-top-width: 0;
   border-right-width: 0;
-  border-bottom-color: #fff;
+  border-bottom-color: #000000;
   z-index: 5;
 }
 
 .inove-clients .inove-topic {
   text-transform: uppercase;
-  background-color: rgb(242, 242, 242);
+  background-color: rgba(255, 255, 255, 0.05);
   line-height: 100%;
   padding: 6px 10px;
   margin: 24px 0 16px 0;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: #555;
+  color: #a1a1aa;
   font-family: var(--font-mono);
 }
 
@@ -358,19 +431,19 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 24px;
   font-weight: 300;
-  color: #111;
+  color: #ffffff;
 }
 
 .inove-tags .inove-tag-list h5 {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #666;
+  color: #a1a1aa;
 }
 
 .inove-tags .inove-tag-list h4:hover,
 .inove-tags .inove-tag-list h5:hover {
-  color: #0284C7;
+  color: #ef233c;
 }
 
 @media (max-width: 900px) {
@@ -384,6 +457,3 @@ body {
     flex: auto;
   }
 }
-
-
-

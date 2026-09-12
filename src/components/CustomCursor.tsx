@@ -22,7 +22,7 @@ export const CustomCursor: React.FC = () => {
       try {
         // Check if mouse is hovering over an interactive/clickable element
         const target = e.target as HTMLElement;
-        const hoverSelector = "button, a, select, input, [role='button'], .cursor-pointer, .clickable";
+        const hoverSelector = "button, a, select, input, textarea, [role='button'], .cursor-pointer, .clickable";
         const isInteractive = target && typeof target.closest === "function" && (target.closest(hoverSelector) !== null);
         setIsHovered(!!isInteractive);
       } catch (err) {
@@ -78,8 +78,8 @@ export const CustomCursor: React.FC = () => {
         ref={ringRef}
         className={`fixed top-0 left-0 rounded-full border transition-all duration-150 ease-out ${
           isHovered 
-            ? "h-10 w-10 border-[#D95B16] bg-[#D95B16]/10 shadow-[0_0_20px_rgba(217,91,22,0.4)]" 
-            : "h-6 w-6 border-[#D95B16]/50 bg-transparent shadow-[0_0_10px_rgba(217,91,22,0.15)]"
+            ? "h-10 w-10 border-[#ef233c] bg-[#ef233c]/15 shadow-[0_0_20px_rgba(239,35,60,0.5)]" 
+            : "h-6 w-6 border-[#ef233c]/60 bg-transparent shadow-[0_0_10px_rgba(239,35,60,0.2)]"
         }`}
         style={{
           willChange: "transform"
@@ -89,8 +89,8 @@ export const CustomCursor: React.FC = () => {
       {/* Inner Pin-Point Laser Dot */}
       <div 
         ref={dotRef}
-        className={`fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-[#D95B16] shadow-[0_0_8px_#D95B16] transition-transform duration-100 ${
-          isHovered ? "scale-150 bg-[#D95B16] shadow-[0_0_10px_#D95B16]" : "scale-100"
+        className={`fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-[#ef233c] shadow-[0_0_8px_#ef233c] transition-transform duration-100 ${
+          isHovered ? "scale-150 bg-[#ef233c] shadow-[0_0_12px_#ef233c]" : "scale-100"
         }`}
         style={{
           willChange: "transform"

@@ -54,7 +54,7 @@ export const FloatingGeometrics: React.FC = () => {
     };
   }, [mouseX, mouseY, clickSpring]);
 
-  // List of high-fidelity multicolored futuristic cyber shapes
+  // List of high-fidelity Red Noir cyber shapes
   const SHAPES: ShapeConfig[] = [
     {
       id: 1,
@@ -65,10 +65,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 45,
       width: "w-16",
       height: "h-16",
-      glowColor: "rgba(6, 182, 212, 0.4)", // Cyan
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <div className="w-16 h-16 bg-cyan-500/10 border border-cyan-400/30 rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.15)] flex items-center justify-center">
-          <div className="w-4 h-4 bg-cyan-400/50 rounded" />
+        <div className="w-16 h-16 bg-[#ef233c]/10 border border-[#ef233c]/30 rounded-xl shadow-[0_0_20px_rgba(239,35,60,0.15)] flex items-center justify-center">
+          <div className="w-4 h-4 bg-[#ef233c]/50 rounded" />
         </div>
       ),
     },
@@ -81,10 +81,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -35,
       width: "w-20",
       height: "h-20",
-      glowColor: "rgba(139, 92, 246, 0.4)", // Violet
+      glowColor: "rgba(217, 4, 41, 0.4)",
       render: () => (
-        <div className="w-20 h-20 bg-violet-600/10 border border-violet-400/30 rotate-[15deg] rounded-3xl shadow-[0_0_20px_rgba(139,92,246,0.15)] flex items-center justify-center">
-          <div className="w-6 h-6 border border-violet-400/40 rounded-full animate-ping" />
+        <div className="w-20 h-20 bg-red-900/10 border border-[#d90429]/30 rotate-[15deg] rounded-3xl shadow-[0_0_20px_rgba(217,4,41,0.15)] flex items-center justify-center">
+          <div className="w-6 h-6 border border-[#ef233c]/40 rounded-full animate-ping" />
         </div>
       ),
     },
@@ -97,10 +97,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 25,
       width: "w-14",
       height: "h-14",
-      glowColor: "rgba(244, 63, 94, 0.4)", // Rose
+      glowColor: "rgba(255, 77, 109, 0.4)",
       render: () => (
-        <div className="w-14 h-14 bg-rose-500/10 border border-rose-400/30 rounded-full shadow-[0_0_20px_rgba(244,63,94,0.15)] flex items-center justify-center">
-          <div className="w-3 h-3 bg-rose-400/60 rounded-full" />
+        <div className="w-14 h-14 bg-[#ff4d6d]/10 border border-[#ff4d6d]/30 rounded-full shadow-[0_0_20px_rgba(255,77,109,0.15)] flex items-center justify-center">
+          <div className="w-3 h-3 bg-[#ff4d6d]/60 rounded-full" />
         </div>
       ),
     },
@@ -113,10 +113,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -20,
       width: "w-24",
       height: "h-24",
-      glowColor: "rgba(16, 185, 129, 0.4)", // Emerald
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <div className="w-24 h-24 bg-emerald-500/5 border border-emerald-400/25 rotate-[-12deg] rounded-2xl shadow-[0_0_25px_rgba(16,185,129,0.1)] flex items-center justify-center">
-          <div className="w-12 h-12 border border-dashed border-emerald-400/30 rounded-xl" />
+        <div className="w-24 h-24 bg-[#ef233c]/5 border border-[#ef233c]/25 rotate-[-12deg] rounded-2xl shadow-[0_0_25px_rgba(239,35,60,0.1)] flex items-center justify-center">
+          <div className="w-12 h-12 border border-dashed border-[#ef233c]/30 rounded-xl" />
         </div>
       ),
     },
@@ -129,9 +129,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 50,
       width: "w-16",
       height: "h-16",
-      glowColor: "rgba(245, 158, 11, 0.4)", // Amber
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <svg className="w-16 h-16 text-amber-500/15 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)] fill-current stroke-amber-400/40" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-16 h-16 text-[#ef233c]/15 drop-shadow-[0_0_15px_rgba(239,35,60,0.2)] fill-current stroke-[#ef233c]/40" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="50,15 90,85 10,85" />
         </svg>
       ),
@@ -145,10 +145,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -30,
       width: "w-20",
       height: "h-20",
-      glowColor: "rgba(59, 130, 246, 0.4)", // Blue
+      glowColor: "rgba(217, 4, 41, 0.4)",
       render: () => (
-        <div className="w-20 h-20 bg-blue-600/10 border border-blue-400/30 rounded-2xl shadow-[0_0_20px_rgba(59,130,246,0.15)] flex items-center justify-center">
-          <div className="w-5 h-5 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-full" />
+        <div className="w-20 h-20 bg-red-950/20 border border-[#ef233c]/30 rounded-2xl shadow-[0_0_20px_rgba(239,35,60,0.15)] flex items-center justify-center">
+          <div className="w-5 h-5 bg-gradient-to-tr from-[#ef233c] to-[#ff4d6d] rounded-full" />
         </div>
       ),
     },
@@ -161,9 +161,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 60,
       width: "w-16",
       height: "h-16",
-      glowColor: "rgba(236, 72, 153, 0.4)", // Pink
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <svg className="w-16 h-16 text-pink-500/10 drop-shadow-[0_0_15px_rgba(236,72,153,0.2)] fill-current stroke-pink-400/40" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-16 h-16 text-[#ef233c]/10 drop-shadow-[0_0_15px_rgba(239,35,60,0.2)] fill-current stroke-[#ef233c]/40" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" />
         </svg>
       ),
@@ -177,9 +177,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -40,
       width: "w-12",
       height: "h-12",
-      glowColor: "rgba(6, 182, 212, 0.4)", // Cyan
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-400/30 rounded-full shadow-[0_0_15px_rgba(6,182,212,0.15)]" />
+        <div className="w-12 h-12 bg-[#ef233c]/10 border border-[#ef233c]/30 rounded-full shadow-[0_0_15px_rgba(239,35,60,0.15)]" />
       ),
     },
     {
@@ -191,9 +191,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 45,
       width: "w-16",
       height: "h-16",
-      glowColor: "rgba(139, 92, 246, 0.4)", // Violet
+      glowColor: "rgba(217, 4, 41, 0.4)",
       render: () => (
-        <div className="w-16 h-16 bg-violet-600/10 border border-violet-400/25 rotate-[35deg] rounded-lg shadow-[0_0_15px_rgba(139,92,246,0.12)]" />
+        <div className="w-16 h-16 bg-red-900/10 border border-[#ef233c]/25 rotate-[35deg] rounded-lg shadow-[0_0_15px_rgba(239,35,60,0.12)]" />
       ),
     },
     {
@@ -205,9 +205,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -45,
       width: "w-24",
       height: "h-20",
-      glowColor: "rgba(16, 185, 129, 0.4)", // Emerald
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <svg className="w-24 h-20 text-emerald-500/15 drop-shadow-[0_0_20px_rgba(16,185,129,0.25)] fill-current rotate-[-15deg] stroke-emerald-400/30" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-24 h-20 text-[#ef233c]/15 drop-shadow-[0_0_20px_rgba(239,35,60,0.25)] fill-current rotate-[-15deg] stroke-[#ef233c]/30" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="0,100 100,50 50,100" />
         </svg>
       ),
@@ -221,9 +221,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 55,
       width: "w-16",
       height: "h-16",
-      glowColor: "rgba(245, 158, 11, 0.4)", // Amber
+      glowColor: "rgba(217, 4, 41, 0.4)",
       render: () => (
-        <svg className="w-16 h-16 text-amber-500/15 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)] fill-current rotate-[45deg] stroke-amber-400/40" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-16 h-16 text-red-700/15 drop-shadow-[0_0_15px_rgba(217,4,41,0.2)] fill-current rotate-[45deg] stroke-[#ef233c]/40" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" />
         </svg>
       ),
@@ -237,10 +237,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -35,
       width: "w-16",
       height: "h-16",
-      glowColor: "rgba(244, 63, 94, 0.4)", // Rose
+      glowColor: "rgba(255, 77, 109, 0.4)",
       render: () => (
-        <div className="w-16 h-16 bg-rose-600/10 border border-rose-400/30 rotate-[22deg] rounded-xl shadow-[0_0_15px_rgba(244,63,94,0.15)] flex items-center justify-center">
-          <div className="w-5 h-5 bg-rose-400/30 rounded" />
+        <div className="w-16 h-16 bg-[#ff4d6d]/10 border border-[#ff4d6d]/30 rotate-[22deg] rounded-xl shadow-[0_0_15px_rgba(255,77,109,0.15)] flex items-center justify-center">
+          <div className="w-5 h-5 bg-[#ff4d6d]/30 rounded" />
         </div>
       ),
     },
@@ -253,9 +253,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 40,
       width: "w-14",
       height: "h-14",
-      glowColor: "rgba(6, 182, 212, 0.4)", // Cyan
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <svg className="w-14 h-14 text-cyan-500/15 drop-shadow-[0_0_15px_rgba(6,182,212,0.2)] fill-current rotate-12 stroke-cyan-400/35" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-14 h-14 text-[#ef233c]/15 drop-shadow-[0_0_15px_rgba(239,35,60,0.2)] fill-current rotate-12 stroke-[#ef233c]/35" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="50,15 100,85 0,85" />
         </svg>
       ),
@@ -269,9 +269,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -20,
       width: "w-20",
       height: "h-20",
-      glowColor: "rgba(139, 92, 246, 0.4)", // Violet
+      glowColor: "rgba(217, 4, 41, 0.4)",
       render: () => (
-        <div className="w-20 h-20 bg-violet-600/10 border border-violet-400/25 rounded-full shadow-[0_0_20px_rgba(139,92,246,0.12)]" />
+        <div className="w-20 h-20 bg-red-900/10 border border-[#ef233c]/25 rounded-full shadow-[0_0_20px_rgba(239,35,60,0.12)]" />
       ),
     },
     {
@@ -283,9 +283,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 60,
       width: "w-14",
       height: "h-14",
-      glowColor: "rgba(16, 185, 129, 0.4)", // Emerald
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <svg className="w-14 h-14 text-emerald-500/15 drop-shadow-[0_0_15px_rgba(16,185,129,0.2)] fill-current stroke-emerald-400/40" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-14 h-14 text-[#ef233c]/15 drop-shadow-[0_0_15px_rgba(239,35,60,0.2)] fill-current stroke-[#ef233c]/40" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" />
         </svg>
       ),
@@ -299,9 +299,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -60,
       width: "w-24",
       height: "h-16",
-      glowColor: "rgba(59, 130, 246, 0.4)", // Blue
+      glowColor: "rgba(217, 4, 41, 0.4)",
       render: () => (
-        <svg className="w-24 h-16 text-blue-500/15 drop-shadow-[0_0_20px_rgba(59,130,246,0.2)] fill-current rotate-[-30deg] stroke-blue-400/35" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-24 h-16 text-red-950/30 drop-shadow-[0_0_20px_rgba(239,35,60,0.2)] fill-current rotate-[-30deg] stroke-[#ef233c]/35" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="0,50 100,50 50,100" />
         </svg>
       ),
@@ -315,9 +315,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 30,
       width: "w-20",
       height: "h-20",
-      glowColor: "rgba(244, 63, 94, 0.4)", // Rose
+      glowColor: "rgba(255, 77, 109, 0.4)",
       render: () => (
-        <div className="w-20 h-20 bg-rose-600/10 border border-rose-400/25 rotate-[40deg] rounded-xl shadow-[0_0_15px_rgba(244,63,94,0.12)]" />
+        <div className="w-20 h-20 bg-[#ff4d6d]/10 border border-[#ff4d6d]/25 rotate-[40deg] rounded-xl shadow-[0_0_15px_rgba(255,77,109,0.12)]" />
       ),
     },
     {
@@ -329,10 +329,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 15,
       width: "w-24",
       height: "h-24",
-      glowColor: "rgba(6, 182, 212, 0.4)", // Cyan
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <div className="w-24 h-24 bg-cyan-600/5 border border-cyan-400/20 rounded-full shadow-[0_0_30px_rgba(6,182,212,0.08)] flex items-center justify-center">
-          <div className="w-8 h-8 rounded-full border border-dashed border-cyan-400/30 animate-[spin_10s_linear_infinite]" />
+        <div className="w-24 h-24 bg-[#ef233c]/5 border border-[#ef233c]/20 rounded-full shadow-[0_0_30px_rgba(239,35,60,0.08)] flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full border border-dashed border-[#ef233c]/30 animate-[spin_10s_linear_infinite]" />
         </div>
       ),
     },
@@ -345,9 +345,9 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: -40,
       width: "w-28",
       height: "h-20",
-      glowColor: "rgba(139, 92, 246, 0.4)", // Violet
+      glowColor: "rgba(217, 4, 41, 0.4)",
       render: () => (
-        <svg className="w-28 h-20 text-violet-500/10 drop-shadow-[0_0_25px_rgba(139,92,246,0.2)] fill-current rotate-[10deg] stroke-violet-400/30" strokeWidth="1" viewBox="0 0 100 100">
+        <svg className="w-28 h-20 text-red-900/10 drop-shadow-[0_0_25px_rgba(239,35,60,0.2)] fill-current rotate-[10deg] stroke-[#ef233c]/30" strokeWidth="1" viewBox="0 0 100 100">
           <polygon points="0,100 100,100 80,0" />
         </svg>
       ),
@@ -361,10 +361,10 @@ export const FloatingGeometrics: React.FC = () => {
       clickRotateMultiplier: 25,
       width: "w-14",
       height: "h-14",
-      glowColor: "rgba(16, 185, 129, 0.4)", // Emerald
+      glowColor: "rgba(239, 35, 60, 0.4)",
       render: () => (
-        <div className="w-14 h-14 bg-emerald-600/10 border border-emerald-400/30 rotate-[15deg] rounded shadow-[0_0_15px_rgba(16,185,129,0.15)] flex items-center justify-center">
-          <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
+        <div className="w-14 h-14 bg-[#ef233c]/10 border border-[#ef233c]/30 rotate-[15deg] rounded shadow-[0_0_15px_rgba(239,35,60,0.15)] flex items-center justify-center">
+          <div className="w-2 h-2 bg-[#ef233c] rounded-full animate-ping" />
         </div>
       ),
     },
@@ -391,7 +391,6 @@ export const FloatingGeometrics: React.FC = () => {
               scale: dynamicScale,
               rotate: dynamicRotate,
             }}
-            // Animate continues floating loop movement to respond even when cursor is stationary
             animate={{
               y: [0, -18, 18, 0],
               x: [0, 12, -12, 0],

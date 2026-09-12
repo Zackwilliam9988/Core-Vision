@@ -4,12 +4,14 @@ interface AnimatedCounterProps {
   value: number;
   suffix?: string;
   duration?: number;
+  className?: string;
 }
 
 export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ 
   value, 
   suffix = "", 
-  duration = 1500 
+  duration = 1500,
+  className
 }) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
@@ -63,7 +65,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 
   return (
     <div ref={containerRef} className="inline-block">
-      <span className="font-display font-bold text-3xl md:text-5xl text-cyan-400 glow-cyan">
+      <span className={className || "font-bold text-3xl md:text-5xl text-[#ef233c] drop-shadow-[0_0_12px_rgba(239,35,60,0.5)]"}>
         {count}
         {suffix}
       </span>

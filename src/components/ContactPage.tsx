@@ -101,20 +101,20 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
   };
 
   return (
-    <div className="pt-32 pb-24 bg-white min-h-screen text-slate-800 font-sans relative overflow-hidden">
+    <div className="pt-32 pb-24 bg-black min-h-screen text-white font-sans relative overflow-hidden">
       
       {/* Premium ambient backdrop glow */}
-      <div className="absolute top-0 left-0 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(217,91,22,0.04),transparent_50%)] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(217,91,22,0.03),transparent_50%)] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(239,35,60,0.12),transparent_50%)] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(239,35,60,0.06),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* HERO TITLE */}
         <div className="text-left mb-16 max-w-4xl">
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 tracking-tight leading-none mb-6">
-            Corporate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] to-[#0EA5E9]">Contact Hub</span>
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight leading-none mb-6">
+            Corporate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ef233c] to-[#ff4d6d]">Contact Hub</span>
           </h1>
-          <p className="text-slate-600 text-base sm:text-xl leading-relaxed font-sans">
+          <p className="text-zinc-300 text-base sm:text-xl leading-relaxed font-sans">
             Ready to deploy professional security systems, optical fiber fusion splicing, or biometrics on-site? Fill out our streamlined priority request for custom engineering.
           </p>
         </div>
@@ -125,43 +125,43 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
           {/* Left Column: Coordinates & Info */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-6">
-              <h3 className="font-display font-black text-2xl text-slate-900 tracking-tight">Islamabad Headquarters</h3>
-              <p className="text-xs text-slate-500 leading-relaxed font-sans">
+              <h3 className="font-display font-black text-2xl text-white tracking-tight">Islamabad Headquarters</h3>
+              <p className="text-xs text-zinc-400 leading-relaxed font-sans">
                 Our engineering office manages commercial projects and dispatch coordinates for hardware installations across major residential and commercial sectors.
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-4 bg-slate-50/80 border border-slate-100 p-4 rounded-2xl">
-                  <div className="h-11 w-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284C7] shadow-sm shrink-0">
+                <div className="flex items-center gap-4 bg-[#0a0a0c] border border-white/10 p-4 rounded-2xl shadow-lg">
+                  <div className="h-11 w-11 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 flex items-center justify-center text-[#ef233c] shadow-sm shrink-0">
                     <Phone size={16} />
                   </div>
                   <div>
-                    <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 font-bold">Hotline Desk</span>
-                    <a href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`} className="text-sm font-bold text-slate-800 hover:text-[#0284C7] transition-colors font-mono">
+                    <span className="block text-[8px] font-mono uppercase tracking-wider text-zinc-500 font-bold">Hotline Desk</span>
+                    <a href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`} className="text-sm font-bold text-white hover:text-[#ef233c] transition-colors font-mono">
                       {contactInfo.phone}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-slate-50/80 border border-slate-100 p-4 rounded-2xl">
-                  <div className="h-11 w-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284C7] shadow-sm shrink-0">
+                <div className="flex items-center gap-4 bg-[#0a0a0c] border border-white/10 p-4 rounded-2xl shadow-lg">
+                  <div className="h-11 w-11 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 flex items-center justify-center text-[#ef233c] shadow-sm shrink-0">
                     <Mail size={16} />
                   </div>
                   <div>
-                    <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 font-bold">Mail Channel</span>
-                    <a href={`mailto:${contactInfo.email}`} className="text-sm font-bold text-slate-800 hover:text-[#0284C7] transition-colors">
+                    <span className="block text-[8px] font-mono uppercase tracking-wider text-zinc-500 font-bold">Mail Channel</span>
+                    <a href={`mailto:${contactInfo.email}`} className="text-sm font-bold text-white hover:text-[#ef233c] transition-colors">
                       {contactInfo.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-slate-50/80 border border-slate-100 p-4 rounded-2xl">
-                  <div className="h-11 w-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284C7] shadow-sm shrink-0">
+                <div className="flex items-center gap-4 bg-[#0a0a0c] border border-white/10 p-4 rounded-2xl shadow-lg">
+                  <div className="h-11 w-11 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 flex items-center justify-center text-[#ef233c] shadow-sm shrink-0">
                     <MapPin size={16} />
                   </div>
                   <div>
-                    <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 font-bold">HQ Site Location</span>
-                    <p className="text-xs font-bold text-slate-800 leading-relaxed font-sans">
+                    <span className="block text-[8px] font-mono uppercase tracking-wider text-zinc-500 font-bold">HQ Site Location</span>
+                    <p className="text-xs font-bold text-zinc-300 leading-relaxed font-sans">
                       {contactInfo.address}
                     </p>
                   </div>
@@ -170,23 +170,23 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
             </div>
 
             {/* Operations Hours Block */}
-            <div className="bg-sky-50/60 border border-sky-100 rounded-2xl p-5 text-left space-y-1.5 font-sans">
-              <div className="font-bold text-slate-800 text-xs flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="bg-[#0a0a0c] border border-white/10 rounded-2xl p-5 text-left space-y-1.5 font-sans shadow-lg">
+              <div className="font-bold text-white text-xs flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>Central Operations & Dispatch Active</span>
               </div>
-              <p className="text-[11px] text-slate-500 font-medium leading-relaxed">
+              <p className="text-[11px] text-zinc-400 font-medium leading-relaxed">
                 Field specialists available across Islamabad & nationwide commercial sectors for site surveys and technical support.
               </p>
             </div>
           </div>
 
           {/* Right Column: Dynamic Form */}
-          <div className="lg:col-span-7 bg-white border border-slate-100 rounded-3xl p-8 relative shadow-md">
-            <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-sky-500/5 blur-3xl pointer-events-none" />
+          <div className="lg:col-span-7 bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 relative shadow-2xl">
+            <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-red-500/5 blur-3xl pointer-events-none" />
             
-            <h3 className="font-display font-black text-2xl text-slate-900 mb-2 tracking-tight">Request Engineering Quote</h3>
-            <p className="text-xs text-slate-500 mb-8 font-sans leading-relaxed">
+            <h3 className="font-display font-black text-2xl text-white mb-2 tracking-tight">Request Engineering Quote</h3>
+            <p className="text-xs text-zinc-400 mb-8 font-sans leading-relaxed">
               Fill out your corporate details below. A certified Core Vision Pakistan site inspector will contact you to discuss camera placements, fiber trunk spans, or network architecture.
             </p>
 
@@ -194,8 +194,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               
               {/* Full Name Input */}
               <div className="space-y-2 text-left">
-                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <User size={12} className="text-[#0284C7]" />
+                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-extrabold flex items-center gap-1.5">
+                  <User size={12} className="text-[#ef233c]" />
                   <span>Full Name</span>
                 </label>
                 <div className="relative">
@@ -205,15 +205,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                     placeholder="Enter your first and last name"
                     value={formName}
                     onChange={(e) => setFormName(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white focus:ring-1 focus:ring-[#0284C7] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400"
+                    className="w-full bg-[#121214] border border-white/10 focus:border-[#ef233c] focus:bg-black focus:ring-1 focus:ring-[#ef233c] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-white outline-none transition-all placeholder:text-zinc-500"
                   />
                 </div>
               </div>
 
               {/* Email Address Input */}
               <div className="space-y-2 text-left">
-                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <Mail size={12} className="text-[#0284C7]" />
+                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-extrabold flex items-center gap-1.5">
+                  <Mail size={12} className="text-[#ef233c]" />
                   <span>Email Address</span>
                 </label>
                 <div className="relative">
@@ -223,15 +223,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                     placeholder="Enter your email address (e.g. name@company.com)"
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white focus:ring-1 focus:ring-[#0284C7] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400"
+                    className="w-full bg-[#121214] border border-white/10 focus:border-[#ef233c] focus:bg-black focus:ring-1 focus:ring-[#ef233c] rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-white outline-none transition-all placeholder:text-zinc-500"
                   />
                 </div>
               </div>
 
               {/* Phone Number Input */}
               <div className="space-y-2 text-left">
-                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <Hash size={12} className="text-[#0284C7]" />
+                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-extrabold flex items-center gap-1.5">
+                  <Hash size={12} className="text-[#ef233c]" />
                   <span>Phone Number</span>
                 </label>
                 <div className="relative">
@@ -244,10 +244,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                       setFormPhone(e.target.value);
                       if (phoneError) setPhoneError("");
                     }}
-                    className={`w-full bg-slate-50 border focus:bg-white focus:ring-1 rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-slate-800 outline-none transition-all placeholder:text-slate-400 ${
+                    className={`w-full bg-[#121214] border focus:bg-black focus:ring-1 rounded-xl py-3.5 px-4 text-base md:text-xs font-semibold text-white outline-none transition-all placeholder:text-zinc-500 ${
                       phoneError 
                         ? "border-red-500/50 focus:border-red-500 focus:ring-red-500" 
-                        : "border-slate-100 focus:border-[#0284C7] focus:ring-[#0284C7]"
+                        : "border-white/10 focus:border-[#ef233c] focus:ring-[#ef233c]"
                     }`}
                   />
                 </div>
@@ -256,7 +256,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                   <motion.div 
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-1.5 text-red-500 text-[11px] font-medium font-sans mt-1.5"
+                    className="flex items-center gap-1.5 text-rose-400 text-[11px] font-medium font-sans mt-1.5"
                   >
                     <AlertCircle size={12} className="shrink-0" />
                     <span>{phoneError}</span>
@@ -266,23 +266,23 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
 
               {/* Service Selection Dropdown */}
               <div className="space-y-2 text-left">
-                <label className="block text-[10px] font-mono uppercase tracking-widest text-slate-500 font-extrabold flex items-center gap-1.5">
-                  <Cpu size={12} className="text-[#0284C7]" />
+                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-extrabold flex items-center gap-1.5">
+                  <Cpu size={12} className="text-[#ef233c]" />
                   <span>Interested Service Solution</span>
                 </label>
                 <div className="relative">
                   <select
                     value={selectedServiceId}
                     onChange={(e) => setSelectedServiceId(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-100 focus:border-[#0284C7] focus:bg-white focus:ring-1 focus:ring-[#0284C7] rounded-xl py-3.5 px-4 text-xs font-semibold text-slate-800 outline-none transition-all appearance-none cursor-pointer"
+                    className="w-full bg-[#121214] border border-white/10 focus:border-[#ef233c] focus:bg-black focus:ring-1 focus:ring-[#ef233c] rounded-xl py-3.5 px-4 text-xs font-semibold text-white outline-none transition-all appearance-none cursor-pointer"
                   >
                     {SERVICES.map(srv => (
-                      <option key={srv.id} value={srv.id} className="bg-white text-slate-800">
+                      <option key={srv.id} value={srv.id} className="bg-[#0a0a0c] text-white">
                         {srv.title}
                       </option>
                     ))}
                   </select>
-                  <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-450">
+                  <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-zinc-400">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -291,11 +291,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               </div>
 
               {/* Security Advisory Notice */}
-              <div className="bg-sky-50/50 border border-sky-100 rounded-2xl p-4 flex gap-3.5 text-left font-sans">
-                <ShieldCheck className="text-[#0284C7] shrink-0" size={18} />
+              <div className="bg-[#121214] border border-white/10 rounded-2xl p-4 flex gap-3.5 text-left font-sans">
+                <ShieldCheck className="text-[#ef233c] shrink-0" size={18} />
                 <div className="space-y-1">
-                  <span className="block text-xs font-bold text-slate-800">Encrypted Transmission</span>
-                  <p className="text-[10px] text-slate-500 leading-normal font-medium">
+                  <span className="block text-xs font-bold text-white">Encrypted Transmission</span>
+                  <p className="text-[10px] text-zinc-400 leading-normal font-medium">
                     Your site request is hashed and securely routed to our Islamabad dispatcher to schedule a field crew. We protect commercial telemetry.
                   </p>
                 </div>
@@ -305,7 +305,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#0284C7] hover:bg-[#0369A1] disabled:bg-slate-300 text-white font-black py-4 rounded-xl text-xs tracking-widest uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2 border-none"
+                className="w-full bg-[#ef233c] hover:bg-[#d90429] disabled:bg-zinc-800 text-white font-black py-4 rounded-xl text-xs tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2 border-none"
               >
                 {isSubmitting ? (
                   <div className="h-4.5 w-4.5 border-2 border-white border-t-transparent rounded-full animate-spin" />

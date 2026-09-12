@@ -107,21 +107,21 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
   onExploreServices
 }) => {
   return (
-    <section className="py-16 bg-white text-black text-left font-['Open_Sans']">
+    <section className="py-16 bg-black text-white text-left font-['Open_Sans']">
       <div className="w-[85%] max-w-[1500px] mx-auto">
         
         {/* Top Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-slate-200">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-white/10">
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-[#0284C7] font-mono text-[10px] font-bold uppercase tracking-widest">
-              <Award size={13} className="text-[#0284C7]" />
+            <div className="inline-flex items-center gap-2 text-[#ef233c] font-mono text-[10px] font-bold uppercase tracking-widest">
+              <Award size={13} className="text-[#ef233c]" />
               <span>CERTIFIED DEPLOYMENT STANDARDS</span>
             </div>
-            <h2 className="font-['Open_Sans_Condensed'] font-light text-3xl sm:text-5xl text-black tracking-wide uppercase leading-tight">
+            <h2 className="font-['Open_Sans_Condensed'] font-light text-3xl sm:text-5xl text-white tracking-wide uppercase leading-tight">
               Precision Infrastructure & <br />
-              <span className="text-[#0284C7] font-bold">Quality Benchmarks</span>
+              <span className="text-[#ef233c] font-bold">Quality Benchmarks</span>
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-1">
+            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed pt-1">
               Every deployment adheres to rigorous international telecom and surveillance standards, certified with calibrated Japanese equipment.
             </p>
           </div>
@@ -129,7 +129,7 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={() => onTriggerQuote()}
-              className="bg-[#0284C7] hover:bg-[#0369A1] text-white px-5 py-3 rounded-xl font-['Open_Sans'] font-bold text-xs uppercase tracking-wider transition-all shadow-sm hover:shadow-md flex items-center gap-2 cursor-pointer"
+              className="bg-[#ef233c] hover:bg-[#d90429] text-white px-5 py-3 rounded-xl font-['Open_Sans'] font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] flex items-center gap-2 cursor-pointer"
             >
               <Sparkles size={14} />
               <span>Launch Quote Simulator</span>
@@ -137,7 +137,7 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
           </div>
         </div>
 
-        {/* 4 Pillars Grid (Clean, High-End INOVE Minimalist Cards) */}
+        {/* 4 Pillars Grid (Red Noir Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 items-stretch">
           {engineeringPillars.map((pillar, idx) => {
             const Icon = pillar.icon;
@@ -148,48 +148,48 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group relative bg-white border border-slate-200 hover:border-[#0284C7] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_35px_rgba(2,132,199,0.1)] select-none"
+                className="group relative bg-[#0a0a0c] border border-white/10 hover:border-[#ef233c] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_16px_35px_rgba(239,35,60,0.25)] select-none"
               >
                 {/* Top Corner Code & Badge */}
                 <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                    <span className="font-mono text-[10px] text-slate-400 font-bold tracking-wider">
+                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                    <span className="font-mono text-[10px] text-zinc-500 font-bold tracking-wider">
                       {pillar.code}
                     </span>
-                    <span className="bg-sky-50 text-[#0284C7] border border-sky-200 text-[8.5px] font-mono font-extrabold px-2 py-0.5 rounded">
+                    <span className="bg-[#ef233c]/10 text-[#ef233c] border border-[#ef233c]/30 text-[8.5px] font-mono font-extrabold px-2 py-0.5 rounded">
                       {pillar.badge}
                     </span>
                   </div>
 
                   {/* Icon & Title */}
                   <div className="pt-4 space-y-2">
-                    <div className="h-10 w-10 rounded-xl bg-slate-50 border border-slate-200 group-hover:bg-[#0284C7] group-hover:border-[#0284C7] text-[#0284C7] group-hover:text-white flex items-center justify-center transition-colors">
+                    <div className="h-10 w-10 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 group-hover:bg-[#ef233c] group-hover:border-[#ef233c] text-[#ef233c] group-hover:text-white flex items-center justify-center transition-colors">
                       <Icon size={18} />
                     </div>
-                    <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-black uppercase tracking-wide leading-tight group-hover:text-[#0284C7] transition-colors">
+                    <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-white uppercase tracking-wide leading-tight group-hover:text-[#ef233c] transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">
+                    <p className="text-zinc-400 text-xs leading-relaxed line-clamp-3">
                       {pillar.desc}
                     </p>
                   </div>
 
                   {/* Micro Specs Table */}
-                  <div className="mt-5 pt-3 border-t border-slate-100 space-y-1.5 font-mono text-[10px]">
+                  <div className="mt-5 pt-3 border-t border-white/10 space-y-1.5 font-mono text-[10px]">
                     {pillar.specs.map((s, sIdx) => (
                       <div key={sIdx} className="flex items-center justify-between">
-                        <span className="text-slate-400">{s.label}:</span>
-                        <span className="font-bold text-slate-800">{s.val}</span>
+                        <span className="text-zinc-500">{s.label}:</span>
+                        <span className="font-bold text-zinc-200">{s.val}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Card Action */}
-                <div className="pt-5 mt-4 border-t border-slate-100">
+                <div className="pt-5 mt-4 border-t border-white/10">
                   <button
                     onClick={() => onExploreServices()}
-                    className="w-full py-2.5 rounded-xl border border-slate-200 group-hover:border-[#0284C7] bg-slate-50 group-hover:bg-[#0284C7] text-slate-700 group-hover:text-white font-['Open_Sans'] font-bold text-[11px] uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full py-2.5 rounded-xl border border-white/10 group-hover:border-[#ef233c] bg-[#121214] group-hover:bg-[#ef233c] text-zinc-300 group-hover:text-white font-['Open_Sans'] font-bold text-[11px] uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <span>View Specifications</span>
                     <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
@@ -201,15 +201,15 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
         </div>
 
         {/* 4-Step Deployment Workflow Timeline */}
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-10">
+        <div className="bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 sm:p-10 shadow-2xl">
           <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-            <span className="text-[#0284C7] font-mono text-[10px] font-extrabold uppercase tracking-widest">
+            <span className="text-[#ef233c] font-mono text-[10px] font-extrabold uppercase tracking-widest">
               DEPLOYMENT PROTOCOL
             </span>
-            <h3 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl text-black font-light uppercase tracking-wide">
+            <h3 className="font-['Open_Sans_Condensed'] text-3xl sm:text-4xl text-white font-light uppercase tracking-wide">
               Engineering Execution Process
             </h3>
-            <p className="text-slate-500 text-xs sm:text-sm">
+            <p className="text-zinc-400 text-xs sm:text-sm">
               Standardized step-by-step procedure guaranteeing zero defect handovers.
             </p>
           </div>
@@ -218,15 +218,15 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
             {deploymentSteps.map((step, sIdx) => (
               <div 
                 key={step.num}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 text-left relative space-y-2 hover:border-[#0284C7] transition-colors shadow-2xs"
+                className="bg-black border border-white/10 rounded-2xl p-6 text-left relative space-y-2 hover:border-[#ef233c] transition-colors shadow-lg"
               >
-                <span className="font-mono text-3xl font-black text-slate-200 group-hover:text-[#0284C7] block leading-none">
+                <span className="font-mono text-3xl font-black text-zinc-800 group-hover:text-[#ef233c] block leading-none">
                   {step.num}
                 </span>
-                <h4 className="font-['Open_Sans'] font-bold text-sm text-black">
+                <h4 className="font-['Open_Sans'] font-bold text-sm text-white">
                   {step.title}
                 </h4>
-                <p className="text-slate-500 text-xs leading-relaxed">
+                <p className="text-zinc-400 text-xs leading-relaxed">
                   {step.desc}
                 </p>
               </div>

@@ -32,13 +32,13 @@ export function SuccessNotification({
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 overflow-hidden select-none">
-          {/* Ambient Blurred Backdrop */}
+          {/* Ambient Blurred Dark Backdrop */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
+            className="absolute inset-0 bg-black/85 backdrop-blur-md"
           />
 
           {/* Glowing Animated Modal Body */}
@@ -48,19 +48,19 @@ export function SuccessNotification({
               opacity: 1, 
               scale: 1, 
               y: 0,
-              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(239, 35, 60, 0.15)"
             }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: "spring", damping: 25, stiffness: 350 }}
-            className="relative w-full max-w-md bg-white border border-slate-100 rounded-3xl p-8 text-center text-slate-800 z-10 overflow-hidden shadow-2xl"
+            className="relative w-full max-w-md bg-[#0a0a0c]/95 border border-white/10 rounded-3xl p-8 text-center text-white z-10 overflow-hidden shadow-2xl backdrop-blur-xl"
           >
             {/* Grid Pattern Background Overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(217,91,22,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(217,91,22,0.01)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(239,35,60,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(239,35,60,0.03)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
             
             {/* Elegant Close Button */}
             <button 
               onClick={onClose}
-              className="absolute top-4 right-4 text-slate-400 hover:text-[#D95B16] p-1.5 hover:bg-slate-50 rounded-full cursor-pointer transition-all duration-300 border border-transparent hover:border-orange-100"
+              className="absolute top-4 right-4 text-zinc-400 hover:text-[#ef233c] p-2 hover:bg-white/5 rounded-full cursor-pointer transition-all duration-300 border border-transparent hover:border-[#ef233c]/30"
               aria-label="Close notification"
             >
               <X size={16} />
@@ -69,16 +69,16 @@ export function SuccessNotification({
             {/* Premium Animated Glowing Success Icon */}
             <div className="flex justify-center mb-6">
               <div className="relative">
-                {/* Outer Ring with Accent Orange glow */}
+                {/* Outer Ring with Accent Crimson glow */}
                 <motion.div 
                   animate={{ rotate: 360 }}
                   transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-3 rounded-full border border-dashed border-[#D95B16]/40"
+                  className="absolute -inset-3 rounded-full border border-dashed border-[#ef233c]/40"
                 />
                 <motion.div 
                   animate={{ rotate: -360 }}
                   transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-5 rounded-full border border-dotted border-orange-200/50"
+                  className="absolute -inset-5 rounded-full border border-dotted border-[#ef233c]/20"
                 />
 
                 {/* Inner Glowing Core */}
@@ -86,45 +86,45 @@ export function SuccessNotification({
                   initial={{ scale: 0.5, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
-                  className="h-16 w-16 bg-orange-50 border-2 border-[#D95B16] rounded-full flex items-center justify-center text-[#D95B16] shadow-[0_0_20px_rgba(217,91,22,0.15)]"
+                  className="h-16 w-16 bg-[#ef233c]/10 border-2 border-[#ef233c] rounded-full flex items-center justify-center text-[#ef233c] shadow-[0_0_25px_rgba(239,35,60,0.4)]"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.3, type: "spring", stiffness: 300 }}
                   >
-                    <Check size={32} strokeWidth={3.5} className="drop-shadow-[0_0_4px_rgba(217,91,22,0.3)]" />
+                    <Check size={32} strokeWidth={3.5} className="drop-shadow-[0_0_8px_rgba(239,35,60,0.6)]" />
                   </motion.div>
                 </motion.div>
               </div>
             </div>
 
             {/* Header / Title */}
-            <h3 className="font-sans font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#D95B16] to-[#EA580C] tracking-wider uppercase mb-1">
+            <h3 className="font-mono font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#ef233c] via-[#ff4d6d] to-white tracking-wider uppercase mb-1">
               REQUEST RECEIVED
             </h3>
             
-            <p className="text-slate-800 font-bold text-base mb-4 font-sans">
+            <p className="text-white font-bold text-base mb-4">
               Thank you for contacting us.
             </p>
             
             {/* Body text with precise requirements */}
-            <div className="space-y-4 text-slate-500 text-sm leading-relaxed mb-6 font-medium font-sans">
+            <div className="space-y-3 text-zinc-400 text-sm leading-relaxed mb-6 font-medium">
               <p>
-                Your request has been successfully received and assigned to our support team.
+                Your request has been successfully received and assigned to our enterprise engineering team.
               </p>
               <p>
-                One of our representatives will contact you within the next 24 hours.
+                One of our senior specialists will contact you within the next 24 hours.
               </p>
-              <p className="text-[#D95B16] font-bold uppercase tracking-widest text-[11px] pt-1">
-                Thank you for choosing us.
+              <p className="text-[#ef233c] font-bold uppercase tracking-widest text-[11px] pt-1 font-mono">
+                Thank you for choosing CoreVision.
               </p>
             </div>
 
             {/* Dismiss Button */}
             <button
               onClick={onClose}
-              className="w-full bg-[#D95B16] hover:bg-[#C2410C] text-white font-extrabold py-3 rounded-xl text-xs tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:scale-[1.02] cursor-pointer border-none"
+              className="w-full bg-[#ef233c] hover:bg-[#d90429] text-white font-bold py-3.5 rounded-xl text-xs tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.6)] hover:scale-[1.02] cursor-pointer border-none font-mono"
             >
               Dismiss Window
             </button>

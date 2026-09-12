@@ -77,22 +77,22 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
       }}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80' 
-          : 'bg-white/90 backdrop-blur-xs'
+          ? 'bg-black/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.8)] border-b border-white/10' 
+          : 'bg-black/75 backdrop-blur-sm border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate({ page: 'home' })}>
-            <div className="w-10 h-10 rounded-full overflow-hidden border border-slate-200 flex items-center justify-center bg-white shadow-xs">
+            <div className="w-10 h-10 rounded-full overflow-hidden border border-[#ef233c]/40 flex items-center justify-center bg-black shadow-[0_0_15px_rgba(239,35,60,0.25)]">
               <img src={logo} alt="Core Vision Pakistan Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-['Open_Sans_Condensed'] font-bold text-lg text-slate-900 uppercase tracking-tight">
-                Core <span className="text-[#0284C7]">Vision</span> Pakistan
+              <span className="font-['Open_Sans_Condensed'] font-bold text-lg text-white uppercase tracking-tight">
+                Core <span className="text-[#ef233c]">Vision</span> Pakistan
               </span>
-              <span className="hidden sm:block text-[9.5px] text-slate-500 font-mono tracking-wider">
+              <span className="hidden sm:block text-[9.5px] text-zinc-400 font-mono tracking-wider">
                 Precision Infrastructure
               </span>
             </div>
@@ -113,8 +113,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
                 onClick={(e) => handleNavLinkClick(e, link.id)}
                 className={`text-xs uppercase tracking-wider font-semibold transition-colors ${
                   isActive(link.id) 
-                    ? 'text-[#0284C7] font-bold border-b-2 border-[#0284C7] pb-0.5' 
-                    : 'text-slate-700 hover:text-[#0284C7]'
+                    ? 'text-[#ef233c] font-bold border-b-2 border-[#ef233c] pb-0.5 drop-shadow-[0_0_8px_rgba(239,35,60,0.5)]' 
+                    : 'text-zinc-300 hover:text-[#ef233c]'
                 }`}
               >
                 {link.label}
@@ -124,14 +124,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
 
           {/* Right: actions */}
           <div className="flex items-center gap-3">
-            <a href={`tel:${contactPhone}`} className="hidden lg:inline-flex items-center gap-2 text-xs font-mono font-bold text-slate-700 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors">
-              <Phone size={14} className="text-[#0284C7]" />
+            <a href={`tel:${contactPhone}`} className="hidden lg:inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-300 px-3 py-2 rounded-lg hover:bg-white/5 transition-colors">
+              <Phone size={14} className="text-[#ef233c]" />
               <span>{contactPhone}</span>
             </a>
 
             <button 
               onClick={onTriggerQuote} 
-              className="hidden sm:inline-flex items-center gap-2 bg-[#0284C7] hover:bg-[#0369A1] text-white px-4 py-2 rounded-xl text-xs uppercase font-bold tracking-wider transition-all shadow-xs hover:shadow-md cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#ef233c] hover:bg-[#d90429] text-white px-4 py-2 rounded-xl text-xs uppercase font-bold tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] cursor-pointer"
             >
               <Sparkles size={13} />
               <span>Get a Quote</span>
@@ -141,7 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
               href="https://wa.me/923064422550" 
               target="_blank" 
               rel="noreferrer" 
-              className="inline-flex items-center justify-center p-2.5 rounded-xl bg-emerald-50 text-[#25D366] hover:bg-emerald-100 border border-emerald-200 shadow-xs transition-colors"
+              className="inline-flex items-center justify-center p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 border border-emerald-500/30 shadow-xs transition-colors"
               title="WhatsApp Direct"
             >
               <WhatsAppIcon className="w-4 h-4" />
@@ -150,7 +150,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
             {/* Mobile: menu toggle */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-              className="md:hidden p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-700"
+              className="md:hidden p-2.5 rounded-xl bg-[#0a0a0c] border border-white/10 text-zinc-300 hover:text-white"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-white border-t border-slate-200 shadow-lg overflow-hidden"
+            className="md:hidden bg-[#0a0a0c] border-t border-white/10 shadow-2xl overflow-hidden"
           >
             <div className="px-5 py-4 space-y-3">
               {[ 'home','services','about','why-us','contact' ].map((id) => (
@@ -176,16 +176,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
                   href="#" 
                   onClick={(e) => handleNavLinkClick(e, id)} 
                   className={`block text-sm uppercase tracking-wider font-semibold py-2 px-3 rounded-lg ${
-                    isActive(id) ? 'bg-sky-50 text-[#0284C7] font-bold' : 'text-slate-700 hover:bg-slate-50'
+                    isActive(id) ? 'bg-[#ef233c]/10 text-[#ef233c] font-bold border border-[#ef233c]/20' : 'text-zinc-300 hover:bg-white/5'
                   }`}
                 >
                   {id === 'why-us' ? 'Why Us' : id.charAt(0).toUpperCase() + id.slice(1)}
                 </a>
               ))}
-              <div className="pt-3 border-t border-slate-100">
+              <div className="pt-3 border-t border-white/10">
                 <button 
                   onClick={() => { setMobileMenuOpen(false); onTriggerQuote(); }} 
-                  className="w-full bg-[#0284C7] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider shadow-sm flex items-center justify-center gap-2"
+                  className="w-full bg-[#ef233c] hover:bg-[#d90429] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider shadow-[0_0_20px_rgba(239,35,60,0.35)] flex items-center justify-center gap-2"
                 >
                   <Sparkles size={14} />
                   <span>Launch Quote Simulator</span>

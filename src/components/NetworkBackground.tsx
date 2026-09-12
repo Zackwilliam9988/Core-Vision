@@ -28,7 +28,6 @@ export const NetworkBackground: React.FC = () => {
 
     const resizeCanvas = () => {
       canvas.width = canvas.parentElement?.clientWidth || window.innerWidth;
-      // Cap height to prevent endless drawing on very long pages
       canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
       initParticles();
     };
@@ -64,21 +63,21 @@ export const NetworkBackground: React.FC = () => {
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
 
-        // Draw particle with alternating tech colors
+        // Draw particle with alternating Red Noir colors
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         const color = idx % 3 === 0 
-          ? `rgba(0, 212, 255, ${p.alpha * 0.95})` // Cyan (#00D4FF)
+          ? `rgba(239, 35, 60, ${p.alpha * 0.95})` // Crimson (#ef233c)
           : idx % 3 === 1 
-            ? `rgba(0, 102, 255, ${p.alpha * 0.95})` // Blue (#0066FF)
-            : `rgba(123, 97, 255, ${p.alpha * 0.95})`; // Purple (#7B61FF)
+            ? `rgba(217, 4, 41, ${p.alpha * 0.95})` // Deep Red (#d90429)
+            : `rgba(255, 77, 109, ${p.alpha * 0.95})`; // Rose Ruby (#ff4d6d)
         ctx.fillStyle = color;
         ctx.fill();
         
         // Dynamic glow on particles
         if (p.radius > 2) {
-          ctx.shadowBlur = 4;
-          ctx.shadowColor = idx % 3 === 0 ? "#00D4FF" : "#7B61FF";
+          ctx.shadowBlur = 6;
+          ctx.shadowColor = idx % 3 === 0 ? "#ef233c" : "#d90429";
         } else {
           ctx.shadowBlur = 0;
         }
@@ -96,14 +95,13 @@ export const NetworkBackground: React.FC = () => {
           const dist = Math.hypot(dx, dy);
 
           if (dist < connectionDistance) {
-            const opacity = (1 - dist / connectionDistance) * 0.15;
+            const opacity = (1 - dist / connectionDistance) * 0.2;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            // Alternate line colors between cyan, blue, purple
             const strokeColor = i % 2 === 0 
-              ? `rgba(0, 212, 255, ${opacity})` 
-              : `rgba(123, 97, 255, ${opacity})`;
+              ? `rgba(239, 35, 60, ${opacity})` 
+              : `rgba(217, 4, 41, ${opacity})`;
             ctx.strokeStyle = strokeColor;
             ctx.lineWidth = 0.8;
             ctx.stroke();
@@ -117,18 +115,18 @@ export const NetworkBackground: React.FC = () => {
           const dist = Math.hypot(dx, dy);
 
           if (dist < mouseConnectionDistance) {
-            const opacity = (1 - dist / mouseConnectionDistance) * 0.35;
+            const opacity = (1 - dist / mouseConnectionDistance) * 0.4;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
-            ctx.strokeStyle = `rgba(0, 212, 255, ${opacity * 1.5})`; // Tech Cyan hover link
+            ctx.strokeStyle = `rgba(239, 35, 60, ${opacity * 1.5})`;
             ctx.lineWidth = 1.0;
             ctx.stroke();
 
             // Draw a subtle secondary ring around mouse
             ctx.beginPath();
             ctx.arc(p1.x, p1.y, 3, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(0, 255, 179, ${opacity})`; // Accent mint/teal
+            ctx.fillStyle = `rgba(255, 77, 109, ${opacity})`;
             ctx.fill();
           }
         }
@@ -137,7 +135,6 @@ export const NetworkBackground: React.FC = () => {
       animationFrameId = requestAnimationFrame(draw);
     };
 
-    // Listen to parent container resize using ResizeObserver instead of window onresize for safety
     const resizeObserver = new ResizeObserver(() => {
       resizeCanvas();
     });
@@ -163,7 +160,6 @@ export const NetworkBackground: React.FC = () => {
     listenerTarget.addEventListener("mousemove", handleMouseMove as any);
     listenerTarget.addEventListener("mouseleave", handleMouseLeave as any);
 
-    // Initial draw trigger
     draw();
 
     return () => {
@@ -177,7 +173,7 @@ export const NetworkBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none opacity-40 mix-blend-normal"
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-40 mix-blend-screen"
       aria-hidden="true"
     />
   );

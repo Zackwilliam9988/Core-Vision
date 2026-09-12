@@ -82,47 +82,47 @@ export const ShowroomCard3D: React.FC<ShowroomCard3DProps> = ({
           rotateY,
           transformStyle: "preserve-3d"
         }}
-        className="relative h-[96px] w-full block cursor-pointer select-none rounded-xl group transition-shadow duration-300 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_35px_rgba(2,132,199,0.18)]"
+        className="relative h-[96px] w-full block cursor-pointer select-none rounded-xl group transition-shadow duration-300 shadow-[0_4px_14px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_35px_rgba(239,35,60,0.25)]"
       >
         {/* Ambient 3D Glow Backlight */}
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-blue-600 rounded-xl opacity-0 group-hover:opacity-50 blur-md transition-opacity duration-300 pointer-events-none" />
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#ef233c] to-[#d90429] rounded-xl opacity-0 group-hover:opacity-40 blur-md transition-opacity duration-300 pointer-events-none" />
 
         {/* LEFT PANE - Action & Info (3D Raised) */}
         <div 
           style={{ transform: "translateZ(25px)" }}
-          className="absolute left-0 right-[48%] top-0 bottom-0 box-border border border-black group-hover:border-[#0284C7] border-r-0 font-semibold bg-white group-hover:bg-[#F0F9FF] text-black group-hover:text-[#0284C7] rounded-l-xl flex flex-col items-center justify-center p-3 transition-all duration-300 z-10 text-center"
+          className="absolute left-0 right-[48%] top-0 bottom-0 box-border border border-white/10 group-hover:border-[#ef233c] border-r-0 font-semibold bg-[#0a0a0c] group-hover:bg-[#121214] text-white group-hover:text-[#ef233c] rounded-l-xl flex flex-col items-center justify-center p-3 transition-all duration-300 z-10 text-center"
         >
           <span className="font-['Open_Sans'] font-bold text-xs uppercase tracking-wider line-clamp-1 leading-snug">
             {service.title}
           </span>
           
-          <div className="flex items-center gap-1 text-[9px] text-slate-400 group-hover:text-[#0284C7] font-mono mt-1 font-bold transition-colors">
+          <div className="flex items-center gap-1 text-[9px] text-zinc-500 group-hover:text-[#ef233c] font-mono mt-1 font-bold transition-colors">
             <span>Explore Blueprint</span>
             <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
 
-        {/* RIGHT PANE - Thumbnail with White Cut Corner */}
+        {/* RIGHT PANE - Thumbnail with Black Cut Corner */}
         <div
           style={{ 
             backgroundImage: `url('${service.imageUrl}')`,
             transform: "translateZ(10px)"
           }}
-          className="absolute left-[52%] right-0 top-0 bottom-0 bg-center bg-cover bg-no-repeat border border-black group-hover:border-[#0284C7] border-l-0 rounded-r-xl overflow-hidden transition-all duration-300 group-hover:scale-[1.01]"
+          className="absolute left-[52%] right-0 top-0 bottom-0 bg-center bg-cover bg-no-repeat border border-white/10 group-hover:border-[#ef233c] border-l-0 rounded-r-xl overflow-hidden transition-all duration-300 group-hover:scale-[1.01]"
         >
           {/* Subtle Overlay Scrim */}
-          <div className="absolute inset-0 bg-black/15 group-hover:bg-transparent transition-colors" />
+          <div className="absolute inset-0 bg-black/25 group-hover:bg-transparent transition-colors" />
 
-          {/* Signature INOVE Corner Triangle Cut */}
+          {/* Signature INOVE Corner Triangle Cut for Red Noir */}
           <div 
-            className="absolute right-0 bottom-0 w-0 h-0 border-solid border-[18px] border-transparent border-t-0 border-r-0 border-b-white z-20"
+            className="absolute right-0 bottom-0 w-0 h-0 border-solid border-[18px] border-transparent border-t-0 border-r-0 border-b-black z-20"
           />
 
           {/* 3D Floating Hardware Spec Pill on Hover */}
           <motion.div 
             animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1 : 0.85 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-2 right-2 bg-black/80 backdrop-blur-md text-white border border-white/20 px-2 py-0.5 rounded font-mono text-[8px] font-bold z-10 pointer-events-none"
+            className="absolute top-2 right-2 bg-black/90 backdrop-blur-md text-white border border-[#ef233c]/40 px-2 py-0.5 rounded font-mono text-[8px] font-bold z-10 pointer-events-none"
           >
             SLA CERTIFIED
           </motion.div>

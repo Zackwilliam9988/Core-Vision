@@ -252,42 +252,42 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -15 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="pt-24 pb-16 min-h-screen text-slate-800 bg-white font-sans relative overflow-hidden"
+      className="pt-24 pb-16 min-h-screen text-white bg-black font-sans relative overflow-hidden"
     >
-      {/* Background orange ambient lights */}
-      <div className="absolute top-0 left-0 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(217,91,22,0.04),transparent_50%)] pointer-events-none" />
-      <div className="absolute top-[50%] right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(217,91,22,0.03),transparent_50%)] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(217,91,22,0.02),transparent_50%)] pointer-events-none" />
+      {/* Background red ambient lights */}
+      <div className="absolute top-0 left-0 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(239,35,60,0.12),transparent_50%)] pointer-events-none" />
+      <div className="absolute top-[50%] right-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(239,35,60,0.06),transparent_50%)] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(239,35,60,0.04),transparent_50%)] pointer-events-none" />
 
       {/* PROFESSIONAL HERO SECTION */}
-      <section className="relative overflow-hidden py-12 sm:py-16 border-b border-slate-100">
+      <section className="relative overflow-hidden py-12 sm:py-16 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Breadcrumbs */}
-          <div className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 mb-6 text-left">
-            <button onClick={onBack} className="hover:text-[#D95B16] transition-colors cursor-pointer">Landing</button>
+          <div className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-500 mb-6 text-left">
+            <button onClick={onBack} className="hover:text-[#ef233c] transition-colors cursor-pointer">Landing</button>
             <span>/</span>
-            <span className="text-slate-400">Services</span>
+            <span className="text-zinc-500">Services</span>
             <span>/</span>
-            <span className="text-[#0284C7]">{service.title}</span>
+            <span className="text-[#ef233c]">{service.title}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Hero Left Column */}
             <div className="lg:col-span-7 text-left space-y-6">
-              <div className="inline-flex items-center gap-2 bg-sky-50 border border-sky-100 rounded-full px-3.5 py-1.5 text-[10px] text-[#0284C7] font-mono font-bold uppercase tracking-widest">
-                <LucideIcon name={service.iconName} size={13} className="text-[#0284C7]" />
+              <div className="inline-flex items-center gap-2 bg-[#ef233c]/10 border border-[#ef233c]/30 rounded-full px-3.5 py-1.5 text-[10px] text-[#ef233c] font-mono font-bold uppercase tracking-widest">
+                <LucideIcon name={service.iconName} size={13} className="text-[#ef233c]" />
                 <span>CORE VISION PAKISTAN SPECIFICATION</span>
               </div>
 
-              <h1 className="font-display font-black text-3xl sm:text-5xl text-slate-900 tracking-tight leading-tight">
+              <h1 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
                 {service.title}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0284C7] to-[#0EA5E9] font-sans font-black uppercase text-lg sm:text-2xl mt-3 tracking-widest font-mono">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#ef233c] to-[#ff4d6d] font-sans font-black uppercase text-lg sm:text-2xl mt-3 tracking-widest font-mono">
                   {meta.tagline}
                 </span>
               </h1>
 
-              <p className="text-slate-600 text-sm leading-relaxed max-w-2xl font-sans">
+              <p className="text-zinc-300 text-sm leading-relaxed max-w-2xl font-sans">
                 {service.description}
               </p>
 
@@ -301,7 +301,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
                 </button>
                 <button 
                   onClick={onBack}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-sky-200 font-mono font-bold py-3.5 px-5 rounded-2xl transition-all text-xs uppercase tracking-wider cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0a0a0c] hover:bg-[#121214] text-white border border-white/10 hover:border-[#ef233c] font-mono font-bold py-3.5 px-5 rounded-2xl transition-all text-xs uppercase tracking-wider cursor-pointer"
                 >
                   <ArrowLeft size={13} />
                   Explore other solutions
@@ -311,27 +311,27 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
 
             {/* Hero Right Column: Beautiful Visual Frame */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-md h-[280px] sm:h-[340px] rounded-3xl overflow-hidden border border-slate-100 shadow-md group">
+              <div className="relative w-full max-w-md h-[280px] sm:h-[340px] rounded-3xl overflow-hidden border border-white/15 shadow-[0_0_35px_rgba(0,0,0,0.8)] group">
                 <img 
                   src={service.imageUrl} 
                   alt={service.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.85]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
                 
                 {/* Active HUD calibration dots */}
-                <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-slate-900/80 border border-sky-100 px-3 py-1 rounded-full text-[8.5px] font-mono text-sky-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+                <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/80 border border-[#ef233c]/40 px-3 py-1 rounded-full text-[8.5px] font-mono text-[#ef233c]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ef233c] animate-ping" />
                   <span>HUD LINK_ACTIVE</span>
                 </div>
 
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md border border-slate-100 rounded-2xl p-4 flex items-center gap-3 shadow-md">
-                  <div className="p-2.5 bg-sky-50 border border-sky-100 text-[#0284C7] rounded-xl">
+                <div className="absolute bottom-4 left-4 right-4 bg-[#0a0a0c]/95 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-3 shadow-2xl">
+                  <div className="p-2.5 bg-[#ef233c]/10 border border-[#ef233c]/30 text-[#ef233c] rounded-xl">
                     <LucideIcon name={service.iconName} size={18} />
                   </div>
                   <div className="text-left">
-                    <span className="block text-[8px] font-mono uppercase text-slate-450 font-bold tracking-widest">SYSTEM ID MATRIX</span>
-                    <span className="block text-xs font-black text-[#0284C7] font-mono tracking-wider">#{service.id.toUpperCase()}</span>
+                    <span className="block text-[8px] font-mono uppercase text-zinc-500 font-bold tracking-widest">SYSTEM ID MATRIX</span>
+                    <span className="block text-xs font-black text-[#ef233c] font-mono tracking-wider">#{service.id.toUpperCase()}</span>
                   </div>
                 </div>
               </div>
@@ -349,39 +349,39 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             
             {/* Description Block */}
             <div className="lg:col-span-7 text-left space-y-8">
-              <div className="border-b border-slate-100 pb-4">
-                <h2 className="font-display font-black text-2xl text-slate-900 tracking-tight">Technical Scope & Specifications</h2>
-                <p className="text-[10px] text-slate-400 font-mono uppercase tracking-widest font-black mt-1">Detailed Service Inclusions</p>
+              <div className="border-b border-white/10 pb-4">
+                <h2 className="font-display font-black text-2xl text-white tracking-tight">Technical Scope & Specifications</h2>
+                <p className="text-[10px] text-zinc-500 font-mono uppercase tracking-widest font-black mt-1">Detailed Service Inclusions</p>
               </div>
               
-              <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-line font-sans">
+              <p className="text-zinc-300 text-sm leading-relaxed whitespace-pre-line font-sans">
                 {service.fullDescription || service.description}
               </p>
 
               {/* Dynamic Engineering standards panel */}
-              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 shadow-sm text-left">
-                <h4 className="font-display font-black text-slate-900 mb-3.5 flex items-center gap-2 text-base">
-                  <Briefcase size={16} className="text-[#0284C7]" />
+              <div className="bg-[#0a0a0c] border border-white/10 rounded-2xl p-6 shadow-xl text-left">
+                <h4 className="font-display font-black text-white mb-3.5 flex items-center gap-2 text-base">
+                  <Briefcase size={16} className="text-[#ef233c]" />
                   <span>Engineering Standards Checklist</span>
                 </h4>
-                <p className="text-xs text-slate-500 mb-6 leading-relaxed font-sans">
+                <p className="text-xs text-zinc-400 mb-6 leading-relaxed font-sans">
                   Our professional on-site deployments strictly conform to certified telecom, optical attenuation boundaries, and rigid physical layouts.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
+                  <div className="flex items-center gap-2.5 text-xs text-zinc-300 font-sans">
+                    <CheckCircle size={14} className="text-[#ef233c] shrink-0" />
                     <span>UL-Listed Weatherproof Cabling</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
+                  <div className="flex items-center gap-2.5 text-xs text-zinc-300 font-sans">
+                    <CheckCircle size={14} className="text-[#ef233c] shrink-0" />
                     <span>Regulated Surge Isolation Loops</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
+                  <div className="flex items-center gap-2.5 text-xs text-zinc-300 font-sans">
+                    <CheckCircle size={14} className="text-[#ef233c] shrink-0" />
                     <span>Micro-Loss Splicing Compliance</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs text-slate-600 font-sans">
-                    <CheckCircle size={14} className="text-[#0284C7] shrink-0" />
+                  <div className="flex items-center gap-2.5 text-xs text-zinc-300 font-sans">
+                    <CheckCircle size={14} className="text-[#ef233c] shrink-0" />
                     <span>1-Year Operations SLA Support</span>
                   </div>
                 </div>
@@ -389,21 +389,21 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             </div>
 
             {/* Features Sidebar */}
-            <div className="lg:col-span-5 text-left bg-white border border-slate-100 shadow-md rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-sky-500/5 blur-2xl pointer-events-none" />
+            <div className="lg:col-span-5 text-left bg-[#0a0a0c] border border-white/10 shadow-2xl rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
+              <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-red-500/5 blur-2xl pointer-events-none" />
               <div>
-                <h3 className="font-display font-black text-lg text-slate-900">System Features</h3>
-                <p className="text-[10px] font-mono text-[#0284C7] uppercase tracking-widest font-extrabold mt-1">Physical Hardware Parameters</p>
+                <h3 className="font-display font-black text-lg text-white">System Features</h3>
+                <p className="text-[10px] font-mono text-[#ef233c] uppercase tracking-widest font-extrabold mt-1">Physical Hardware Parameters</p>
               </div>
 
               <div className="space-y-3 pt-2">
                 {meta.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3.5 bg-slate-50 rounded-xl border border-slate-100 transition-all hover:border-sky-200 hover:bg-sky-50/30 group">
-                    <div className="p-1.5 bg-sky-50 text-[#0284C7] rounded-lg group-hover:bg-[#0284C7] group-hover:text-white transition-colors">
+                  <div key={idx} className="flex items-start gap-3 p-3.5 bg-[#121214] rounded-xl border border-white/5 transition-all hover:border-[#ef233c]/40 hover:bg-[#18181b] group">
+                    <div className="p-1.5 bg-[#ef233c]/10 text-[#ef233c] rounded-lg group-hover:bg-[#ef233c] group-hover:text-white transition-colors">
                       <CheckCircle size={12} className="stroke-[2.5]" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-slate-700 group-hover:text-slate-900 transition-colors">{feature}</p>
+                      <p className="text-xs font-bold text-zinc-300 group-hover:text-white transition-colors">{feature}</p>
                     </div>
                   </div>
                 ))}
@@ -416,14 +416,14 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
       </section>
 
       {/* BENEFITS SECTION */}
-      <section className="py-16 border-y border-slate-100 bg-slate-50">
+      <section className="py-16 border-y border-white/10 bg-[#0a0a0c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
           
           <div className="max-w-2xl mx-auto">
-            <span className="text-[10px] font-mono text-[#0284C7] uppercase tracking-widest font-black bg-sky-50 border border-sky-100 px-3.5 py-1.5 rounded-full inline-block">
+            <span className="text-[10px] font-mono text-[#ef233c] uppercase tracking-widest font-black bg-[#ef233c]/10 border border-[#ef233c]/30 px-3.5 py-1.5 rounded-full inline-block">
               Premium Corporate Benefits
             </span>
-            <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-900 tracking-tight mt-4">
+            <h2 className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight mt-4">
               Why Corporate Clients Choose Core Vision Pakistan
             </h2>
           </div>
@@ -432,16 +432,16 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             {meta.benefits.map((benefit, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-slate-100 hover:border-sky-200 p-6.5 rounded-2xl flex flex-col items-center text-center hover:bg-slate-50/50 hover:shadow-lg transition-all duration-300 relative group"
+                className="bg-black border border-white/10 hover:border-[#ef233c] p-6.5 rounded-2xl flex flex-col items-center text-center hover:bg-[#121214] hover:shadow-[0_0_25px_rgba(239,35,60,0.2)] transition-all duration-300 relative group"
               >
-                <div className="p-3 bg-sky-50 border border-sky-100 text-[#0284C7] group-hover:bg-[#0284C7] group-hover:text-white rounded-xl shrink-0 mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                <div className="p-3 bg-[#ef233c]/10 border border-[#ef233c]/30 text-[#ef233c] group-hover:bg-[#ef233c] group-hover:text-white rounded-xl shrink-0 mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
                   <LucideIcon name={benefit.icon} size={20} />
                 </div>
                 
-                <h4 className="font-display font-black text-slate-900 mb-2 leading-snug text-base group-hover:text-[#0284C7] transition-colors">
+                <h4 className="font-display font-black text-white mb-2 leading-snug text-base group-hover:text-[#ef233c] transition-colors">
                   {benefit.title}
                 </h4>
-                <p className="text-slate-500 text-xs leading-relaxed font-sans">
+                <p className="text-zinc-400 text-xs leading-relaxed font-sans">
                   {benefit.desc}
                 </p>
               </div>
@@ -456,23 +456,23 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
           
           <div className="max-w-2xl mx-auto">
-            <span className="text-[10px] font-mono text-[#0284C7] uppercase tracking-widest font-black bg-sky-50 border border-sky-100 px-3.5 py-1.5 rounded-full inline-block">
+            <span className="text-[10px] font-mono text-[#ef233c] uppercase tracking-widest font-black bg-[#ef233c]/10 border border-[#ef233c]/30 px-3.5 py-1.5 rounded-full inline-block">
               Operational Roadmap
             </span>
-            <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-900 tracking-tight mt-4">
+            <h2 className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight mt-4">
               Our 4-Phase System Deployment Protocol
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch relative">
             {meta.process.map((step, idx) => (
-              <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl text-left shadow-md hover:border-sky-200 transition-all relative overflow-hidden group">
-                <span className="absolute top-2 right-4 text-4xl font-mono font-black text-slate-100 group-hover:text-sky-50 transition-colors">
+              <div key={idx} className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-left shadow-xl hover:border-[#ef233c] transition-all relative overflow-hidden group">
+                <span className="absolute top-2 right-4 text-4xl font-mono font-black text-zinc-800 group-hover:text-[#ef233c]/30 transition-colors">
                   {step.step}
                 </span>
-                <div className="h-1 w-10 bg-[#0284C7] rounded-full mb-5 group-hover:w-16 transition-all" />
-                <h4 className="font-display font-black text-slate-900 text-sm mb-2 group-hover:text-[#0284C7] transition-colors">{step.title}</h4>
-                <p className="text-slate-500 text-xs leading-relaxed font-sans">{step.desc}</p>
+                <div className="h-1 w-10 bg-[#ef233c] rounded-full mb-5 group-hover:w-16 transition-all" />
+                <h4 className="font-display font-black text-white text-sm mb-2 group-hover:text-[#ef233c] transition-colors">{step.title}</h4>
+                <p className="text-zinc-400 text-xs leading-relaxed font-sans">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -483,29 +483,29 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
       {/* CALL TO ACTION SECTION */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50 border border-slate-100 rounded-3xl shadow-md p-8 sm:p-12 text-left relative overflow-hidden">
-            <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] w-[350px] bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="bg-gradient-to-br from-[#0a0a0c] via-black to-[#0a0a0c] border border-white/10 rounded-3xl shadow-2xl p-8 sm:p-12 text-left relative overflow-hidden">
+            <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] w-[350px] bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl space-y-5">
-              <span className="text-[9px] font-mono text-[#0284C7] uppercase tracking-widest font-black bg-sky-50 px-3 py-1 border border-sky-100 rounded-full inline-block">Secure Your Infrastructure Today</span>
-              <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
+              <span className="text-[9px] font-mono text-[#ef233c] uppercase tracking-widest font-black bg-[#ef233c]/10 px-3 py-1 border border-[#ef233c]/30 rounded-full inline-block">Secure Your Infrastructure Today</span>
+              <h2 className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight leading-tight">
                 Ready to Initiate Certified Systems Setup?
               </h2>
-              <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-sans">
+              <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-sans">
                 Connect with our certified Islamabad engineering dispatch team. We compile customized loss budgets, network diagnostics, and high-precision blueprints to address your security concerns.
               </p>
               
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
                 <button 
                   onClick={openWhatsAppContact}
-                  className="bg-[#0284C7] hover:bg-[#0369A1] text-white font-mono font-black py-3 px-6 rounded-xl transition-all shadow-sm hover:scale-[1.02] cursor-pointer text-xs uppercase tracking-wider text-center border-none"
+                  className="bg-[#ef233c] hover:bg-[#d90429] text-white font-mono font-black py-3 px-6 rounded-xl transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:scale-[1.02] cursor-pointer text-xs uppercase tracking-wider text-center border-none"
                 >
                   Contact
                 </button>
                 <button 
                   onClick={onBack}
-                  className="bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-mono font-bold py-3 px-5 rounded-xl transition-all text-xs uppercase tracking-wider text-center cursor-pointer"
+                  className="bg-[#0a0a0c] hover:bg-[#121214] text-white border border-white/10 hover:border-[#ef233c] font-mono font-bold py-3 px-5 rounded-xl transition-all text-xs uppercase tracking-wider text-center cursor-pointer"
                 >
                   Explore Other Solutions
                 </button>
