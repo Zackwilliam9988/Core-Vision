@@ -12,7 +12,6 @@ interface EngineeringShowcaseProps {
 
 const engineeringPillars = [
   {
-    code: "PIL-01",
     title: "4K AI Surveillance Matrix",
     subtitle: "Precision Optical Mapping",
     desc: "Laser-calculated camera positioning with ultra 4K Sony Starvis sensors, eliminating blindspots and optical reflections.",
@@ -24,7 +23,6 @@ const engineeringPillars = [
     badge: "4K ULTRA HD"
   },
   {
-    code: "PIL-02",
     title: "Japanese Optical Fusion",
     subtitle: "Fujikura Core-Alignment",
     desc: "Sub-decibel optical trunk splicing ensuring lossless data transit over multi-kilometer corporate backbones.",
@@ -36,7 +34,6 @@ const engineeringPillars = [
     badge: "SUB-DECIBEL LOSS"
   },
   {
-    code: "PIL-03",
     title: "10G Structured Cabling",
     subtitle: "Cat6A High-Throughput Core",
     desc: "Modular patch bay topologies with 500 MHz solid copper cabling, physical metallic conduit shielding, and VLAN isolation.",
@@ -48,7 +45,6 @@ const engineeringPillars = [
     badge: "FLUKE CERTIFIED"
   },
   {
-    code: "PIL-04",
     title: "Enterprise SLA & Support",
     subtitle: "Guaranteed On-Site Dispatch",
     desc: "Continuous SLA support with rapid field dispatch throughout Islamabad and Rawalpindi industrial & commercial zones.",
@@ -123,19 +119,16 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
           {engineeringPillars.map((pillar, idx) => {
             return (
               <motion.div
-                key={pillar.code}
+                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="group relative bg-[#0a0a0c] border border-white/10 hover:border-[#ef233c] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_16px_35px_rgba(239,35,60,0.25)] select-none"
               >
-                {/* Top Corner Code & Badge */}
+                {/* Top Corner Badge */}
                 <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                    <span className="font-mono text-[10px] text-zinc-500 font-bold tracking-wider">
-                      {pillar.code}
-                    </span>
+                  <div className="flex items-center justify-end pb-3 border-b border-white/10">
                     <span className="bg-[#ef233c]/10 text-[#ef233c] border border-[#ef233c]/30 text-[8.5px] font-mono font-extrabold px-2 py-0.5 rounded">
                       {pillar.badge}
                     </span>
