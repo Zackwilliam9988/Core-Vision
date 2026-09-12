@@ -19,8 +19,7 @@ const engineeringPillars = [
       { label: "Sensor Array", val: "Sony Starvis 4K UHD" },
       { label: "Coverage", val: "Zero Blindspots Verified" },
       { label: "Stream Security", val: "H.265+ / AES-256 GCM" }
-    ],
-    badge: "4K ULTRA HD"
+    ]
   },
   {
     title: "Japanese Optical Fusion",
@@ -30,8 +29,7 @@ const engineeringPillars = [
       { label: "Insertion Loss", val: "≤ 0.018 dB Certified" },
       { label: "Equipment", val: "Fujikura Japan Core Align" },
       { label: "Verification", val: "Dual 1310/1550nm OTDR" }
-    ],
-    badge: "SUB-DECIBEL LOSS"
+    ]
   },
   {
     title: "10G Structured Cabling",
@@ -41,8 +39,7 @@ const engineeringPillars = [
       { label: "Frequency", val: "500 MHz Solid Copper" },
       { label: "Testing", val: "100% Fluke Link Certified" },
       { label: "Backbone", val: "10 Gbps SFP+ Uplink" }
-    ],
-    badge: "FLUKE CERTIFIED"
+    ]
   },
   {
     title: "Enterprise SLA & Support",
@@ -52,8 +49,7 @@ const engineeringPillars = [
       { label: "Dispatch Window", val: "<60 Min Priority SLA" },
       { label: "Parts Standard", val: "100% OEM Brand Genuine" },
       { label: "Warranty", val: "1-Year Comprehensive" }
-    ],
-    badge: "100% SLA BACKED"
+    ]
   }
 ];
 
@@ -126,16 +122,9 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="group relative bg-[#0a0a0c] border border-white/10 hover:border-[#ef233c] rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_16px_35px_rgba(239,35,60,0.25)] select-none"
               >
-                {/* Top Corner Badge */}
                 <div>
-                  <div className="flex items-center justify-end pb-3 border-b border-white/10">
-                    <span className="bg-[#ef233c]/10 text-[#ef233c] border border-[#ef233c]/30 text-[8.5px] font-mono font-extrabold px-2 py-0.5 rounded">
-                      {pillar.badge}
-                    </span>
-                  </div>
-
                   {/* Title & Desc */}
-                  <div className="pt-4 space-y-2">
+                  <div className="space-y-2">
                     <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-white uppercase tracking-wide leading-tight group-hover:text-[#ef233c] transition-colors">
                       {pillar.title}
                     </h3>
