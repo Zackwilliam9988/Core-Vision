@@ -303,11 +303,11 @@ export default function App() {
     if (path === "/about" || path === "/about/" || hash === "#/about" || hash === "#about") {
       return { page: "about" };
     }
-    if (path === "/why-us" || path === "/why-us/" || hash === "#/why-us" || hash === "#why-us") {
-      return { page: "why-us" };
-    }
     if (path === "/partners" || path === "/partners/" || hash === "#/partners" || hash === "#partners") {
       return { page: "partners" };
+    }
+    if (path === "/why-us" || path === "/why-us/" || hash === "#/why-us" || hash === "#why-us") {
+      return { page: "why-us" };
     }
     
     const servicePathMatch = path.match(/^\/service\/([^/]+)/);
@@ -335,12 +335,12 @@ export default function App() {
       url = `/service/${route.serviceId}`;
     } else if (route.page === "services") {
       url = "/services";
+    } else if (route.page === "partners") {
+      url = "/partners";
     } else if (route.page === "about") {
       url = "/about";
     } else if (route.page === "why-us") {
       url = "/why-us";
-    } else if (route.page === "partners") {
-      url = "/partners";
     } else if (route.page === "contact") {
       url = "/contact";
     }
@@ -510,13 +510,14 @@ export default function App() {
           />
         ) : currentRoute.page === "about" ? (
           <AboutPage key="about-page" />
-        ) : currentRoute.page === "why-us" ? (
-          <WhyUsPage key="why-us-page" />
         ) : currentRoute.page === "partners" ? (
           <PartnersPage 
-            key="partners-page"
-            onTriggerQuote={(srvId) => triggerQuote(srvId)}
+            key="partners-page" 
+            onTriggerQuote={() => triggerQuote()}
+            onNavigate={(r) => navigateTo(r)}
           />
+        ) : currentRoute.page === "why-us" ? (
+          <WhyUsPage key="why-us-page" />
         ) : (
           <motion.div
             key="home-page"
@@ -898,9 +899,9 @@ export default function App() {
               <ul className="space-y-2 text-xs font-semibold text-zinc-400 font-mono">
                 <li><button onClick={() => navigateTo({ page: "home" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Home landing</button></li>
                 <li><button onClick={() => navigateTo({ page: "services" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Solutions Catalog</button></li>
+                <li><button onClick={() => navigateTo({ page: "partners" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Hardware Alliances</button></li>
                 <li><button onClick={() => navigateTo({ page: "about" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">About Engineering</button></li>
                 <li><button onClick={() => navigateTo({ page: "why-us" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Certified Promise</button></li>
-                <li><button onClick={() => navigateTo({ page: "partners" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">OEM Alliances</button></li>
                 <li><button onClick={() => navigateTo({ page: "contact" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Security Dispatch</button></li>
               </ul>
             </div>
