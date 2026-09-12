@@ -410,22 +410,18 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                           {service.description}
                         </p>
 
-                        {/* Clean Feature Chips */}
+                        {/* Capabilities List (Unboxed Clean Design) */}
                         {spec.chips && (
-                          <div className="flex flex-wrap gap-2 pt-1">
+                          <ul className="space-y-1.5 pt-3 border-t border-white/10">
                             {spec.chips.map((chip, cIdx) => (
-                              <span 
-                                key={cIdx} 
-                                className={`text-[9.5px] font-mono px-2.5 py-1 rounded-lg border transition-all ${
-                                  chip.highlight 
-                                    ? "bg-[#ef233c]/10 border-[#ef233c]/30 text-[#ef233c] font-bold shadow-xs" 
-                                    : "bg-black/60 border-white/10 text-zinc-400"
-                                }`}
-                              >
-                                {chip.label}
-                              </span>
+                              <li key={cIdx} className="flex items-center gap-2 text-xs font-['Open_Sans']">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#ef233c] shrink-0" />
+                                <span className={chip.highlight ? "text-white font-medium" : "text-zinc-400"}>
+                                  {chip.label}
+                                </span>
+                              </li>
                             ))}
-                          </div>
+                          </ul>
                         )}
                       </div>
                     </div>
