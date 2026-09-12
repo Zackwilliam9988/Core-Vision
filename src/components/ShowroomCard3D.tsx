@@ -117,15 +117,6 @@ export const ShowroomCard3D: React.FC<ShowroomCard3DProps> = ({
           <div 
             className="absolute right-0 bottom-0 w-0 h-0 border-solid border-[18px] border-transparent border-t-0 border-r-0 border-b-black z-20"
           />
-
-          {/* 3D Floating Hardware Spec Pill on Hover */}
-          <motion.div 
-            animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1 : 0.85 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-2 right-2 bg-black/90 backdrop-blur-md text-white border border-[#ef233c]/40 px-2 py-0.5 rounded font-mono text-[8px] font-bold z-10 pointer-events-none"
-          >
-            SLA CERTIFIED
-          </motion.div>
         </div>
       </motion.div>
     </motion.div>

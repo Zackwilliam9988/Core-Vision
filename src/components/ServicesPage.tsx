@@ -386,33 +386,19 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         {/* Cinematic Ambient Scrim */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-black/45 pointer-events-none z-10" />
                         
-                        {/* Top Left: Category Badge */}
-                        <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full shadow-md z-20">
-                          <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
-                            {spec.categoryLabel}
-                          </span>
-                        </div>
-
-                        {/* Top Right: Status Tag */}
-                        <div className="absolute top-4 right-4 z-20">
-                          {service.hot ? (
+                        {/* Top Right: Status Tag (Only if hot) */}
+                        {service.hot && (
+                          <div className="absolute top-4 right-4 z-20">
                             <span className="bg-[#ef233c] text-white px-2.5 py-1 rounded-full text-[9px] font-mono font-extrabold uppercase tracking-wide shadow-[0_0_12px_rgba(239,35,60,0.5)] flex items-center gap-1">
                               <Flame size={11} className="fill-white" />
                               <span>POPULAR</span>
                             </span>
-                          ) : (
-                            <span className="bg-black/80 backdrop-blur-md text-white/90 border border-white/20 px-2.5 py-1 rounded-full text-[9px] font-mono font-bold uppercase tracking-wider shadow-sm">
-                              {spec.badgeType}
-                            </span>
-                          )}
-                        </div>
+                          </div>
+                        )}
 
-                        {/* Title & Module Identity in Media Header */}
+                        {/* Title & Icon in Media Header */}
                         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 z-20">
                           <div>
-                            <span className="text-[9px] font-mono text-[#ef233c] font-bold uppercase tracking-widest block mb-1">
-                              ENGINEERING MODULE // 0{idx + 1}
-                            </span>
                             <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-white tracking-wide uppercase leading-tight group-hover:text-[#ef233c] transition-colors drop-shadow-md">
                               {service.title}
                             </h3>
@@ -429,25 +415,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                           {service.description}
                         </p>
 
-                        {/* Technical Telemetry Grid Table */}
-                        {spec.telemetry && spec.telemetry.length > 0 && (
-                          <div className="bg-black/60 border border-white/10 rounded-2xl p-3.5 space-y-2 font-mono text-[10px] group-hover:border-[#ef233c]/30 transition-colors">
-                            <div className="flex items-center justify-between text-[8.5px] font-bold text-zinc-500 uppercase tracking-widest pb-1.5 border-b border-white/10">
-                              <span>Hardware Calibration</span>
-                              <span className="text-zinc-400 font-bold">
-                                VERIFIED
-                              </span>
-                            </div>
-                            {spec.telemetry.map((t, tIdx) => (
-                              <div key={tIdx} className="flex items-center justify-between text-[10.5px]">
-                                <span className="text-zinc-400 font-normal">{t.label}:</span>
-                                <span className="font-bold text-white text-right truncate ml-2">{t.val}</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Micro Feature Chips */}
+                        {/* Clean Feature Chips */}
                         {spec.chips && (
                           <div className="flex flex-wrap gap-2 pt-1">
                             {spec.chips.map((chip, cIdx) => (
