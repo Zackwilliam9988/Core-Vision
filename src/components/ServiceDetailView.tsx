@@ -276,7 +276,6 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             {/* Hero Left Column */}
             <div className="lg:col-span-7 text-left space-y-6">
               <div className="inline-flex items-center gap-2 bg-[#ef233c]/10 border border-[#ef233c]/30 rounded-full px-3.5 py-1.5 text-[10px] text-[#ef233c] font-mono font-bold uppercase tracking-widest">
-                <LucideIcon name={service.iconName} size={13} className="text-[#ef233c]" />
                 <span>CORE VISION PAKISTAN SPECIFICATION</span>
               </div>
 

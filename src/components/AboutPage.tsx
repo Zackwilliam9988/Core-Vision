@@ -137,7 +137,6 @@ export const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {coreValues.map((value, idx) => {
-              const Icon = value.icon;
               return (
                 <motion.div 
                   key={idx}
@@ -147,9 +146,6 @@ export const AboutPage: React.FC = () => {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                   className="bg-[#0a0a0c] border border-white/10 rounded-2xl p-6 relative transition-all duration-300 group hover:scale-[1.02] shadow-xl hover:border-[#ef233c] hover:shadow-[0_0_25px_rgba(239,35,60,0.2)]"
                 >
-                  <div className="h-10 w-10 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 text-[#ef233c] flex items-center justify-center mb-3">
-                    <Icon size={18} />
-                  </div>
                   <h4 className="text-lg font-black text-white mb-2 font-sans group-hover:text-[#ef233c] transition-colors">{value.title}</h4>
                   <p className="text-xs text-zinc-400 leading-relaxed font-sans">{value.description}</p>
                 </motion.div>

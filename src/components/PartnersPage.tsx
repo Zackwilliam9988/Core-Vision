@@ -199,10 +199,6 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({
                         </div>
                       )}
                     </div>
-
-                    <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 text-white group-hover:text-[#ef233c] group-hover:border-[#ef233c]/40 flex items-center justify-center shrink-0 transition-colors">
-                      <Icon size={18} />
-                    </div>
                   </div>
 
                   {/* Role & Description */}

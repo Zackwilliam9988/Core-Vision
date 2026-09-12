@@ -1,21 +1,7 @@
 import React, { useState } from "react";
 import { 
-  ShieldCheck, 
-  Cpu, 
-  Activity, 
-  Layers, 
   Sparkles, 
-  ArrowRight, 
-  CheckCircle2, 
-  Phone, 
-  MessageCircle,
-  Flame,
-  Award,
-  Zap,
-  Cable,
-  Camera,
-  Server,
-  FileCheck
+  ArrowRight
 } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -27,7 +13,6 @@ interface EngineeringShowcaseProps {
 const engineeringPillars = [
   {
     code: "PIL-01",
-    icon: Camera,
     title: "4K AI Surveillance Matrix",
     subtitle: "Precision Optical Mapping",
     desc: "Laser-calculated camera positioning with ultra 4K Sony Starvis sensors, eliminating blindspots and optical reflections.",
@@ -40,7 +25,6 @@ const engineeringPillars = [
   },
   {
     code: "PIL-02",
-    icon: Cable,
     title: "Japanese Optical Fusion",
     subtitle: "Fujikura Core-Alignment",
     desc: "Sub-decibel optical trunk splicing ensuring lossless data transit over multi-kilometer corporate backbones.",
@@ -53,7 +37,6 @@ const engineeringPillars = [
   },
   {
     code: "PIL-03",
-    icon: Server,
     title: "10G Structured Cabling",
     subtitle: "Cat6A High-Throughput Core",
     desc: "Modular patch bay topologies with 500 MHz solid copper cabling, physical metallic conduit shielding, and VLAN isolation.",
@@ -66,7 +49,6 @@ const engineeringPillars = [
   },
   {
     code: "PIL-04",
-    icon: ShieldCheck,
     title: "Enterprise SLA & Support",
     subtitle: "Guaranteed On-Site Dispatch",
     desc: "Continuous SLA support with rapid field dispatch throughout Islamabad and Rawalpindi industrial & commercial zones.",
@@ -113,9 +95,8 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
         {/* Top Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-white/10">
           <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-[#ef233c] font-mono text-[10px] font-bold uppercase tracking-widest">
-              <Award size={13} className="text-[#ef233c]" />
-              <span>CERTIFIED DEPLOYMENT STANDARDS</span>
+            <div className="inline-block text-[#ef233c] font-mono text-[10px] font-bold uppercase tracking-widest">
+              CERTIFIED DEPLOYMENT STANDARDS
             </div>
             <h2 className="font-['Open_Sans_Condensed'] font-light text-3xl sm:text-5xl text-white tracking-wide uppercase leading-tight">
               Precision Infrastructure & <br />
@@ -140,7 +121,6 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
         {/* 4 Pillars Grid (Red Noir Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 items-stretch">
           {engineeringPillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
             return (
               <motion.div
                 key={pillar.code}
@@ -161,11 +141,8 @@ export const EngineeringShowcase: React.FC<EngineeringShowcaseProps> = ({
                     </span>
                   </div>
 
-                  {/* Icon & Title */}
+                  {/* Title & Desc */}
                   <div className="pt-4 space-y-2">
-                    <div className="h-10 w-10 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 group-hover:bg-[#ef233c] group-hover:border-[#ef233c] text-[#ef233c] group-hover:text-white flex items-center justify-center transition-colors">
-                      <Icon size={18} />
-                    </div>
                     <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-white uppercase tracking-wide leading-tight group-hover:text-[#ef233c] transition-colors">
                       {pillar.title}
                     </h3>

@@ -396,16 +396,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                           </div>
                         )}
 
-                        {/* Title & Icon in Media Header */}
-                        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 z-20">
-                          <div>
-                            <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-white tracking-wide uppercase leading-tight group-hover:text-[#ef233c] transition-colors drop-shadow-md">
-                              {service.title}
-                            </h3>
-                          </div>
-                          <div className="h-9 w-9 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shrink-0 group-hover:bg-[#ef233c] group-hover:scale-110 group-hover:border-transparent transition-all duration-300 shadow-md">
-                            <LucideIcon name={service.iconName} size={16} />
-                          </div>
+                        {/* Title in Media Header */}
+                        <div className="absolute bottom-4 left-4 right-4 z-20">
+                          <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-white tracking-wide uppercase leading-tight group-hover:text-[#ef233c] transition-colors drop-shadow-md">
+                            {service.title}
+                          </h3>
                         </div>
                       </div>
 
