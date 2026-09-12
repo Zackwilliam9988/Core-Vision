@@ -364,69 +364,63 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       mass: 0.85,
                       delay: (idx % 3) * 0.09
                     }}
-                    whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.25, ease: "easeOut" } }}
+                    whileHover={{ y: -8, scale: 1.01, transition: { duration: 0.2, ease: "easeOut" } }}
                     onClick={() => onSelectService(service)}
-                    className="group relative bg-[#0a0b0e] border border-white/10 hover:border-[#ef233c] rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.7)] hover:shadow-[0_20px_45px_rgba(239,35,60,0.3)] transition-all duration-500 cursor-pointer select-none tech-bracket"
+                    className="group relative bg-zinc-950/80 border border-white/10 hover:border-white/20 rounded-2xl overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-300 cursor-pointer select-none"
                   >
-                    {/* Top Red Noir Accent Glow Bar */}
-                    <div className="absolute top-0 inset-x-0 h-1 bg-zinc-800 group-hover:bg-gradient-to-r group-hover:from-rose-500 group-hover:via-[#ef233c] group-hover:to-red-700 transition-all duration-500 z-30" />
-
                     <div>
-                      {/* Dahua-Style Media Header with Smooth Image Float & Laser Beam Sweep */}
+                      {/* Media Header */}
                       <div className="relative w-full h-52 sm:h-56 overflow-hidden bg-black border-b border-white/10">
                         <img 
                           src={service.imageUrl} 
                           alt={service.title} 
-                          className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-105 transition-all duration-700 ease-out filter brightness-[0.85]"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-out filter brightness-[0.85]"
                         />
                         
-                        {/* Light Sweep Beam */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
-
-                        {/* Cinematic Ambient Scrim */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-black/45 pointer-events-none z-10" />
+                        {/* Ambient Scrim */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none z-10" />
                         
                         {/* Top Left: Category Badge */}
-                        <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full shadow-md z-20">
-                          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                          <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
+                        <div className="absolute top-3 left-3 flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full z-20">
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                          <span className="text-[9px] font-mono font-medium text-white tracking-wider">
                             {spec.categoryLabel}
                           </span>
                         </div>
 
                         {/* Top Right: Status Tag */}
-                        <div className="absolute top-4 right-4 z-20">
+                        <div className="absolute top-3 right-3 z-20">
                           {service.hot ? (
-                            <span className="bg-[#ef233c] text-white px-2.5 py-1 rounded-full text-[9px] font-mono font-extrabold uppercase tracking-wide shadow-[0_0_12px_rgba(239,35,60,0.5)] flex items-center gap-1">
-                              <Flame size={11} className="fill-white animate-bounce" />
+                            <span className="bg-[#ef233c] text-white px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-wide flex items-center gap-1">
+                              <Flame size={10} className="fill-white" />
                               <span>POPULAR</span>
                             </span>
                           ) : (
-                            <span className="bg-black/80 backdrop-blur-md text-white/90 border border-white/20 px-2.5 py-1 rounded-full text-[9px] font-mono font-bold uppercase tracking-wider shadow-sm">
+                            <span className="bg-black/80 backdrop-blur-md text-zinc-300 border border-white/15 px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-wider">
                               {spec.badgeType}
                             </span>
                           )}
                         </div>
 
-                        {/* Title & Module Identity in Media Header */}
-                        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 z-20">
+                        {/* Title & Module Identity */}
+                        <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between gap-3 z-20">
                           <div>
-                            <span className="text-[9px] font-mono text-[#ef233c] font-bold uppercase tracking-widest block mb-1">
-                              ENGINEERING MODULE // 0{idx + 1}
+                            <span className="text-[9px] font-mono text-[#ef233c] font-medium tracking-wider block mb-0.5">
+                              MODULE // 0{idx + 1}
                             </span>
-                            <h3 className="font-['Open_Sans_Condensed'] font-bold text-2xl text-white tracking-wide uppercase leading-tight group-hover:text-[#ef233c] transition-colors drop-shadow-md">
+                            <h3 className="font-bold text-lg sm:text-xl text-white tracking-tight leading-snug group-hover:text-[#ef233c] transition-colors">
                               {service.title}
                             </h3>
                           </div>
-                          <div className="h-9 w-9 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shrink-0 group-hover:bg-[#ef233c] group-hover:scale-110 group-hover:border-transparent transition-all duration-300 shadow-md">
-                            <LucideIcon name={service.iconName} size={16} />
+                          <div className="h-8 w-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shrink-0 group-hover:bg-[#ef233c] transition-all">
+                            <LucideIcon name={service.iconName} size={15} />
                           </div>
                         </div>
                       </div>
 
                       {/* Card Content Body */}
-                      <div className="p-6 space-y-4 text-left">
-                        <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed line-clamp-2 min-h-[40px] font-['Open_Sans']">
+                      <div className="p-5 space-y-4 text-left">
+                        <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed line-clamp-2 min-h-[38px]">
                           {service.description}
                         </p>
 

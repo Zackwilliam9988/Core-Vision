@@ -536,29 +536,28 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.05 }}
-                  className="md:col-span-4 bg-[#0a0b0e]/95 border border-white/10 rounded-2xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.7)] hover:border-[#ef233c]/50 transition-all duration-300 flex flex-col justify-between min-h-[280px] group tech-bracket relative overflow-hidden"
+                  className="md:col-span-4 bg-zinc-950/80 border border-white/10 rounded-2xl p-7 shadow-lg hover:border-white/20 transition-all flex flex-col justify-between min-h-[260px]"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold text-[#ef233c] uppercase tracking-widest bg-[#ef233c]/10 px-2.5 py-1 rounded-md border border-[#ef233c]/30 inline-block">
+                      <span className="text-xs font-mono font-medium text-[#ef233c] uppercase tracking-wider">
                         Enterprise Infrastructure
                       </span>
-                      <span className="text-[9px] font-mono text-emerald-400 font-bold flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                        ISO / OEM SPEC
+                      <span className="text-[10px] text-emerald-400 font-mono">
+                        ISO / OEM Spec
                       </span>
                     </div>
-                    <p className="text-sm sm:text-base leading-relaxed text-zinc-300 font-normal pt-1">
+                    <p className="text-sm leading-relaxed text-zinc-300 font-normal">
                       Architecting mission-critical IT infrastructure, enterprise ELV systems, smart surveillance grids, and high-speed optical fusion backbones.
                     </p>
                   </div>
                   
-                  <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                    <h2 className="font-mono text-xl sm:text-2xl font-bold text-white uppercase tracking-wider group-hover:text-[#ef233c] transition-colors">
-                      CORE <span className="text-[#ef233c]">GUARD</span>
+                  <div className="pt-5 border-t border-white/10 flex items-center justify-between">
+                    <h2 className="text-lg font-bold text-white tracking-tight">
+                      Core <span className="text-[#ef233c]">Guard</span>
                     </h2>
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
-                      EST. 2026
+                    <span className="text-xs text-zinc-500 font-mono">
+                      Est. 2026
                     </span>
                   </div>
                 </motion.div>
@@ -569,28 +568,28 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.12 }}
-                  className="md:col-span-5 bg-[#0a0b0e]/95 border border-white/10 rounded-2xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.7)] hover:border-[#ef233c]/50 transition-all duration-300 flex flex-col justify-between min-h-[280px] group tech-bracket relative overflow-hidden"
+                  className="md:col-span-5 bg-zinc-950/80 border border-white/10 rounded-2xl p-7 shadow-lg hover:border-white/20 transition-all flex flex-col justify-between min-h-[260px]"
                 >
-                  <div className="space-y-2">
+                  <div className="space-y-2.5">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest">
+                      <span className="text-xs font-mono text-zinc-400 tracking-wide">
                         Engineering Precision
                       </span>
-                      <span className="text-[9px] font-mono text-[#ef233c] font-bold">
-                        ZERO DEFECT STANDARD
+                      <span className="text-[10px] font-mono text-[#ef233c]">
+                        Zero Defect Standard
                       </span>
                     </div>
-                    <h3 className="font-mono text-2xl sm:text-3xl font-bold text-white my-1 leading-tight">
-                      MISSION-CRITICAL <span className="text-[#ef233c]">RELIABILITY</span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                      Mission-Critical <span className="text-[#ef233c]">Reliability</span>
                     </h3>
                     <p className="text-xs sm:text-sm leading-relaxed text-zinc-400 font-normal">
                       From sub-decibel Fujikura optical fusion loops to high-density Cat6A patch matrices, we engineer networks built for 99.98% high-uptime uptime.
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-zinc-400">
-                    <span>FLUKE TESTED & VERIFIED</span>
-                    <span className="text-emerald-400 font-bold">● 10G READY</span>
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400 font-mono">
+                    <span>Fluke Tested & Certified</span>
+                    <span className="text-emerald-400 font-medium">10G Ready</span>
                   </div>
                 </motion.div>
 
@@ -600,43 +599,43 @@ export default function App() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ type: "spring", stiffness: 90, damping: 16, delay: 0.18 }}
-                  className="md:col-span-3 bg-[#0a0b0e]/95 border border-white/10 rounded-2xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.7)] hover:border-[#ef233c]/50 transition-all duration-300 flex flex-col justify-between min-h-[280px] tech-bracket"
+                  className="md:col-span-3 bg-zinc-950/80 border border-white/10 rounded-2xl p-7 shadow-lg hover:border-white/20 transition-all flex flex-col justify-between min-h-[260px]"
                 >
                   <div>
-                    <h3 className="font-mono text-lg font-bold text-white mb-4 tracking-wider uppercase flex items-center justify-between">
+                    <h3 className="text-base font-bold text-white mb-3 tracking-wide flex items-center justify-between">
                       <span>NOC Dispatch</span>
-                      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-mono">
-                        LIVE
+                      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-mono">
+                        Online
                       </span>
                     </h3>
                     
-                    <div className="flex items-center gap-2.5 pt-1">
+                    <div className="flex items-center gap-2 pt-1">
                       <a 
                         href={`https://wa.me/${contactInfo.phone.replace(/\D/g, "")}`} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="flex-1 p-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
+                        className="flex-1 py-2 px-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 transition-all flex items-center justify-center gap-1.5 text-xs font-medium"
                         title="Direct WhatsApp Support"
                       >
-                        <MessageSquare size={15} />
-                        <span className="text-[11px]">Chat</span>
+                        <MessageSquare size={13} />
+                        <span>Chat</span>
                       </a>
 
                       <a 
                         href={`tel:${contactInfo.phone.replace(/\D/g, "")}`} 
-                        className="flex-1 p-3 rounded-xl border border-white/10 hover:border-[#ef233c] hover:bg-[#ef233c]/10 text-white hover:text-[#ef233c] transition-all duration-300 shadow-xs flex items-center justify-center gap-2 font-mono text-xs font-bold"
+                        className="flex-1 py-2 px-3 rounded-lg border border-white/10 hover:bg-white/5 text-white transition-all flex items-center justify-center gap-1.5 text-xs font-medium"
                         title="Priority Hotline"
                       >
-                        <Phone size={15} />
-                        <span className="text-[11px]">Call</span>
+                        <Phone size={13} />
+                        <span>Call</span>
                       </a>
 
                       <button 
                         onClick={() => triggerQuote()}
-                        className="p-3 rounded-xl border border-[#ef233c]/40 bg-[#ef233c] hover:bg-[#d90429] text-white transition-all duration-300 shadow-[0_0_15px_rgba(239,35,60,0.35)] cursor-pointer"
+                        className="p-2 rounded-lg bg-[#ef233c] hover:bg-[#d90429] text-white transition-all cursor-pointer"
                         title="Launch Quote Simulator"
                       >
-                        <Sparkles size={15} />
+                        <Sparkles size={14} />
                       </button>
                     </div>
                   </div>
@@ -691,36 +690,36 @@ export default function App() {
 
               {/* Column 2: Commercial Sectors */}
               <div className="inove-bbox inove-clients">
-                <h2 className="font-mono text-2xl sm:text-3xl font-bold text-white mb-8 uppercase tracking-wider">
+                <h2 className="font-semibold text-2xl sm:text-3xl text-white mb-8 tracking-tight">
                   Enterprise <span className="text-[#ef233c]">Sectors</span>
                 </h2>
 
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl bg-[#0a0b0e] border border-white/10 tech-bracket">
+                <div className="space-y-3">
+                  <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-white/20 transition-all">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-mono font-bold text-xs text-white uppercase tracking-wider">Corporate High-Rises</span>
-                      <span className="text-[8px] font-mono text-[#ef233c] bg-[#ef233c]/10 px-1.5 py-0.5 rounded">ELV INFRASTRUCTURE</span>
+                      <span className="font-medium text-xs text-white">Corporate High-Rises</span>
+                      <span className="text-[9px] font-mono text-zinc-400 bg-white/5 px-1.5 py-0.5 rounded">ELV Infrastructure</span>
                     </div>
-                    <p className="text-[11px] text-zinc-400 font-sans leading-relaxed">Integrated biometric checkpoints, perimeter surveillance, and building-wide Gigabit fiber backbones.</p>
+                    <p className="text-xs text-zinc-400 leading-relaxed">Integrated biometric checkpoints, perimeter surveillance, and building-wide Gigabit fiber backbones.</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-[#0a0b0e] border border-white/10 tech-bracket">
+                  <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-white/20 transition-all">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-mono font-bold text-xs text-white uppercase tracking-wider">Industrial Logistics & Warehouses</span>
-                      <span className="text-[8px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">THERMAL PTZ</span>
+                      <span className="font-medium text-xs text-white">Industrial Logistics & Warehouses</span>
+                      <span className="text-[9px] font-mono text-zinc-400 bg-white/5 px-1.5 py-0.5 rounded">Thermal PTZ</span>
                     </div>
-                    <p className="text-[11px] text-zinc-400 font-sans leading-relaxed">Wide-angle thermal PTZ cameras, license-plate recognition, and heavy armored cabling conduits.</p>
+                    <p className="text-xs text-zinc-400 leading-relaxed">Wide-angle thermal PTZ cameras, license-plate recognition, and heavy armored cabling conduits.</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-[#0a0b0e] border border-white/10 tech-bracket">
+                  <div className="p-4 rounded-xl bg-zinc-950/80 border border-white/10 hover:border-white/20 transition-all">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-mono font-bold text-xs text-white uppercase tracking-wider">Residential Compounds & Embassies</span>
-                      <span className="text-[8px] font-mono text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">HIGH SECURITY</span>
+                      <span className="font-medium text-xs text-white">Residential Compounds & Embassies</span>
+                      <span className="text-[9px] font-mono text-zinc-400 bg-white/5 px-1.5 py-0.5 rounded">High Security</span>
                     </div>
-                    <p className="text-[11px] text-zinc-400 font-sans leading-relaxed">Low-profile 4K multi-lens cameras, smart intercoms, and redundant fiber internet loops.</p>
+                    <p className="text-xs text-zinc-400 leading-relaxed">Low-profile 4K multi-lens cameras, smart intercoms, and redundant fiber internet loops.</p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 pt-2 text-xs font-mono font-bold text-zinc-300">
-                    <div className="p-3 rounded-lg border border-white/10 bg-[#0a0b0e] text-center hover:border-[#ef233c] hover:text-[#ef233c] transition-all">DATACENTERS</div>
-                    <div className="p-3 rounded-lg border border-white/10 bg-[#0a0b0e] text-center hover:border-[#ef233c] hover:text-[#ef233c] transition-all">COMMERCIAL PLAZAS</div>
+                  <div className="grid grid-cols-2 gap-2 pt-1 text-xs text-zinc-300">
+                    <div className="p-2.5 rounded-lg border border-white/10 bg-zinc-950/80 text-center hover:border-white/20 transition-all">Datacenters</div>
+                    <div className="p-2.5 rounded-lg border border-white/10 bg-zinc-950/80 text-center hover:border-white/20 transition-all">Commercial Plazas</div>
                   </div>
                 </div>
               </div>
