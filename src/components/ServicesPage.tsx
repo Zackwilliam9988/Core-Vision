@@ -322,15 +322,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </div>
         </div>
 
-        {/* Dahua-Inspired Animated Professional Services Grid */}
-        <AnimatePresence mode="popLayout">
+        {/* Clean Modern Professional Services Grid */}
+        <div>
           {filteredServices.length > 0 ? (
-            <motion.div 
-              variants={containerVariants}
-              initial="hidden"
-              animate="show"
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 items-stretch"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {filteredServices.map((service, idx) => {
                 const spec = serviceSpecs[service.id] || {
                   categoryLabel: "CERTIFIED SYSTEM",
@@ -340,119 +335,81 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   guaranteeText: "Enterprise Certified"
                 };
 
-                // High-visibility directional scroll animation pattern
-                const animPattern = idx % 4;
-                const getInitialDirection = () => {
-                  if (animPattern === 0) return { x: -110, y: 0, rotate: -2 };
-                  if (animPattern === 1) return { x: 110, y: 0, rotate: 2 };
-                  if (animPattern === 2) return { y: -90, x: 0, rotate: 0 };
-                  return { y: 90, x: 0, rotate: 0 };
-                };
-                const initialDir = getInitialDirection();
-
                 return (
-                  <motion.div
-                    layout
+                  <div
                     key={service.id}
-                    initial={{ opacity: 0, ...initialDir, scale: 0.90, filter: "blur(4px)" }}
-                    whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1, filter: "blur(0px)" }}
-                    viewport={{ once: false, amount: 0.18 }}
-                    transition={{ 
-                      type: "spring", 
-                      stiffness: 65, 
-                      damping: 14, 
-                      mass: 0.85,
-                      delay: (idx % 3) * 0.09
-                    }}
-                    whileHover={{ y: -8, scale: 1.01, transition: { duration: 0.2, ease: "easeOut" } }}
                     onClick={() => onSelectService(service)}
-                    className="group relative bg-zinc-950/80 border border-white/10 hover:border-white/20 rounded-2xl overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-300 cursor-pointer select-none"
+                    className="group bg-zinc-900/60 hover:bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 rounded-xl overflow-hidden flex flex-col justify-between transition-colors duration-200 cursor-pointer text-left"
                   >
                     <div>
-                      {/* Media Header */}
-                      <div className="relative w-full h-52 sm:h-56 overflow-hidden bg-black border-b border-white/10">
+                      {/* Image Preview Header */}
+                      <div className="relative w-full h-48 overflow-hidden bg-black">
                         <img 
                           src={service.imageUrl} 
                           alt={service.title} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-out filter brightness-[0.85]"
+                          className="w-full h-full object-cover filter brightness-90"
                         />
-                        
-                        {/* Ambient Scrim */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                         
                         {/* Top Left: Category Badge */}
-                        <div className="absolute top-3 left-3 flex items-center gap-2 bg-black/80 backdrop-blur-md border border-white/15 px-2.5 py-1 rounded-full z-20">
+                        <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/75 backdrop-blur-sm border border-white/10 px-2.5 py-1 rounded-md text-[10px] font-mono text-zinc-300">
                           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                          <span className="text-[9px] font-mono font-medium text-white tracking-wider">
-                            {spec.categoryLabel}
-                          </span>
+                          <span>{spec.categoryLabel}</span>
                         </div>
 
                         {/* Top Right: Status Tag */}
-                        <div className="absolute top-3 right-3 z-20">
+                        <div className="absolute top-3 right-3">
                           {service.hot ? (
-                            <span className="bg-[#ef233c] text-white px-2.5 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-wide flex items-center gap-1">
+                            <span className="bg-[#ef233c] text-white px-2 py-0.5 rounded text-[10px] font-mono font-semibold tracking-wide flex items-center gap-1">
                               <Flame size={10} className="fill-white" />
                               <span>POPULAR</span>
                             </span>
                           ) : (
-                            <span className="bg-black/80 backdrop-blur-md text-zinc-300 border border-white/15 px-2.5 py-0.5 rounded-full text-[9px] font-mono tracking-wider">
+                            <span className="bg-black/75 backdrop-blur-sm text-zinc-400 border border-white/10 px-2 py-0.5 rounded text-[10px] font-mono">
                               {spec.badgeType}
                             </span>
                           )}
                         </div>
 
-                        {/* Title & Module Identity */}
-                        <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between gap-3 z-20">
-                          <div>
-                            <span className="text-[9px] font-mono text-[#ef233c] font-medium tracking-wider block mb-0.5">
-                              MODULE // 0{idx + 1}
-                            </span>
-                            <h3 className="font-bold text-lg sm:text-xl text-white tracking-tight leading-snug group-hover:text-[#ef233c] transition-colors">
-                              {service.title}
-                            </h3>
-                          </div>
-                          <div className="h-8 w-8 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shrink-0 group-hover:bg-[#ef233c] transition-all">
-                            <LucideIcon name={service.iconName} size={15} />
+                        {/* Bottom image overlay: Title & Icon */}
+                        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+                          <h3 className="font-semibold text-base sm:text-lg text-white tracking-tight leading-snug group-hover:text-[#ef233c] transition-colors">
+                            {service.title}
+                          </h3>
+                          <div className="h-7 w-7 rounded-md bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
+                            <LucideIcon name={service.iconName} size={14} />
                           </div>
                         </div>
                       </div>
 
-                      {/* Card Content Body */}
-                      <div className="p-5 space-y-4 text-left">
-                        <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed line-clamp-2 min-h-[38px]">
+                      {/* Content Body */}
+                      <div className="p-4 space-y-3">
+                        <p className="text-zinc-400 text-xs leading-relaxed line-clamp-2 min-h-[34px]">
                           {service.description}
                         </p>
 
-                        {/* Technical Telemetry Grid Table */}
+                        {/* Hardware Telemetry Specs */}
                         {spec.telemetry && spec.telemetry.length > 0 && (
-                          <div className="bg-black/60 border border-white/10 rounded-2xl p-3.5 space-y-2 font-mono text-[10px] group-hover:border-[#ef233c]/30 transition-colors">
-                            <div className="flex items-center justify-between text-[8.5px] font-bold text-zinc-500 uppercase tracking-widest pb-1.5 border-b border-white/10">
-                              <span>Hardware Calibration</span>
-                              <span className="text-emerald-400 font-bold flex items-center gap-1">
-                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
-                                VERIFIED
-                              </span>
-                            </div>
+                          <div className="bg-black/50 border border-zinc-800/80 rounded-lg p-2.5 space-y-1.5 text-[11px] font-mono">
                             {spec.telemetry.map((t, tIdx) => (
-                              <div key={tIdx} className="flex items-center justify-between text-[10.5px]">
-                                <span className="text-zinc-400 font-normal">{t.label}:</span>
-                                <span className="font-bold text-white text-right truncate ml-2">{t.val}</span>
+                              <div key={tIdx} className="flex items-center justify-between">
+                                <span className="text-zinc-500">{t.label}:</span>
+                                <span className="text-zinc-300 font-medium text-right truncate ml-2">{t.val}</span>
                               </div>
                             ))}
                           </div>
                         )}
 
-                        {/* Micro Feature Chips */}
+                        {/* Feature Chips */}
                         {spec.chips && (
-                          <div className="flex flex-wrap gap-2 pt-1">
+                          <div className="flex flex-wrap gap-1.5 pt-1">
                             {spec.chips.map((chip, cIdx) => (
                               <span 
                                 key={cIdx} 
-                                className={`text-[9.5px] font-mono px-2.5 py-1 rounded-lg border transition-all ${
+                                className={`text-[10px] px-2 py-0.5 rounded border ${
                                   chip.highlight 
-                                    ? "bg-[#ef233c]/10 border-[#ef233c]/30 text-[#ef233c] font-bold shadow-xs" 
-                                    : "bg-black/60 border-white/10 text-zinc-400"
+                                    ? "bg-[#ef233c]/10 border-[#ef233c]/20 text-[#ef233c] font-medium" 
+                                    : "bg-zinc-800/40 border-zinc-800 text-zinc-400"
                                 }`}
                               >
                                 {chip.label}
@@ -463,50 +420,43 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       </div>
                     </div>
 
-                    {/* Bottom Action Footer */}
-                    <div className="p-6 pt-0">
-                      <div className="pt-4 border-t border-white/10 flex items-center gap-2.5">
-                        {/* Primary Explore Action Button */}
+                    {/* Bottom Actions */}
+                    <div className="p-4 pt-0">
+                      <div className="pt-3 border-t border-zinc-800/80 flex items-center gap-2">
                         <button 
                           onClick={(e) => { e.stopPropagation(); onSelectService(service); }}
-                          className="group/btn flex-1 inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-[#ef233c] active:scale-98 text-white text-xs font-['Open_Sans'] font-bold uppercase tracking-wider py-3 px-4 rounded-xl transition-all duration-300 shadow-md cursor-pointer"
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 bg-zinc-800 hover:bg-[#ef233c] text-white text-xs font-medium py-2 px-3 rounded-lg transition-colors cursor-pointer"
                         >
-                          <span>Explore Blueprint</span>
-                          <ChevronRight size={14} className="stroke-[3] group-hover/btn:translate-x-1 transition-transform" />
+                          <span>View Details</span>
+                          <ChevronRight size={13} />
                         </button>
 
-                        {/* Instant Quote Button */}
                         <button 
                           onClick={(e) => { e.stopPropagation(); onTriggerQuote(service.id); }}
-                          className="inline-flex items-center justify-center p-3 rounded-xl border border-[#ef233c]/30 bg-[#ef233c]/10 text-[#ef233c] hover:bg-[#ef233c] hover:text-white transition-all shadow-xs cursor-pointer hover:scale-105 active:scale-95"
-                          title="Instant Quote Simulator"
+                          className="inline-flex items-center justify-center p-2 rounded-lg border border-[#ef233c]/30 bg-[#ef233c]/10 text-[#ef233c] hover:bg-[#ef233c] hover:text-white transition-colors cursor-pointer"
+                          title="Get Quote"
                         >
-                          <Calculator size={15} />
+                          <Calculator size={14} />
                         </button>
                         
-                        {/* WhatsApp Support Button */}
                         <a 
                           href={`https://wa.me/923064422550?text=${encodeURIComponent(`Hello Core Vision Pakistan, I would like to inquire about ${service.title}.`)}`}
                           target="_blank"
                           rel="noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center justify-center p-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all shadow-xs hover:scale-105 active:scale-95"
+                          className="inline-flex items-center justify-center p-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-white transition-colors"
                           title="WhatsApp Inquiry"
                         >
-                          <MessageCircle size={15} />
+                          <MessageCircle size={14} />
                         </a>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
-            </motion.div>
+            </div>
           ) : (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-20 bg-[#0a0a0c] border border-white/10 rounded-3xl max-w-xl mx-auto mt-6 shadow-2xl"
-            >
+            <div className="text-center py-20 bg-[#0a0a0c] border border-white/10 rounded-3xl max-w-xl mx-auto mt-6 shadow-2xl">
               <div className="h-12 w-12 rounded-2xl bg-[#ef233c]/10 border border-[#ef233c]/20 text-[#ef233c] flex items-center justify-center mx-auto mb-4">
                 <ShieldAlert size={22} />
               </div>
@@ -520,9 +470,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               >
                 Reset Filters
               </button>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
+        </div>
 
         {/* Enterprise Compliance & Hardware Standards Strip */}
         <div className="mt-16 bg-[#0a0a0c] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-left shadow-2xl">
