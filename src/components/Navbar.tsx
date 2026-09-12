@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
     <motion.header
       initial={{ y: 0 }}
       animate={{ 
-        y: isVisible ? 0 : -90,
+        y: isVisible ? 0 : -100,
         opacity: isVisible ? 1 : 0
       }}
       transition={{ 
@@ -77,23 +77,46 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
       }}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled 
-          ? 'bg-black/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.8)] border-b border-white/10' 
-          : 'bg-black/75 backdrop-blur-sm border-b border-white/5'
+          ? 'bg-black/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.9)] border-b border-white/10' 
+          : 'bg-black/85 backdrop-blur-sm border-b border-white/5'
       }`}
     >
+      {/* Fortek Enterprise Top Telemetry Strip */}
+      <div className="hidden sm:block border-b border-white/5 bg-[#0a0b0e]/90 px-4 py-1 text-[9.5px] font-mono text-zinc-400">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <span className="inline-flex items-center gap-1.5 text-emerald-400 font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block" />
+              24/7 NOC ACTIVE
+            </span>
+            <span className="hidden md:inline text-zinc-500">|</span>
+            <span className="hidden md:inline">SYSTEM UPTIME: <strong className="text-zinc-200">99.98%</strong></span>
+            <span className="hidden lg:inline text-zinc-500">|</span>
+            <span className="hidden lg:inline text-zinc-400">ENGINEERING: <strong className="text-[#ef233c]">ELV & OPTICAL FIBER</strong></span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-zinc-400">TIER-3 SPEC</span>
+            <span className="text-zinc-500">|</span>
+            <a href={`tel:${contactPhone}`} className="text-zinc-300 hover:text-[#ef233c] font-bold transition-colors">
+              SUPPORT: {contactPhone}
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate({ page: 'home' })}>
-            <div className="w-10 h-10 rounded-full overflow-hidden border border-[#ef233c]/40 flex items-center justify-center bg-black shadow-[0_0_15px_rgba(239,35,60,0.25)]">
+            <div className="w-10 h-10 rounded-xl overflow-hidden border border-[#ef233c]/40 flex items-center justify-center bg-[#0a0b0e] shadow-[0_0_15px_rgba(239,35,60,0.25)] tech-bracket">
               <img src={logo} alt="Core Vision Pakistan Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-['Open_Sans_Condensed'] font-bold text-lg text-white uppercase tracking-tight">
-                Core <span className="text-[#ef233c]">Vision</span> Pakistan
+              <span className="font-mono font-bold text-base sm:text-lg text-white uppercase tracking-wider flex items-center gap-1">
+                CORE <span className="text-[#ef233c]">GUARD</span>
               </span>
-              <span className="hidden sm:block text-[9.5px] text-zinc-400 font-mono tracking-wider">
-                Precision Infrastructure
+              <span className="hidden sm:block text-[9px] text-zinc-400 font-mono tracking-widest uppercase">
+                Enterprise Infrastructure
               </span>
             </div>
           </div>
@@ -111,10 +134,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
                 key={link.id}
                 href={link.path}
                 onClick={(e) => handleNavLinkClick(e, link.id)}
-                className={`text-xs uppercase tracking-wider font-semibold transition-colors ${
+                className={`text-xs uppercase font-mono tracking-wider transition-colors ${
                   isActive(link.id) 
-                    ? 'text-[#ef233c] font-bold border-b-2 border-[#ef233c] pb-0.5 drop-shadow-[0_0_8px_rgba(239,35,60,0.5)]' 
-                    : 'text-zinc-300 hover:text-[#ef233c]'
+                    ? 'text-[#ef233c] font-bold border-b-2 border-[#ef233c] pb-1 drop-shadow-[0_0_8px_rgba(239,35,60,0.5)]' 
+                    : 'text-zinc-400 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -124,14 +147,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
 
           {/* Right: actions */}
           <div className="flex items-center gap-3">
-            <a href={`tel:${contactPhone}`} className="hidden lg:inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-300 px-3 py-2 rounded-lg hover:bg-white/5 transition-colors">
-              <Phone size={14} className="text-[#ef233c]" />
+            <a href={`tel:${contactPhone}`} className="hidden xl:inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-300 px-3 py-2 rounded-lg hover:bg-white/5 transition-colors border border-white/5">
+              <Phone size={13} className="text-[#ef233c]" />
               <span>{contactPhone}</span>
             </a>
 
             <button 
               onClick={onTriggerQuote} 
-              className="hidden sm:inline-flex items-center gap-2 bg-[#ef233c] hover:bg-[#d90429] text-white px-4 py-2 rounded-xl text-xs uppercase font-bold tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#ef233c] hover:bg-[#d90429] text-white px-4 py-2 rounded-xl text-xs uppercase font-mono font-bold tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] cursor-pointer"
             >
               <Sparkles size={13} />
               <span>Get a Quote</span>
@@ -175,7 +198,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
                   key={id} 
                   href="#" 
                   onClick={(e) => handleNavLinkClick(e, id)} 
-                  className={`block text-sm uppercase tracking-wider font-semibold py-2 px-3 rounded-lg ${
+                  className={`block text-sm uppercase font-mono tracking-wider py-2 px-3 rounded-lg ${
                     isActive(id) ? 'bg-[#ef233c]/10 text-[#ef233c] font-bold border border-[#ef233c]/20' : 'text-zinc-300 hover:bg-white/5'
                   }`}
                 >
@@ -185,7 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
               <div className="pt-3 border-t border-white/10">
                 <button 
                   onClick={() => { setMobileMenuOpen(false); onTriggerQuote(); }} 
-                  className="w-full bg-[#ef233c] hover:bg-[#d90429] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider shadow-[0_0_20px_rgba(239,35,60,0.35)] flex items-center justify-center gap-2"
+                  className="w-full bg-[#ef233c] hover:bg-[#d90429] text-white py-3 rounded-xl font-mono font-bold uppercase text-xs tracking-wider shadow-[0_0_20px_rgba(239,35,60,0.35)] flex items-center justify-center gap-2"
                 >
                   <Sparkles size={14} />
                   <span>Launch Quote Simulator</span>

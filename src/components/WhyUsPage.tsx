@@ -257,7 +257,7 @@ export const WhyUsPage: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="bg-[#0a0a0c] border border-white/10 rounded-2xl p-6 text-center relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 transition-all"
+              className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-6 text-center relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 transition-all tech-bracket"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ef233c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               
@@ -275,8 +275,8 @@ export const WhyUsPage: React.FC = () => {
         {/* BENEFITS GRID */}
         <div className="mb-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white mt-4 font-sans">
-              Designed For High-Uptime Demands
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold tracking-wider text-white mt-4 uppercase">
+              Engineered For <span className="text-[#ef233c]">High-Uptime Demands</span>
             </h2>
           </div>
 
@@ -289,11 +289,11 @@ export const WhyUsPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="bg-[#0a0a0c] border border-white/10 rounded-2xl p-6 hover:border-[#ef233c] hover:shadow-[0_0_25px_rgba(239,35,60,0.2)] transition-all duration-300 relative text-left group"
+                  className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-6 hover:border-[#ef233c] hover:shadow-[0_0_25px_rgba(239,35,60,0.2)] transition-all duration-300 relative text-left group tech-bracket"
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
                   
-                  <h3 className="text-lg font-black font-sans text-white mb-2 mt-2 tracking-tight group-hover:text-[#ef233c] transition-colors">
+                  <h3 className="font-mono text-lg font-bold text-white mb-2 mt-2 tracking-wide group-hover:text-[#ef233c] transition-colors uppercase">
                     {b.title}
                   </h3>
                   

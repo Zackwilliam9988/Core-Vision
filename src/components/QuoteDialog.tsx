@@ -138,7 +138,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
             }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: "spring", damping: 28, stiffness: 350 }}
-            className="relative w-full max-w-sm rounded-[24px] border border-white/15 bg-[#0a0a0c] p-6 md:p-7 z-10 overflow-hidden backdrop-blur-3xl select-none"
+            className="relative w-full max-w-sm rounded-[24px] border border-white/15 bg-[#0a0b0e] p-6 md:p-7 z-10 overflow-hidden backdrop-blur-3xl select-none tech-bracket"
           >
             {/* Cyber background grid lines */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none rounded-[24px]" />

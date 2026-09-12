@@ -125,13 +125,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
           {/* Left Column: Coordinates & Info */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-6">
-              <h3 className="font-display font-black text-2xl text-white tracking-tight">Islamabad Headquarters</h3>
+              <h3 className="font-mono font-bold text-2xl text-white tracking-wider uppercase">Islamabad Headquarters</h3>
               <p className="text-xs text-zinc-400 leading-relaxed font-sans">
                 Our engineering office manages commercial projects and dispatch coordinates for hardware installations across major residential and commercial sectors.
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-center gap-4 bg-[#0a0a0c] border border-white/10 p-4 rounded-2xl shadow-lg">
+                <div className="flex items-center gap-4 bg-[#0a0b0e] border border-white/10 p-4 rounded-xl shadow-lg tech-bracket">
                   <div className="h-11 w-11 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 flex items-center justify-center text-[#ef233c] shadow-sm shrink-0">
                     <Phone size={16} />
                   </div>
@@ -143,7 +143,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-[#0a0a0c] border border-white/10 p-4 rounded-2xl shadow-lg">
+                <div className="flex items-center gap-4 bg-[#0a0b0e] border border-white/10 p-4 rounded-xl shadow-lg tech-bracket">
                   <div className="h-11 w-11 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 flex items-center justify-center text-[#ef233c] shadow-sm shrink-0">
                     <Mail size={16} />
                   </div>
@@ -155,7 +155,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 bg-[#0a0a0c] border border-white/10 p-4 rounded-2xl shadow-lg">
+                <div className="flex items-center gap-4 bg-[#0a0b0e] border border-white/10 p-4 rounded-xl shadow-lg tech-bracket">
                   <div className="h-11 w-11 rounded-xl bg-[#ef233c]/10 border border-[#ef233c]/30 flex items-center justify-center text-[#ef233c] shadow-sm shrink-0">
                     <MapPin size={16} />
                   </div>
@@ -170,10 +170,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
             </div>
 
             {/* Operations Hours Block */}
-            <div className="bg-[#0a0a0c] border border-white/10 rounded-2xl p-5 text-left space-y-1.5 font-sans shadow-lg">
+            <div className="bg-[#0a0b0e] border border-white/10 rounded-xl p-5 text-left space-y-1.5 font-sans shadow-lg tech-bracket">
               <div className="font-bold text-white text-xs flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Central Operations & Dispatch Active</span>
+                <span className="font-mono uppercase tracking-wider">Central Operations & Dispatch Active</span>
               </div>
               <p className="text-[11px] text-zinc-400 font-medium leading-relaxed">
                 Field specialists available across Islamabad & nationwide commercial sectors for site surveys and technical support.
@@ -182,7 +182,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
           </div>
 
           {/* Right Column: Dynamic Form */}
-          <div className="lg:col-span-7 bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 relative shadow-2xl">
+          <div className="lg:col-span-7 bg-[#0a0b0e] border border-white/10 rounded-2xl p-8 relative shadow-2xl tech-bracket">
             <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-red-500/5 blur-3xl pointer-events-none" />
             
             <h3 className="font-display font-black text-2xl text-white mb-2 tracking-tight">Request Engineering Quote</h3>

@@ -366,7 +366,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     }}
                     whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.25, ease: "easeOut" } }}
                     onClick={() => onSelectService(service)}
-                    className="group relative bg-[#0a0a0c] border border-white/10 hover:border-[#ef233c] rounded-3xl overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_45px_rgba(239,35,60,0.25)] transition-all duration-500 cursor-pointer select-none"
+                    className="group relative bg-[#0a0b0e] border border-white/10 hover:border-[#ef233c] rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.7)] hover:shadow-[0_20px_45px_rgba(239,35,60,0.3)] transition-all duration-500 cursor-pointer select-none tech-bracket"
                   >
                     {/* Top Red Noir Accent Glow Bar */}
                     <div className="absolute top-0 inset-x-0 h-1 bg-zinc-800 group-hover:bg-gradient-to-r group-hover:from-rose-500 group-hover:via-[#ef233c] group-hover:to-red-700 transition-all duration-500 z-30" />

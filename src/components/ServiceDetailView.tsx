@@ -432,13 +432,13 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             {meta.benefits.map((benefit, idx) => (
               <div 
                 key={idx}
-                className="bg-black border border-white/10 hover:border-[#ef233c] p-6.5 rounded-2xl flex flex-col items-center text-center hover:bg-[#121214] hover:shadow-[0_0_25px_rgba(239,35,60,0.2)] transition-all duration-300 relative group"
+                className="bg-[#0a0b0e] border border-white/10 hover:border-[#ef233c] p-6.5 rounded-2xl flex flex-col items-center text-center hover:bg-[#121214] hover:shadow-[0_0_25px_rgba(239,35,60,0.25)] transition-all duration-300 relative group tech-bracket"
               >
                 <div className="p-3 bg-[#ef233c]/10 border border-[#ef233c]/30 text-[#ef233c] group-hover:bg-[#ef233c] group-hover:text-white rounded-xl shrink-0 mb-4 shadow-sm group-hover:scale-105 transition-transform duration-300">
                   <LucideIcon name={benefit.icon} size={20} />
                 </div>
                 
-                <h4 className="font-display font-black text-white mb-2 leading-snug text-base group-hover:text-[#ef233c] transition-colors">
+                <h4 className="font-mono font-bold text-white mb-2 leading-snug text-base group-hover:text-[#ef233c] transition-colors uppercase tracking-wider">
                   {benefit.title}
                 </h4>
                 <p className="text-zinc-400 text-xs leading-relaxed font-sans">
@@ -459,19 +459,19 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
             <span className="text-[10px] font-mono text-[#ef233c] uppercase tracking-widest font-black bg-[#ef233c]/10 border border-[#ef233c]/30 px-3.5 py-1.5 rounded-full inline-block">
               Operational Roadmap
             </span>
-            <h2 className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight mt-4">
-              Our 4-Phase System Deployment Protocol
+            <h2 className="font-mono font-bold text-2xl sm:text-4xl text-white tracking-wider mt-4 uppercase">
+              4-Phase System <span className="text-[#ef233c]">Deployment Protocol</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch relative">
             {meta.process.map((step, idx) => (
-              <div key={idx} className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-left shadow-xl hover:border-[#ef233c] transition-all relative overflow-hidden group">
+              <div key={idx} className="bg-[#0a0b0e] border border-white/10 p-6 rounded-2xl text-left shadow-xl hover:border-[#ef233c] transition-all relative overflow-hidden group tech-bracket">
                 <span className="absolute top-2 right-4 text-4xl font-mono font-black text-zinc-800 group-hover:text-[#ef233c]/30 transition-colors">
                   {step.step}
                 </span>
                 <div className="h-1 w-10 bg-[#ef233c] rounded-full mb-5 group-hover:w-16 transition-all" />
-                <h4 className="font-display font-black text-white text-sm mb-2 group-hover:text-[#ef233c] transition-colors">{step.title}</h4>
+                <h4 className="font-mono font-bold text-white text-sm mb-2 group-hover:text-[#ef233c] transition-colors uppercase tracking-wide">{step.title}</h4>
                 <p className="text-zinc-400 text-xs leading-relaxed font-sans">{step.desc}</p>
               </div>
             ))}

@@ -373,10 +373,10 @@ export const SophiaChat: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
             exit={{ opacity: 0, y: 30, scale: 0.92 }}
             transition={{ type: "spring", stiffness: 350, damping: 26 }}
-            className="absolute bottom-18 right-0 w-[calc(100vw-32px)] sm:w-[390px] h-[72vh] sm:h-[550px] min-h-[400px] max-h-[550px] bg-[#0a0a0c] border border-white/15 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.8),0_0_30px_rgba(239,35,60,0.2)] overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-[#ef233c]/30 via-[#0a0a0c] to-[#ef233c]/10"
+            className="absolute bottom-18 right-0 w-[calc(100vw-32px)] sm:w-[390px] h-[72vh] sm:h-[550px] min-h-[400px] max-h-[550px] bg-[#0a0b0e] border border-white/15 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_30px_rgba(239,35,60,0.25)] overflow-hidden flex flex-col p-[1px] bg-gradient-to-b from-[#ef233c]/30 via-[#0a0b0e] to-[#ef233c]/10 tech-bracket"
           >
             {/* Main Inner Container */}
-            <div className="w-full h-full bg-[#0a0a0c] rounded-2xl flex flex-col overflow-hidden">
+            <div className="w-full h-full bg-[#0a0b0e] rounded-2xl flex flex-col overflow-hidden">
               
               {/* Header banner */}
               <div className="p-4 bg-gradient-to-r from-black via-[#0a0a0c] to-black border-b border-white/10 flex items-center justify-between">

@@ -60,7 +60,7 @@ export const QuickQuoteEstimator: React.FC<QuickQuoteEstimatorProps> = ({ onTrig
 
           {/* Right Column Interactive Sliders & Output Card */}
           <div className="lg:col-span-7">
-            <div className="bg-[#0a0a0c] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl text-left space-y-6">
+            <div className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl text-left space-y-6 tech-bracket">
               
               {/* Slider 1: 4K CCTV Cameras */}
               <div className="space-y-2">
