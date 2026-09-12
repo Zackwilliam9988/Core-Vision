@@ -47,7 +47,6 @@ import { ContactPage } from "./components/ContactPage";
 import { ServicesPage } from "./components/ServicesPage";
 import { AboutPage } from "./components/AboutPage";
 import { WhyUsPage } from "./components/WhyUsPage";
-import { PartnersPage } from "./components/PartnersPage";
 import { Navbar } from "./components/Navbar";
 import { CCTVCamera } from "./components/CCTVCamera";
 import { SuccessNotification } from "./components/SuccessNotification";
@@ -303,9 +302,6 @@ export default function App() {
     if (path === "/about" || path === "/about/" || hash === "#/about" || hash === "#about") {
       return { page: "about" };
     }
-    if (path === "/partners" || path === "/partners/" || hash === "#/partners" || hash === "#partners") {
-      return { page: "partners" };
-    }
     if (path === "/why-us" || path === "/why-us/" || hash === "#/why-us" || hash === "#why-us") {
       return { page: "why-us" };
     }
@@ -335,8 +331,6 @@ export default function App() {
       url = `/service/${route.serviceId}`;
     } else if (route.page === "services") {
       url = "/services";
-    } else if (route.page === "partners") {
-      url = "/partners";
     } else if (route.page === "about") {
       url = "/about";
     } else if (route.page === "why-us") {
@@ -510,12 +504,6 @@ export default function App() {
           />
         ) : currentRoute.page === "about" ? (
           <AboutPage key="about-page" />
-        ) : currentRoute.page === "partners" ? (
-          <PartnersPage 
-            key="partners-page" 
-            onTriggerQuote={() => triggerQuote()}
-            onNavigate={(r) => navigateTo(r)}
-          />
         ) : currentRoute.page === "why-us" ? (
           <WhyUsPage key="why-us-page" />
         ) : (
@@ -551,12 +539,9 @@ export default function App() {
                   className="md:col-span-4 bg-zinc-950/80 border border-white/10 rounded-2xl p-7 shadow-lg hover:border-white/20 transition-all flex flex-col justify-between min-h-[260px]"
                 >
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between">
+                    <div>
                       <span className="text-xs font-mono font-medium text-[#ef233c] uppercase tracking-wider">
                         Enterprise Infrastructure
-                      </span>
-                      <span className="text-[10px] text-emerald-400 font-mono">
-                        ISO / OEM Spec
                       </span>
                     </div>
                     <p className="text-sm leading-relaxed text-zinc-300 font-normal">
@@ -899,7 +884,6 @@ export default function App() {
               <ul className="space-y-2 text-xs font-semibold text-zinc-400 font-mono">
                 <li><button onClick={() => navigateTo({ page: "home" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Home landing</button></li>
                 <li><button onClick={() => navigateTo({ page: "services" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Solutions Catalog</button></li>
-                <li><button onClick={() => navigateTo({ page: "partners" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Hardware Alliances</button></li>
                 <li><button onClick={() => navigateTo({ page: "about" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">About Engineering</button></li>
                 <li><button onClick={() => navigateTo({ page: "why-us" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Certified Promise</button></li>
                 <li><button onClick={() => navigateTo({ page: "contact" })} className="hover:text-[#ef233c] text-left transition-colors cursor-pointer">Security Dispatch</button></li>

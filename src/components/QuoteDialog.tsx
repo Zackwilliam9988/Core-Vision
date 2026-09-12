@@ -155,10 +155,10 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                 </div>
                 <div>
                   <h3 className="text-sm font-black font-display text-white tracking-wide uppercase">
-                    Launch AI Quotation
+                    Request a Quote
                   </h3>
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">
-                    Direct Dispatch Channel
+                  <span className="text-xs text-zinc-400 block font-normal">
+                    Direct inquiry to our engineering team
                   </span>
                 </div>
               </div>
@@ -177,9 +177,9 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                 <div className="h-12 w-12 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(16,185,129,0.3)]">
                   <CheckCircle size={24} />
                 </div>
-                <h4 className="text-base font-bold text-white">Quotation Packet Transmitted</h4>
+                <h4 className="text-base font-bold text-white">Quote Request Received</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed font-sans">
-                  Your customized inquiry has been routed directly to our chief engineering dispatch. We will contact you at <b>{formData.phone}</b>.
+                  Thank you! Our engineering team will review your requirements and reach out to you shortly at <b>{formData.phone}</b>.
                 </p>
                 <button
                   onClick={onClose}
@@ -196,15 +196,15 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                 </div>
                 <div className="space-y-1">
                   <span className="text-[11px] font-bold text-[#ef233c] block">{submitPhase}</span>
-                  <span className="text-[9px] text-zinc-500">AES-256 GCM SECURE TUNNEL</span>
+                  <span className="text-xs text-zinc-500 font-sans">Sending quote request...</span>
                 </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3.5 relative z-10 text-left">
                 {/* Service Selection */}
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
-                    Target Hardware Solution
+                  <label className="block text-xs text-zinc-300 mb-1 font-medium font-sans">
+                    Select Service
                   </label>
                   <select
                     value={formData.serviceId}
@@ -221,7 +221,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
 
                 {/* Name */}
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
+                  <label className="block text-xs text-zinc-300 mb-1 font-medium font-sans">
                     Your Full Name
                   </label>
                   <input
@@ -236,7 +236,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
+                  <label className="block text-xs text-zinc-300 mb-1 font-medium font-sans">
                     Phone Number
                   </label>
                   <input
@@ -251,7 +251,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
 
                 {/* Email */}
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-1 font-bold">
+                  <label className="block text-xs text-zinc-300 mb-1 font-medium font-sans">
                     Email Address
                   </label>
                   <input
@@ -270,7 +270,7 @@ export const QuoteDialog: React.FC<QuoteDialogProps> = ({
                   className="mt-2 w-full bg-[#ef233c] hover:bg-[#d90429] text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] cursor-pointer flex items-center justify-center gap-2"
                 >
                   <Send size={13} />
-                  <span>Transmit Estimate Packet</span>
+                  <span>Submit Quote Request</span>
                 </button>
               </form>
             )}

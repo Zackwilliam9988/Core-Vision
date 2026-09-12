@@ -97,11 +97,10 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 hover:shadow-[0_0_30px_rgba(239,35,60,0.2)] transition-all duration-300 tech-bracket"
           >
-            <div className="flex items-center justify-between mb-4">
+            <div className="mb-4">
               <span className="text-[9px] font-mono text-[#ef233c] bg-[#ef233c]/10 px-2 py-0.5 rounded border border-[#ef233c]/20 font-bold uppercase">
                 STRATEGIC MANDATE
               </span>
-              <span className="text-[9px] font-mono text-zinc-500">ISO 27001 ALIGNED</span>
             </div>
             <h3 className="text-2xl font-mono font-bold tracking-wider text-white mb-3">Our Mission</h3>
             <p className="text-zinc-400 text-sm leading-relaxed font-sans">
@@ -116,11 +115,10 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 hover:shadow-[0_0_30px_rgba(239,35,60,0.2)] transition-all duration-300 tech-bracket"
           >
-            <div className="flex items-center justify-between mb-4">
+            <div className="mb-4">
               <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold uppercase">
                 FUTURE ARCHITECTURE
               </span>
-              <span className="text-[9px] font-mono text-zinc-500">NEXT-GEN ELV</span>
             </div>
             <h3 className="text-2xl font-mono font-bold tracking-wider text-white mb-3">Our Vision</h3>
             <p className="text-zinc-400 text-sm leading-relaxed font-sans">
@@ -191,11 +189,6 @@ export const AboutPage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-[0.9]"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="text-[9px] font-mono font-bold text-[#ef233c] bg-black/80 backdrop-blur-md border border-[#ef233c]/40 px-2.5 py-0.5 rounded shadow-sm">
-                      VERIFIED
-                    </span>
-                  </div>
                 </div>
                 
                 <div className="p-5 text-center">
