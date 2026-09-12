@@ -56,6 +56,7 @@ import { HeroVideoBackground } from "./components/HeroVideoBackground";
 import { EngineeringShowcase } from "./components/EngineeringShowcase";
 import { PartnersShowcase } from "./components/PartnersShowcase";
 import { ShowroomCard3D } from "./components/ShowroomCard3D";
+import { ContinuousTickerScroll } from "./components/ContinuousTickerScroll";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
@@ -815,6 +816,12 @@ export default function App() {
 
             {/* OFFICIAL OEM PARTNERS & HARDWARE COMPLIANCE MARQUEE */}
             <PartnersShowcase />
+
+            {/* HORIZONTAL LINE DIVIDER */}
+            <div className="inove-hline" />
+
+            {/* CONTINUOUS REAL MAGIC TICKER SCROLL */}
+            <ContinuousTickerScroll />
 
             {/* HORIZONTAL LINE DIVIDER */}
             <div className="inove-hline" />
