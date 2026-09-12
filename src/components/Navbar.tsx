@@ -81,50 +81,28 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
           : 'bg-black/85 backdrop-blur-sm border-b border-white/5'
       }`}
     >
-      {/* Enterprise Status Strip */}
-      <div className="hidden sm:block border-b border-white/5 bg-black/80 px-4 py-1.5 text-[10px] font-mono text-zinc-400">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-              24/7 NOC Active
-            </span>
-            <span className="text-zinc-600">/</span>
-            <span>Uptime: <strong className="text-zinc-200">99.98%</strong></span>
-            <span className="hidden md:inline text-zinc-600">/</span>
-            <span className="hidden md:inline">ELV & Optical Splicing</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <a href={`tel:${contactPhone}`} className="text-zinc-400 hover:text-white transition-colors">
-              Support: {contactPhone}
-            </a>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate({ page: 'home' })}>
-            <div className="w-9 h-9 rounded-lg overflow-hidden border border-white/10 flex items-center justify-center bg-zinc-900">
+            <div className="w-10 h-10 rounded-xl overflow-hidden border border-[#ef233c]/40 flex items-center justify-center bg-[#0a0b0e] shadow-[0_0_15px_rgba(239,35,60,0.25)] tech-bracket">
               <img src={logo} alt="Core Vision Pakistan Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-semibold text-sm sm:text-base text-white tracking-tight flex items-center gap-1">
-                Core <span className="text-[#ef233c]">Guard</span>
+              <span className="font-mono font-bold text-base sm:text-lg text-white uppercase tracking-wider flex items-center gap-1">
+                CORE <span className="text-[#ef233c]">GUARD</span>
               </span>
-              <span className="hidden sm:block text-[9px] text-zinc-500 font-mono tracking-wider">
-                Precision Infrastructure
+              <span className="hidden sm:block text-[9px] text-zinc-400 font-mono tracking-widest uppercase">
+                Enterprise Infrastructure
               </span>
             </div>
           </div>
 
           {/* Center: primary links */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden md:flex items-center gap-8">
             {[
               { id: 'home', label: 'Home', path: '/' },
               { id: 'services', label: 'Services', path: '/services' },
-              { id: 'partners', label: 'Partners', path: '/partners' },
               { id: 'about', label: 'About', path: '/about' },
               { id: 'why-us', label: 'Why Us', path: '/why-us' },
               { id: 'contact', label: 'Contact', path: '/contact' },
@@ -133,9 +111,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
                 key={link.id}
                 href={link.path}
                 onClick={(e) => handleNavLinkClick(e, link.id)}
-                className={`text-xs tracking-wide transition-colors ${
+                className={`text-xs uppercase font-mono tracking-wider transition-colors ${
                   isActive(link.id) 
-                    ? 'text-white font-semibold border-b border-[#ef233c] pb-1' 
+                    ? 'text-[#ef233c] font-bold border-b-2 border-[#ef233c] pb-1 drop-shadow-[0_0_8px_rgba(239,35,60,0.5)]' 
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -146,16 +124,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
 
           {/* Right: actions */}
           <div className="flex items-center gap-3">
-            <a href={`tel:${contactPhone}`} className="hidden xl:inline-flex items-center gap-2 text-xs font-mono text-zinc-300 px-3 py-1.5 rounded-lg hover:bg-white/5 transition-colors border border-white/10">
-              <Phone size={12} className="text-[#ef233c]" />
+            <a href={`tel:${contactPhone}`} className="hidden xl:inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-300 px-3 py-2 rounded-lg hover:bg-white/5 transition-colors border border-white/5">
+              <Phone size={13} className="text-[#ef233c]" />
               <span>{contactPhone}</span>
             </a>
 
             <button 
               onClick={onTriggerQuote} 
-              className="hidden sm:inline-flex items-center gap-1.5 bg-[#ef233c] hover:bg-[#d90429] text-white px-3.5 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#ef233c] hover:bg-[#d90429] text-white px-4 py-2 rounded-xl text-xs uppercase font-mono font-bold tracking-wider transition-all shadow-[0_0_20px_rgba(239,35,60,0.35)] hover:shadow-[0_0_30px_rgba(239,35,60,0.5)] cursor-pointer"
             >
-              <Sparkles size={12} />
+              <Sparkles size={13} />
               <span>Get a Quote</span>
             </button>
 
@@ -192,16 +170,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate, contac
             className="md:hidden bg-[#0a0a0c] border-t border-white/10 shadow-2xl overflow-hidden"
           >
             <div className="px-5 py-4 space-y-3">
-              {[ 'home', 'services', 'partners', 'about', 'why-us', 'contact' ].map((id) => (
+              {[ 'home','services','about','why-us','contact' ].map((id) => (
                 <a 
                   key={id} 
-                  href={`/${id === 'home' ? '' : id}`} 
+                  href="#" 
                   onClick={(e) => handleNavLinkClick(e, id)} 
                   className={`block text-sm uppercase font-mono tracking-wider py-2 px-3 rounded-lg ${
                     isActive(id) ? 'bg-[#ef233c]/10 text-[#ef233c] font-bold border border-[#ef233c]/20' : 'text-zinc-300 hover:bg-white/5'
                   }`}
                 >
-                  {id === 'why-us' ? 'Why Us' : id === 'partners' ? 'Partners' : id.charAt(0).toUpperCase() + id.slice(1)}
+                  {id === 'why-us' ? 'Why Us' : id.charAt(0).toUpperCase() + id.slice(1)}
                 </a>
               ))}
               <div className="pt-3 border-t border-white/10">

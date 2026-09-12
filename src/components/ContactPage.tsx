@@ -170,9 +170,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ contactInfo, onTrigger
             </div>
 
             {/* Operations Hours Block */}
-            <div className="bg-[#0a0b0e] border border-white/10 rounded-xl p-5 text-left space-y-1.5 font-sans shadow-lg tech-bracket">
-              <div className="font-bold text-white text-xs flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="bg-[#0a0b0e] border border-white/10 rounded-xl p-5 text-left space-y-1.5 font-sans shadow-lg">
+              <div className="font-bold text-white text-xs">
                 <span className="font-mono uppercase tracking-wider">Central Operations & Dispatch Active</span>
               </div>
               <p className="text-[11px] text-zinc-400 font-medium leading-relaxed">

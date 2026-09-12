@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { 
   Shield, 
   Eye, 
@@ -13,7 +13,6 @@ import {
   Zap, 
   Heart 
 } from "lucide-react";
-import { ScrollJourneyAbout } from "./ScrollJourneyAbout";
 
 export const AboutPage: React.FC = () => {
   const coreValues = [
@@ -58,6 +57,13 @@ export const AboutPage: React.FC = () => {
     }
   ];
 
+  const milestones = [
+    { year: "2018", title: "Enterprise Conception", desc: "Core Vision Pakistan begins high-end commercial cabling & CCTV rollouts in Islamabad." },
+    { year: "2020", title: "Fiber Splice Core", desc: "Acquired state-of-the-art OTDR core-alignment splicing units to service optical feeds." },
+    { year: "2022", title: "Smart City Contract", desc: "Deployed integrated surveillance systems covering major commercial zones." },
+    { year: "2025", title: "Biometric Integration Hub", desc: "Launched central biometric database syncing cloud metrics for 50+ enterprise sites." }
+  ];
+
   return (
     <div className="pt-32 pb-24 bg-black min-h-screen text-white font-sans relative overflow-hidden">
       
@@ -95,14 +101,11 @@ export const AboutPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 hover:shadow-[0_0_30px_rgba(239,35,60,0.2)] transition-all duration-300 tech-bracket"
+            className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 hover:shadow-[0_0_30px_rgba(239,35,60,0.2)] transition-all duration-300"
           >
-            <div className="mb-4">
-              <span className="text-[9px] font-mono text-[#ef233c] bg-[#ef233c]/10 px-2 py-0.5 rounded border border-[#ef233c]/20 font-bold uppercase">
-                STRATEGIC MANDATE
-              </span>
-            </div>
-            <h3 className="text-2xl font-mono font-bold tracking-wider text-white mb-3">Our Mission</h3>
+            <h3 className="text-2xl font-['Open_Sans_Condensed'] font-light tracking-wide text-white mb-3 uppercase">
+              Our <span className="font-bold text-[#ef233c]">Mission</span>
+            </h3>
             <p className="text-zinc-400 text-sm leading-relaxed font-sans">
               To engineer and maintain bulletproof security grids, high-speed networking paths, and automated bio-tracking modules that guarantee commercial clients continuous uptime, maximum asset protection, and streamlined oversight.
             </p>
@@ -113,16 +116,13 @@ export const AboutPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 hover:shadow-[0_0_30px_rgba(239,35,60,0.2)] transition-all duration-300 tech-bracket"
+            className="bg-[#0a0b0e] border border-white/10 rounded-2xl p-8 relative overflow-hidden group shadow-2xl hover:border-[#ef233c]/50 hover:shadow-[0_0_30px_rgba(239,35,60,0.2)] transition-all duration-300"
           >
-            <div className="mb-4">
-              <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold uppercase">
-                FUTURE ARCHITECTURE
-              </span>
-            </div>
-            <h3 className="text-2xl font-mono font-bold tracking-wider text-white mb-3">Our Vision</h3>
+            <h3 className="text-2xl font-['Open_Sans_Condensed'] font-light tracking-wide text-white mb-3 uppercase">
+              Our <span className="font-bold text-[#ef233c]">Vision</span>
+            </h3>
             <p className="text-zinc-400 text-sm leading-relaxed font-sans">
-              To become the benchmark across Pakistan for high-precision optical fiber trunking and enterprise ELV surveillance infrastructure, defined by zero defect tolerances and instant telemetry.
+              To become the benchmark across Pakistan for high-precision optical fiber trunking and enterprise ELV surveillance infrastructure, defined by reliability, clean craftsmanship, and proactive support.
             </p>
           </motion.div>
         </div>
@@ -158,8 +158,36 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        {/* SCROLL-DRIVEN DYNAMIC SVG JOURNEY TIMELINE */}
-        <ScrollJourneyAbout />
+        {/* ACHIEVEMENTS / HISTORIC TIMELINE */}
+        <div className="mb-20 bg-[#0a0a0c] border border-white/10 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+          
+          <div className="text-left mb-12">
+            <h2 className="text-3xl font-black font-sans text-white mt-4">Proven Service Trajectory</h2>
+          </div>
+
+          <div className="relative border-l-2 border-zinc-800 pl-6 sm:pl-10 space-y-12">
+            {milestones.map((m, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="relative text-left"
+              >
+                {/* Timeline Dot Indicator */}
+                <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 h-4 w-4 rounded-full bg-black border-2 border-[#ef233c] shadow-[0_0_12px_rgba(239,35,60,0.6)]" />
+                
+                <span className="text-sm font-mono font-black text-[#ef233c] bg-[#ef233c]/10 px-3 py-1 rounded-md border border-[#ef233c]/30 inline-block mb-2">
+                  {m.year}
+                </span>
+                <h4 className="text-xl font-bold font-sans text-white">{m.title}</h4>
+                <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl font-sans leading-relaxed">{m.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* PROFESSIONAL TEAM SECTION */}
         <div className="mb-8">
@@ -189,6 +217,11 @@ export const AboutPage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-[0.9]"
                     referrerPolicy="no-referrer"
                   />
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="text-[9px] font-mono font-bold text-[#ef233c] bg-black/80 backdrop-blur-md border border-[#ef233c]/40 px-2.5 py-0.5 rounded shadow-sm">
+                      VERIFIED
+                    </span>
+                  </div>
                 </div>
                 
                 <div className="p-5 text-center">

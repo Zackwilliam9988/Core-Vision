@@ -318,22 +318,6 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ service, o
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.85]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
-                
-                {/* Active HUD calibration dots */}
-                <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/80 border border-[#ef233c]/40 px-3 py-1 rounded-full text-[8.5px] font-mono text-[#ef233c]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#ef233c] animate-ping" />
-                  <span>HUD LINK_ACTIVE</span>
-                </div>
-
-                <div className="absolute bottom-4 left-4 right-4 bg-[#0a0a0c]/95 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-3 shadow-2xl">
-                  <div className="p-2.5 bg-[#ef233c]/10 border border-[#ef233c]/30 text-[#ef233c] rounded-xl">
-                    <LucideIcon name={service.iconName} size={18} />
-                  </div>
-                  <div className="text-left">
-                    <span className="block text-[8px] font-mono uppercase text-zinc-500 font-bold tracking-widest">SYSTEM ID MATRIX</span>
-                    <span className="block text-xs font-black text-[#ef233c] font-mono tracking-wider">#{service.id.toUpperCase()}</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -320,17 +320,6 @@ export const WhyUsPage: React.FC = () => {
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
               Every coaxial connector is compressed, every fiber splicing sleeve is heat-shrunk and double-clamped, and every server room router is fully tested for packet jitter. We stand behind our setups with absolute operational transparency.
             </p>
-            
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-6 text-xs text-[#ef233c] font-mono">
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-[#ef233c] animate-ping" />
-                <span>ACTIVE FIELD DIAGNOSTICS</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-[#ff4d6d]" />
-                <span>CERTIFIED CALIBRATED METERS</span>
-              </div>
-            </div>
           </div>
 
           <div className="lg:col-span-5 relative w-full h-full min-h-[220px] rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
@@ -341,10 +330,6 @@ export const WhyUsPage: React.FC = () => {
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 text-left">
-              <span className="block text-[8px] font-mono tracking-widest text-[#ef233c] bg-black/80 border border-[#ef233c]/30 px-2 py-0.5 rounded uppercase font-bold inline-block">LIVE METRIC FEED</span>
-              <span className="block text-xs font-sans text-white font-extrabold mt-1 drop-shadow-md">Core Alignment Splicer Calibrator-04</span>
-            </div>
           </div>
         </div>
 
